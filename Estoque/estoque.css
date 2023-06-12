@@ -1,0 +1,406 @@
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.asideNav {
+    display: flex;
+    flex-flow: column wrap;
+    border-right: .5px solid #000000;
+    width: 200px;
+    height: 100vh;
+}
+
+.asideUl {
+    padding: 15px 0px;
+    margin: 0px 15px;
+}
+
+.asideTitle {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+/* // ----------------- FILTRO MARCA ----------------- //  */
+
+.marcaFilter {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.marcaTitle {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.marcaTitle i {
+    transition: transform 0.3s linear;
+}
+
+.marcaFilter.active .marcaTitle i {
+    transform: rotate(-180deg);
+}
+
+.marcaFilter.active .content .options {
+    display: block;
+}
+
+#selectMarca {
+    font-size: 13px;
+    padding: 0px 10px;
+}
+
+.options {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 0px 5px;
+    border: .5px solid #f2f2f2;
+}
+
+.options li {
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.options li:hover {
+    background-color: #f2f2f2;
+}
+
+
+
+/* // ----------------- FILTRO PRECO ----------------- //  */
+
+.priceFilter {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.priceTitle {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.priceTitle i {
+    transition: transform 0.3s linear;
+}
+
+.priceFilter.active .marcaTitle i {
+    transform: rotate(-180deg);
+}
+
+.priceFilter.off .contentPrice .options {
+    display: flex;
+}
+
+#selectPrice {
+    font-size: 13px;
+    padding: 0px 10px;
+}
+
+.options {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 5px;
+    margin: 30px 0px 35px;
+    padding: 5px 5px;
+    border: .5px solid #f2f2f2;
+    font-size: 16px;
+}
+
+.options .field {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.options .field .dentro {
+    position: absolute;
+    left: 40px;
+    font-size: 12px;
+}
+
+.options .field span {
+    padding: 0px 5px;
+}
+
+.options .field input {
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 5px 5px 5px 20px;
+    outline: none;
+    border: 1px solid #999;
+}
+
+.options .field .inputMax {
+    margin-left: 1px;
+}
+
+.slider {
+    margin: 10px 0px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: #ddd;
+    position: relative;
+}
+
+.slider .progess {
+    height: 8px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #009be2;
+}
+
+.rangeInput {
+    position: relative;
+}
+
+.rangeInput input {
+    position: absolute;
+    top: -18px;
+    height: 8px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 13px;
+    width: 13px;
+    border-radius: 50px;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background-color: #009be2
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 10px;
+    width: 10px;
+    border: none;
+    border-radius: 50px;
+    pointer-events: auto;
+    -moz-appearance: none;
+    background-color: #009be2
+}
+
+
+/* // ----------------- FILTRO ANO ----------------- //  */
+
+.anoFilter {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.anoTitle {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.anoTitle i {
+    transition: transform 0.3s linear;
+}
+
+.anoFilter.active .anoTitle i {
+    transform: rotate(-180deg);
+}
+
+.anoFilter.active .contentAno .optionsAno {
+    display: block;
+}
+
+#selectAno {
+    font-size: 13px;
+    padding: 0px 10px;
+}
+
+.optionsAno {
+    display: none;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 0px 5px;
+    border: .5px solid #f2f2f2;
+}
+
+.optionsAno li {
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.optionsAno li:hover {
+    background-color: #f2f2f2;
+}
+
+/* // ----------------- ESTOQUE ----------------- //  */
+
+.carrosEstoque {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 40px;
+}
+
+.cardCarro {
+    display: flex;
+    flex-direction: row wrap;
+    width: 600px;
+    margin: 20px;
+    background-color: rgb(48, 48, 48);
+}
+
+.cardCarro>img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.cardContent {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+}
+
+
+
+/* // ----------------- MODAL CADASTRO CARRO ----------------- //  */
+.modalContent::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgb(194, 193, 193);
+}
+.modalContent::-webkit-scrollbar{
+    border-radius: 10px;
+    width: 13px;
+    background-color: rgb(235, 235, 235);
+    background-clip: content-box;
+}
+
+.modalCriar {
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+    width: 600px;
+    height: auto;
+    margin: auto;
+    border: 1px solid #acacac;
+}
+
+.modalTitle {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.modalTitle span{
+    font-size: 20px;
+}
+
+.modalTitle i{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.modalContent{
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modalContent div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.imgCarros {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.5rem;
+}
+
+.imgCar{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.imgInputClass {
+    display: none;
+}
+
+.imgInputLabel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.imgInputLabel > img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+
+.btnCadastro button{
+    margin: 0 auto;
+    padding: 13px;
+    font-size: 17px;
+    border-radius: 10px;
+}

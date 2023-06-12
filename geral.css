@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+
+}
+
+.imageSlider.natela {
+    filter: grayscale(0%);
+    box-shadow: -9px 0px 18px #00000093,
+        9px 0px 18px #00000093;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.noSelect {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+/* // ------------------------------------------------ //  */
+
+body {
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 100%;
+    background-color: black;
+}
+
+.footer>p {
+    margin: 20px 0px 0px 20px;
+    color: rgb(255, 255, 255);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px;
+    padding: 5px 0px;
+    border-bottom: .5px solid #414141d0;
+}
+
+.logo {
+    cursor: pointer;
+    width: auto;
+    width: 150px;
+    height: 60px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hamburger {
+    position: absolute;
+    top: 1.25rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+}
+
+.hamburgerSlice {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.navMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+.navMenu i {
+    font-size: 33px;
+}
+
+.navMenu ul a {
+    margin-right: 15px;
+}
+
+.navMenu ul a:hover {
+    color: rgb(136, 136, 136);
+}
+
+.contaUl .contaText {
+    display: none;
+}
+
+
+@media (max-width: 650px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navMenuLine {
+        position: absolute;
+        top: 4.5rem;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: #f2f2f2;
+        width: auto;
+        padding: 10px;
+    }
+
+    .navMenu ul a {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    .contaUl .contaText {
+        display: block;
+    }
+
+    .contaUl .contaIcon {
+        display: none;
+    }
+}

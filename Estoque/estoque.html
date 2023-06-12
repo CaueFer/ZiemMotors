@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziem Motors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="estoque.css">
+    <link rel="stylesheet" href="/geral.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><a href="/home/home.html"><img src="/Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a>
+        </div>
+        <div class="navMenu">
+            <ul>
+                <a href="/Estoque/estoque.html">ESTOQUE</a>
+                <a href="#">CONTATO</a>
+                <a href="#">SOBRE</a>
+                <a href="/conta/conta.html"><i class="fa-solid fa-circle-user fa-xl"></i></a>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <dialog class="modalCriar">
+            <div class="modalTitle">
+                <span>Cadastra Carro</span>
+                <i onclick="cadastroCarro()" class="fa-solid fa-x fa-lg"></i>
+            </div>
+            <div class="modalContent">
+                <div class="name">
+                    <span>Nome</span>
+                    <input type="text" class="carName">
+                </div>
+                <div class="marca">
+                    <span>marca</span>
+                    <input type="text" class="carMarca">
+                </div>
+                <div class="modelo">
+                    <span>modelo</span>
+                    <input type="text" class="carModelo">
+                </div>
+                <div class="versao">
+                    <span>versao</span>
+                    <input type="text" class="carVersao">
+                </div>
+                <div class="ano">
+                    <span>ano</span>
+                    <input type="text" class="carAno">
+                </div>
+                <div class="preco">
+                    <span>preco</span>
+                    <input type="number" class="carPreco">
+                </div>
+                <div class="transmissao">
+                    <span>transmissao</span>
+                    <select name="carTransmi" id="" class="carTransmi">
+                        <option value="automatica">Automatica</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                </div>
+                <div class="quilometragem">
+                    <span>quilometragem</span>
+                    <input type="number" class="carQuilo">
+                </div>
+                <div class="infos">
+                    <span>Informacoes</span>
+                    <textarea class="carInfos" name="infos" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="imgCarros">
+                    <span>Imagens</span>
+                    <div class="imgCar 1">
+                        <input id="imgInput1" class="imgInputClass" type="file" accept="image/*">
+                        <label class="imgInputLabel" for="imgInput1">
+                            <span>ADD IMAGE</span>
+                        </label>
+                    </div>
+                    <div class="imgCar 2">
+                        <input id="imgInput2" class="imgInputClass" type="file" accept="image/*">
+                        <label class="imgInputLabel" for="imgInput2">
+                            <span>ADD IMAGE</span>
+                        </label>
+                    </div>
+                    <div class="imgCar 3">
+                        <input id="imgInput3" class="imgInputClass" type="file" accept="image/*">
+                        <label class="imgInputLabel" for="imgInput3">
+                            <span>ADD IMAGE</span>
+                        </label>
+                    </div>
+                    <div class="imgCar 4">
+                        <input id="imgInput4" class="imgInputClass" type="file" accept="image/*">
+                        <label class="imgInputLabel" for="imgInput4">
+                            <span>ADD IMAGE</span>
+                        </label>
+                    </div>
+                    <div class="imgCar 5">
+                        <input id="imgInput5" class="imgInputClass" type="file" accept="image/*">
+                        <label class="imgInputLabel" for="imgInput5">
+                            <span>ADD IMAGE</span>
+                        </label>
+                    </div>
+                    <div class="btnCadastro">
+                        <button onclick="addValues()">CADASTRAR CARRO</button>
+                    </div>
+                </div>
+            </div>
+            
+        </dialog>
+
+
+        <aside class="asideNav">
+            <ul class="asideUl noSelect">
+                <p class="asideTitle">Filtros</p>
+                <div class="marcaFilter">
+                    <div class="marcaTitle">
+                        <span>Marca</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="content">
+                        <span id="selectMarca">Selecionado: Nenhuma</span>
+                        <ul class="options" id="marcaOptions">
+                            <li class="marcaOpt">Audi</li>
+                            <li class="marcaOpt">BMW</li>
+                            <li class="marcaOpt">Ferrari</li>
+                            <li class="marcaOpt">Lamborghini</li>
+                            <li class="marcaOpt">McLaren</li>
+                            <li class="marcaOpt">Mercedes-Benz</li>
+                            <li class="marcaOpt">Porsche</li>
+                            <li class="marcaOpt">Tesla</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="priceFilter">
+                    <div class="priceTitle">
+                        <span>Preco</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="contentPrice">
+                        <span id="selectPrice">Intervalo de preco</span>
+                        <div class="priceInput options">
+                            <div class="field">
+                                <span>Min</span>
+                                <span class="dentro">R$</span>
+                                <input type="text" class="inputMin" id="input" maxlength="7" value="2500000">
+                            </div>
+                            <div class="slider">
+                                <div class="progess"></div>
+                            </div>
+                            <div class="rangeInput">
+                                <input type="range" class="rangeMin" min="100000" max="10000000" value="2500000" step="10000" >
+                                <input type="range" class="rangeMax" min="100000" max="10000000" value="7500000" step="10000">
+                            </div>
+                            <div class="field">
+                                <span>Max</span>
+                                <span class="dentro">R$</span>
+                                <input type="text" class="inputMax" id="input" maxlength="8"  value="7500000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anoFilter">
+                    <div class="anoTitle">
+                        <span>Ano</span>
+                        <i class="fa-solid fa-angle-up"></i>
+                    </div>
+                    <div class="contentAno">
+                        <span id="selectAno">Selecionado: Nenhuma</span>
+                        <ul class="optionsAno" id="anoOptions">
+                            <li class="anoOpt">2000</li>
+                            <li class="anoOpt">2002</li>
+                            <li class="anoOpt">2004</li>
+                            <li class="anoOpt">2008</li>
+                            <li class="anoOpt">2012</li>
+                            <li class="anoOpt">2015</li>
+                            <li class="anoOpt">2020</li>
+                            <li class="anoOpt">2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </aside>
+
+        <article class="carrosEstoque">
+            <button onclick="cadastroCarro('abrir')">CADASTRAR CARRO</button>
+        </article>
+    </main>
+    <footer class="footer">
+        <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<script src="estoque.js" defer></script>
+
+</html>
