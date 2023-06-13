@@ -340,36 +340,37 @@ function createBigPage(e) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
             integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="shortcut icon" href="/Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
-        <link rel="stylesheet" href="/PagCarro/pagcarro.css">
-        <link rel="stylesheet" href="/geral.css">
+        <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
+        <link rel="stylesheet" href="../PagCarro/pagcarro.css">
+        <link rel="stylesheet" href="../geral.css/">
     </head>
     
     <body>
         <header>
             <nav>
-                <div class="logo"><a href="/home/home.html"><img src="/Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a>
+                <div class="logo"><a href="/home/home.html"><img src="../Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a>
                 </div>
                 <div class="navMenu">
                     <ul>
-                        <a href="/Estoque/estoque.html">ESTOQUE</a>
+                        <a href="../Estoque/estoque.html">ESTOQUE</a>
                         <a href="#">CONTATO</a>
                         <a href="#">SOBRE</a>
-                        <a href="/conta/conta.html"><i class="fa-solid fa-circle-user fa-xl"></i></a>
+                        <a href="../conta/login/login.php"><i class="fa-solid fa-circle-user fa-xl"></i></a>
                     </ul>
                 </div>
             </nav>
         </header>
     
         <main>
-            <button class="cta" onclick="javascript:location.href='/Estoque/estoque.html'">
+            <h1> NOVO </h1>
+            <button class="cta" onclick="javascript:location.href='../Estoque/estoque.html'">
                 <span>Voltar</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                     <path d="M1,5 L11,5"></path>
                     <polyline points="8 1 12 5 8 9"></polyline>
                 </svg>
             </button>
-            <button class="cta2" onclick="javascript:location.href='/Estoque/estoque.html'">
+            <button class="cta2" onclick="javascript:location.href='../Estoque/estoque.html'">
                 <span>Voltar</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                     <path d="M1,5 L11,5"></path>
@@ -468,7 +469,7 @@ function createBigPage(e) {
                         </div>
                     </div>
                 </div>
-                <img id="logoCar" src="/Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
+                <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
             </div>
         </main>
     
@@ -477,7 +478,7 @@ function createBigPage(e) {
         </footer>
     </body>
     
-    <script src="/PagCarro/pagcarro.js"></script>
+    <script src="../PagCarro/pagcarro.js"></script>
 
     </html>`
 
