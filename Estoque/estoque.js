@@ -274,8 +274,6 @@ function addValidCar() {
 
 function createCard() {
 
-    //newCar.cartoAdd[0].nome
-
     const carrosEstoque = document.querySelector('.carrosEstoque');
 
     carrosEstoque.insertAdjacentHTML("beforeend",
@@ -342,7 +340,7 @@ function createBigPage(e) {
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
         <link rel="stylesheet" href="../PagCarro/pagcarro.css">
-        <link rel="stylesheet" href="../geral.css/">
+        <link rel="stylesheet" href="../geral.css">
     </head>
     
     <body>
@@ -362,7 +360,6 @@ function createBigPage(e) {
         </header>
     
         <main>
-            <h1> NOVO </h1>
             <button class="cta" onclick="javascript:location.href='../Estoque/estoque.html'">
                 <span>Voltar</span>
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
@@ -474,7 +471,7 @@ function createBigPage(e) {
         </main>
     
         <footer class="footer">
-                <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
+                
         </footer>
     </body>
     
