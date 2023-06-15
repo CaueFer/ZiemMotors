@@ -306,7 +306,7 @@ function createCard() {
     )
 };
 
-var novaPagina;
+
 
 function openBigPage(e) {
     const targetEl = e.target.closest("div").childNodes[1].innerText;
@@ -318,12 +318,8 @@ function openBigPage(e) {
     })
 };
 
-function closeBigPage() {
-};
-
 function createBigPage(e) {
-    console.log(e.nome);
-
+    var novaPagina;
 
     novaPagina = window.open("", "_self");
     novaPagina.document.write(
@@ -340,20 +336,27 @@ function createBigPage(e) {
             crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
         <link rel="stylesheet" href="../PagCarro/pagcarro.css">
-        <link rel="stylesheet" href="../geral.css">
+        <link rel="stylesheet" href="../geral.css?v=1.45">
     </head>
     
     <body>
         <header>
             <nav>
-                <div class="logo"><a href="/home/home.html"><img src="../Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a>
-                </div>
+                <div class="logo"><a href="#"><img src="../Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a></div>
                 <div class="navMenu">
-                    <ul>
-                        <a href="../Estoque/estoque.html">ESTOQUE</a>
+                    <div class="hamburger">
+                        <span class="hamburgerSlice"></span>
+                        <span class="hamburgerSlice"></span>
+                        <span class="hamburgerSlice"></span>
+                     </div>
+                    <ul class="navMenuLine">
+                        <a href="#">ESTOQUE</a>
                         <a href="#">CONTATO</a>
                         <a href="#">SOBRE</a>
-                        <a href="../conta/login/login.php"><i class="fa-solid fa-circle-user fa-xl"></i></a>
+                        <a class="contaUl" href="../conta/login/login.php">
+                            <span class="contaText">CONTA</span>
+                            <i class="fa-solid fa-circle-user fa-xl contaIcon"></i>
+                        </a>
                     </ul>
                 </div>
             </nav>
@@ -475,7 +478,7 @@ function createBigPage(e) {
         </footer>
     </body>
     
-    <script src="../PagCarro/pagcarro.js"></script>
+    <script src="../PagCarro/pagcarro.js?v=1.45"></script>
 
     </html>`
 

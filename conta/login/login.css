@@ -1,0 +1,11 @@
+
+.textLogin{
+    display: block;
+    text-align: center;
+    justify-content: center;
+}
+
+#showSignBtn{
+    text-decoration: underline;
+    cursor: pointer;
+}
