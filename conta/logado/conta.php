@@ -1,3 +1,25 @@
+<?php
+session_start();
+
+if ((!isset($_SESSION['email']) == true) && (!isset($_SESSION['senha']) == true)) {
+    header('Location: ../login/login.php');
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+}
+$logado = $_SESSION['email'];
+
+$navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
+
+if(isset($_SESSION['email']) == true){
+    $navOptions = '<li><a class="dropdown-item" href="#">Conta</a></li>
+    <li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    <li>
+        <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="../login/sair.php">Sair</a></li>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,21 +43,39 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="#"><img src="../../Imagens/icones-Logos/logoZIEM.png" alt="logoImg"></a></div>
-            <div class="navMenu">
-                <div class="hamburger">
-                    <span class="hamburgerSlice"></span>
-                    <span class="hamburgerSlice"></span>
-                    <span class="hamburgerSlice"></span>
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                    style="height:60px">
+                    <a href="../../home/home.php"
+                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                        style="width: 42px; height:40px">
+                        <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png"
+                            alt="logoZiem">
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="../../Estoque/estoque.php"
+                                class="nav-link px-3 link-secondary navTitle">Estoque</a></li>
+                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                    </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
+                            aria-label="Search">
+                    </form>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../Imagens/icones-Logos/usericon.svg" alt="mdo" width="38" height="38"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" style="">
+                            <?php echo $navOptions ?>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="navMenuLine">
-                    <a href="../../Estoque/estoque.html">ESTOQUE</a>
-                    <a href="#">CONTATO</a>
-                    <a href="#">SOBRE</a>
-                    <a class="contaUl" href="../login/login.php">
-                        <span class="contaText">CONTA</span>
-                        <i class="fa-solid fa-circle-user fa-xl contaIcon"></i></a>
-                </ul>
             </div>
         </nav>
     </header>
@@ -54,9 +94,9 @@
                 </a>
             </ul>
             <ul class="asideUl noSelect">
-                <p class="asideTitle">Recursos</p>
+                <p class="asideTitle">Configuracoes</p>
                 <a href="#">
-                    <li>Configuracoes</li>
+                    <li>Preferencias</li>
                 </a>
                 <a href="#">
                     <li>Atendimento</li>
@@ -75,7 +115,9 @@
             <div class="conta">
                 <section class="showConta">
                     <h1>Conta</h1>
-                    <p>Conectado como $USUARIO</p>
+                    <p>Conectado como
+                        <?php echo $logado ?>
+                    </p>
                 </section>
                 <section class="configConta">
                     <h1>Suas informacoes</h1>
@@ -112,5 +154,6 @@
 </body>
 
 <script src="conta.js?v=1" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 </html>

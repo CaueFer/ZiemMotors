@@ -27,6 +27,14 @@
     /* Standard syntax */
 }
 
+.form-control:focus {
+    color: var(--bs-body-color)!important;
+    background-color: var(--bs-body-bg)!important;
+    border-color: #000!important;
+    outline: 0!important;
+    box-shadow: 0 0 0 0.10rem rgba(0, 0, 0, 0.25)!important;
+}
+
 /* // ------------------------------------------------ //  */
 
 body {

@@ -349,6 +349,7 @@ input[type="range"]::-moz-range-thumb {
 
 .modalContent{
     padding: 20px;
+    height: 600px;
     overflow-y: auto;
 }
 
@@ -400,6 +401,7 @@ input[type="range"]::-moz-range-thumb {
 
 .btnCadastro button{
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     padding: 13px;
     font-size: 17px;
     border-radius: 10px;

@@ -189,7 +189,7 @@ imgInput.forEach((e) => {
                         break;
 
                     default:
-                        console.log("NENHUMA IMAGEM SELECIONADA")
+                        alert("NENHUMA IMAGEM SELECIONADA");
                         break;
                 }
 
@@ -240,7 +240,7 @@ function addValues() {
                 createCard();
                 cadastroCarro('fechar');
             } else {
-                alert("JA EXISTE CARRO COM O MESMO NOME")
+                alert("JA EXISTE CARRO COM O MESMO NOME");
             }
         })
     } else {
@@ -250,6 +250,7 @@ function addValues() {
     };
 
     newCar.cartoAdd.length = 0;
+    limparInput();
 };
 
 function addValidCar() {
@@ -270,6 +271,29 @@ function addValidCar() {
         img5: img5Src
     })
 };
+
+function limparInput() {
+    carName.value = "";
+    carMarca.value = "";
+    carModelo.value = "";
+    carVersao.value = "";
+    carAno.value = "";
+    carPreco.value = "";
+    carTransmi.value = "";
+    carQuilo.value = "";
+    carInfos.value = "";
+
+    const imgCar = document.querySelectorAll(".imgCar");
+
+    imgCar.forEach((e) => {
+        console.log(e);
+        const ImgInputLabel = e.childNodes[3];
+
+        if (ImgInputLabel.childNodes[2]) {
+            ImgInputLabel.childNodes[2].remove();
+        }
+    });
+}
 
 
 function createCard() {

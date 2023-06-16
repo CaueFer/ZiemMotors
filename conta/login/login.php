@@ -11,6 +11,7 @@ if (isset($_POST['submitSign'])) {
 
     $signClassAdd = "";
     $signError = "";
+    $signValid = "";
     $signInputInvalido = "0";
 
     if ($email && $password && $nome) {
@@ -22,7 +23,7 @@ if (isset($_POST['submitSign'])) {
             $signInputInvalido = 1;
         } else {
             $result = mysqli_query($conexao, "INSERT INTO usuarios(email,senha,nome) VALUES('$email','$password','$nome')");
-            print_r("Conta criada");
+            $signInputInvalido = 3;
         }
     } else {
         $signInputInvalido = 2;
@@ -34,11 +35,15 @@ if (isset($_POST['submitSign'])) {
     } else if ($signInputInvalido === 2) {
         $signClassAdd = "is-invalid";
         $signError = "Preencha os campos!";
+    } else if($signInputInvalido === 3){
+        $signClassAdd = "is-valid";
+        $signValid = "Conta criada!";
     }
 }
 ;
 
 // ---------------------- LOGIN ---------------------- //
+session_start();
 
 if (isset($_POST['submitLogin'])) {
     include_once('config.php');
@@ -56,8 +61,12 @@ if (isset($_POST['submitLogin'])) {
         $validacao = $conexao->query($sql);
 
         if (mysqli_num_rows($validacao) > 0) {
-            header('Location: ../logado/conta.html');
+            $_SESSION['email'] = $email;
+            $_SESSION['senha'] = $password;
+            header('Location: ../logado/conta.php');
         } else {
+            unset($_SESSION['email']);
+            unset($_SESSION['senha']);
             $inputInvalido = 1;
         }
     } else {
@@ -71,9 +80,18 @@ if (isset($_POST['submitLogin'])) {
         $classAdd = "is-invalid";
         $loginError = "Preencha os campos!";
     }
-}
-;
+};
 
+$navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
+
+if(isset($_SESSION['email']) == true){
+    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="#">Perfil</a></li>
+    <li>
+        <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="sair.php">Sair</a></li>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -102,12 +120,12 @@ if (isset($_POST['submitLogin'])) {
         <nav>
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative" style="height:60px">
-                    <a href="../../home/home.html" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
+                    <a href="../../home/home.php" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
                         <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-3 link-secondary navTitle">Estoque</a></li>
+                        <li><a href="../../Estoque/estoque.php" class="nav-link px-3 link-secondary navTitle">Estoque</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                     </ul>
@@ -119,16 +137,11 @@ if (isset($_POST['submitLogin'])) {
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="mdo" width="38" height="38"
+                            <img src="../../Imagens/icones-Logos/usericon.svg" alt="mdo" width="38" height="38"
                                 class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" style="">
-                            <li><a class="dropdown-item" href="#">Configuracoes</a></li>
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                            <?php echo $navOptions?>
                         </ul>
                     </div>
                 </div>
@@ -203,7 +216,10 @@ if (isset($_POST['submitLogin'])) {
                                         name="password" id="floatingPassword" placeholder="Password">
                                     <label for="floatingPassword">Senha</label>
                                     <div class="invalid-feedback">
-                                        <?php echo $signError; ?>
+                                        <?php echo $signError;?>
+                                    </div>
+                                    <div class="valid-feedback">
+                                        <?php echo $signValid;?>
                                     </div>
                                 </div>
                                 <button class="w-100 fancy mb-3" type="submit" name="submitSign">

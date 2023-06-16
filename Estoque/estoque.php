@@ -1,3 +1,18 @@
+<?php
+session_start();
+$navOptions = '<li><a class="dropdown-item" href="../conta/login/login.php">Fazer Login</a></li>';
+
+if (isset($_SESSION['email']) == true) {
+    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="#">Perfil</a></li>
+    <li>
+        <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,7 +38,7 @@
         <nav>
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative" style="height:60px">
-                    <a href="#" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
+                    <a href="../home/home.php" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
                         <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
                     </a>
 
@@ -40,16 +55,11 @@
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../Imagens/icones-Logos/userIcon.png" alt="mdo" width="38" height="38"
+                            <img src="../Imagens/icones-Logos/userIcon.svg" alt="mdo" width="38" height="38"
                                 class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" style="">
-                            <li><a class="dropdown-item" href="#">Configuracoes</a></li>
-                            <li><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                            <?php echo $navOptions?>
                         </ul>
                     </div>
                 </div>
