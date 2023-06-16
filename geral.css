@@ -59,91 +59,15 @@ nav {
 .logo {
     cursor: pointer;
     width: auto;
-    width: 150px;
     height: 60px;
 }
 
-.logo img {
+.logoimg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.hamburger {
-    position: absolute;
-    top: 1.25rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
-}
-
-.hamburgerSlice {
-    width: 100%;
-    height: 3px;
-    background-color: black;
-}
-
-.navMenu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0px 15px;
-}
-
-.navMenu i {
-    font-size: 33px;
-}
-
-.navMenuLine a{
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    margin-right: 15px;
-}
-
-.navMenu ul a:hover {
-    color: rgb(136, 136, 136);
-}
-
-.contaUl .contaText {
-    display: none;
-}
-
-
-@media (max-width: 650px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .navMenuLine {
-        position: absolute;
-        top: 4.5rem;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        background-color: #f2f2f2;
-        width: auto;
-        padding: 10px;
-    }
-
-    .navMenu ul a {
-        margin: 0px;
-        padding: 0px;
-        margin-bottom: 5px;
-        padding: 10px;
-    }
-
-    .contaUl .contaText {
-        display: block;
-    }
-
-    .contaUl .contaIcon {
-        display: none;
-    }
+.navTitle{
+    font-size: 19px!important;
 }
