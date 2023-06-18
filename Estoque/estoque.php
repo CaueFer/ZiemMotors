@@ -1,6 +1,7 @@
 <?php
 session_start();
 $navOptions = '<li><a class="dropdown-item" href="../conta/login/login.php">Fazer Login</a></li>';
+$addCadastro = "";
 
 if (isset($_SESSION['email']) == true) {
     $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
@@ -9,7 +10,12 @@ if (isset($_SESSION['email']) == true) {
         <hr class="dropdown-divider">
     </li>
     <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
+
+    include_once('../conta/login/config.php');
+    $addCadastro = 'show';
 }
+
+
 
 ?>
 
@@ -31,14 +37,19 @@ if (isset($_SESSION['email']) == true) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script data-main="estoque.js?v=1.45" src="../../support/require.js"></script>
 </head>
 
 <body>
     <header>
         <nav>
             <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative" style="height:60px">
-                    <a href="../home/home.php" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                    style="height:60px">
+                    <a href="../home/home.php"
+                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                        style="width: 42px; height:40px">
                         <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
                     </a>
 
@@ -49,7 +60,8 @@ if (isset($_SESSION['email']) == true) {
                     </ul>
 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..." aria-label="Search">
+                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
+                            aria-label="Search">
                     </form>
 
                     <div class="dropdown text-end">
@@ -59,7 +71,7 @@ if (isset($_SESSION['email']) == true) {
                                 class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" style="">
-                            <?php echo $navOptions?>
+                            <?php echo $navOptions ?>
                         </ul>
                     </div>
                 </div>
@@ -70,32 +82,32 @@ if (isset($_SESSION['email']) == true) {
         <dialog class="modalCriar">
             <div class="modalTitle">
                 <span>Cadastrar Carro</span>
-                <i onclick="cadastroCarro()" class="fa-solid fa-x fa-lg"></i>
+                <i onclick="modalCadastroCarro('fechar')" class="fa-solid fa-x fa-lg"></i>
             </div>
             <div class="modalContent">
                 <div class="name">
                     <span>Nome</span>
-                    <input type="text" class="carName">
+                    <input type="text" class="carName" maxlength="20">
                 </div>
                 <div class="marca">
                     <span>marca</span>
-                    <input type="text" class="carMarca">
+                    <input type="text" class="carMarca" maxlength="20">
                 </div>
                 <div class="modelo">
                     <span>modelo</span>
-                    <input type="text" class="carModelo">
+                    <input type="text" class="carModelo" maxlength="20">
                 </div>
                 <div class="versao">
                     <span>versao</span>
-                    <input type="text" class="carVersao">
+                    <input type="text" class="carVersao" maxlength="20">
                 </div>
                 <div class="ano">
                     <span>ano</span>
-                    <input type="text" class="carAno">
+                    <input type="text" class="carAno" maxlength="4">
                 </div>
                 <div class="preco">
                     <span>preco</span>
-                    <input type="number" class="carPreco">
+                    <input type="number" class="carPreco" maxlength="10">
                 </div>
                 <div class="transmissao">
                     <span>transmissao</span>
@@ -228,7 +240,12 @@ if (isset($_SESSION['email']) == true) {
         </aside>
 
         <article class="carrosEstoque">
-            <button onclick="cadastroCarro('abrir')">CADASTRAR CARRO</button>
+            <button onclick="modalCadastroCarro('abrir')" class="w-100 fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
+                <span class="top-key"></span>
+                <span class="text">CADASTRAR CARRO</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
         </article>
     </main>
     <footer class="footer">
@@ -238,6 +255,8 @@ if (isset($_SESSION['email']) == true) {
 
 <script src="estoque.js?v=1.45" defer></script>
 <script src="../geral.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
 </html>

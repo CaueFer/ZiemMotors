@@ -1,141 +1,16 @@
+/* // ----------------- SAVE CADASTRO INTO JSON ----------------- //  */
 
+function addValidCarJSON(){
+    const fs = require('fs');
 
-/* // ----------------- FILTRO MARCA ----------------- //  */
+    const jsonContent = JSON.stringify(estoque.carro);
 
-const marcaTitle = document.querySelector('.marcaTitle');
-const marcaFilter = document.querySelector('.marcaFilter');
-
-marcaTitle.addEventListener('click', (e) => {
-
-    marcaFilter.classList.toggle('active');
-    priceFilter.classList.remove('off');
-    anoFilter.classList.remove('active');
-})
-
-const marcaOptionsSelect = document.querySelectorAll('.marcaOpt');
-const marcaSelect = document.querySelector('#selectMarca')
-
-marcaOptionsSelect.forEach((e) => {
-    e.addEventListener('click', (e) => {
-        const targetEl = e.target;
-        marcaSelect.innerHTML = "";
-        marcaSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        marcaFilter.classList.remove('active');
-    })
-})
-
-
-/* // ----------------- FILTRO PRECO ----------------- //  */
-
-const priceTitle = document.querySelector('.priceTitle');
-const priceFilter = document.querySelector('.priceFilter');
-
-priceTitle.addEventListener('click', (e) => {
-
-    priceFilter.classList.toggle('off');
-    marcaFilter.classList.remove('active');
-    anoFilter.classList.remove('active');
-})
-
-const priceOptionsSelect = document.querySelectorAll('.priceOpt');
-const priceSelect = document.querySelector('#selectPrice')
-
-priceOptionsSelect.forEach((e) => {
-    e.addEventListener('click', (e) => {
-        const targetEl = e.target;
-        priceSelect.innerHTML = "";
-        priceSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        priceFilter.classList.remove('off');
-    })
-})
-
-const rangeInput = document.querySelectorAll(".rangeInput input"),
-    progress = document.querySelector(".progess"),
-    fieldValue = document.querySelectorAll(".field #input");
-
-let rangeGap = 1000000;
-
-rangeInput.forEach(input => {
-    input.addEventListener("input", (e) => {
-        let minVal = parseInt(rangeInput[0].value),
-            maxVal = parseInt(rangeInput[1].value);
-
-        if (maxVal - minVal < rangeGap) {
-            if (e.target.className === "rangeMin") {
-                rangeInput[0].value = maxVal - rangeGap;
-            } else {
-                rangeInput[1].value = minVal + rangeGap;
-            }
-        } else {
-            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-
-            fieldValue[0].value = minVal;
-            fieldValue[1].value = maxVal;
+    fs.writeFile("estoqueDados.json", jsonContent, 'utf-8', (err) => {
+        if (err) {
+            return console.log(err);
         }
-    })
-});
-
-fieldValue.forEach(input => {
-    input.addEventListener("input", (e) => {
-        let minVal = parseInt(fieldValue[0].value),
-            maxVal = parseInt(fieldValue[1].value);
-
-        if ((maxVal - minVal >= rangeGap) && maxVal <= 10000000) {
-            if (e.target.className === "inputMin") {
-                rangeInput[0].value = minVal;
-                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                console.log(maxVal);
-            } else {
-                rangeInput[1].value = maxVal;
-                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-            }
-        } else if (maxVal > 10000000) {
-            if (e.target.className === "inputMax") {
-                rangeInput[1].value = 10000000;
-                progress.style.right = 100 - (10000000 / rangeInput[1].max) * 100 + "%";
-            }
-        }
-    })
-});
-
-/* // ----------------- FILTRO ANO ----------------- //  */
-
-const anoTitle = document.querySelector('.anoTitle');
-const anoFilter = document.querySelector('.anoFilter');
-
-anoTitle.addEventListener('click', (e) => {
-
-    anoFilter.classList.toggle('active');
-    marcaFilter.classList.remove('active');
-    priceFilter.classList.remove('off');
-})
-
-const anoOptionsSelect = document.querySelectorAll('.anoOpt');
-const anoSelect = document.querySelector('#selectAno')
-
-anoOptionsSelect.forEach((e) => {
-    e.addEventListener('click', (e) => {
-        const targetEl = e.target;
-        anoSelect.innerHTML = "";
-        anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        anoFilter.classList.remove('active');
-    })
-})
-
-
-/* // ----------------- CARRO MODAL ----------------- //  */
-
-
-function cadastroCarro(estado) {
-    const modalCar = document.querySelector(".modalCriar");
-
-    if (estado === "abrir") {
-        modalCar.show();
-    } else {
-        modalCar.close();
-    }
-
+        console.log("Arquivo salvo");
+    });
 }
 
 // IMG INPUT CONFIG  -----------------------------------------------------  // 
@@ -200,7 +75,7 @@ imgInput.forEach((e) => {
 });
 
 
-// IMG INPUT CONFIG  -----------------------------------------------------  // 
+// CADASTRO CARROS INPUTS -----------------------------------------------------  // 
 const estoque = { carro: [] };
 const newCar = { cartoAdd: [] };
 
@@ -270,6 +145,7 @@ function addValidCar() {
         img4: img4Src,
         img5: img5Src
     })
+    addValidCarJSON();
 };
 
 function limparInput() {
@@ -286,7 +162,6 @@ function limparInput() {
     const imgCar = document.querySelectorAll(".imgCar");
 
     imgCar.forEach((e) => {
-        console.log(e);
         const ImgInputLabel = e.childNodes[3];
 
         if (ImgInputLabel.childNodes[2]) {
@@ -505,10 +380,142 @@ function createBigPage(e) {
     <script src="../PagCarro/pagcarro.js?v=1.45"></script>
 
     </html>`
-
     );
 }
 
+/* // ----------------- FILTRO MARCA ----------------- //  */
+
+const marcaTitle = document.querySelector('.marcaTitle');
+const marcaFilter = document.querySelector('.marcaFilter');
+
+marcaTitle.addEventListener('click', (e) => {
+
+    marcaFilter.classList.toggle('active');
+    priceFilter.classList.remove('off');
+    anoFilter.classList.remove('active');
+})
+
+const marcaOptionsSelect = document.querySelectorAll('.marcaOpt');
+const marcaSelect = document.querySelector('#selectMarca')
+
+marcaOptionsSelect.forEach((e) => {
+    e.addEventListener('click', (e) => {
+        const targetEl = e.target;
+        marcaSelect.innerHTML = "";
+        marcaSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+        marcaFilter.classList.remove('active');
+    })
+})
 
 
+/* // ----------------- FILTRO PRECO ----------------- //  */
 
+const priceTitle = document.querySelector('.priceTitle');
+const priceFilter = document.querySelector('.priceFilter');
+
+priceTitle.addEventListener('click', (e) => {
+
+    priceFilter.classList.toggle('off');
+    marcaFilter.classList.remove('active');
+    anoFilter.classList.remove('active');
+})
+
+const priceOptionsSelect = document.querySelectorAll('.priceOpt');
+const priceSelect = document.querySelector('#selectPrice')
+
+priceOptionsSelect.forEach((e) => {
+    e.addEventListener('click', (e) => {
+        const targetEl = e.target;
+        priceSelect.innerHTML = "";
+        priceSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+        priceFilter.classList.remove('off');
+    })
+})
+
+const rangeInput = document.querySelectorAll(".rangeInput input"),
+    progress = document.querySelector(".progess"),
+    fieldValue = document.querySelectorAll(".field #input");
+
+let rangeGap = 1000000;
+
+rangeInput.forEach(input => {
+    input.addEventListener("input", (e) => {
+        let minVal = parseInt(rangeInput[0].value),
+            maxVal = parseInt(rangeInput[1].value);
+
+        if (maxVal - minVal < rangeGap) {
+            if (e.target.className === "rangeMin") {
+                rangeInput[0].value = maxVal - rangeGap;
+            } else {
+                rangeInput[1].value = minVal + rangeGap;
+            }
+        } else {
+            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+
+            fieldValue[0].value = minVal;
+            fieldValue[1].value = maxVal;
+        }
+    })
+});
+
+fieldValue.forEach(input => {
+    input.addEventListener("input", (e) => {
+        let minVal = parseInt(fieldValue[0].value),
+            maxVal = parseInt(fieldValue[1].value);
+
+        if ((maxVal - minVal >= rangeGap) && maxVal <= 10000000) {
+            if (e.target.className === "inputMin") {
+                rangeInput[0].value = minVal;
+                progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                console.log(maxVal);
+            } else {
+                rangeInput[1].value = maxVal;
+                progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+        } else if (maxVal > 10000000) {
+            if (e.target.className === "inputMax") {
+                rangeInput[1].value = 10000000;
+                progress.style.right = 100 - (10000000 / rangeInput[1].max) * 100 + "%";
+            }
+        }
+    })
+});
+
+/* // ----------------- FILTRO ANO ----------------- //  */
+
+const anoTitle = document.querySelector('.anoTitle');
+const anoFilter = document.querySelector('.anoFilter');
+
+anoTitle.addEventListener('click', (e) => {
+
+    anoFilter.classList.toggle('active');
+    marcaFilter.classList.remove('active');
+    priceFilter.classList.remove('off');
+})
+
+const anoOptionsSelect = document.querySelectorAll('.anoOpt');
+const anoSelect = document.querySelector('#selectAno')
+
+anoOptionsSelect.forEach((e) => {
+    e.addEventListener('click', (e) => {
+        const targetEl = e.target;
+        anoSelect.innerHTML = "";
+        anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+        anoFilter.classList.remove('active');
+    })
+})
+
+
+/* // ----------------- CARRO MODAL ----------------- //  */
+
+function modalCadastroCarro(estado) {
+    const modalCar = document.querySelector(".modalCriar");
+
+    if (estado === "abrir") {
+        modalCar.show();
+    } else {
+        modalCar.close();
+    }
+
+}
