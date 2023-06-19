@@ -15,8 +15,6 @@ if (isset($_SESSION['email']) == true) {
     $addCadastro = 'show';
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +35,6 @@ if (isset($_SESSION['email']) == true) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script data-main="estoque.js?v=1.45" src="../../support/require.js"></script>
 </head>
 
 <body>
@@ -258,5 +254,4 @@ if (isset($_SESSION['email']) == true) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-
 </html>

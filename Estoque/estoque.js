@@ -1,17 +1,3 @@
-/* // ----------------- SAVE CADASTRO INTO JSON ----------------- //  */
-
-function addValidCarJSON(){
-    const fs = require('fs');
-
-    const jsonContent = JSON.stringify(estoque.carro);
-
-    fs.writeFile("estoqueDados.json", jsonContent, 'utf-8', (err) => {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Arquivo salvo");
-    });
-}
 
 // IMG INPUT CONFIG  -----------------------------------------------------  // 
 
@@ -79,6 +65,39 @@ imgInput.forEach((e) => {
 const estoque = { carro: [] };
 const newCar = { cartoAdd: [] };
 
+function estoqueCarroUpdate(){
+
+    fetch("readDB.php", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+
+    }).then(function(response){
+        return response.text();
+    }).then(function(data){
+        console.log(data);
+    })
+
+
+    // estoque.carro.push({
+    //     //     nome: carName.value,
+    //     //     marca: carMarca.value,
+    //     //     modelo: carModelo.value,
+    //     //     versao: carVersao.value,
+    //     //     ano: carAno.value,
+    //     //     preco: carPreco.value,
+    //     //     transmissao: carTransmi.value,
+    //     //     quilometragem: carQuilo.value,
+    //     //     infos: carInfos.value,
+    //     //     img1: img1Src ? img1Src: "noImg1",
+    //     //     img2: img2Src ? img2Src: "noImg2",
+    //     //     img3: img3Src ? img3Src: "noImg3",
+    //     //     img4: img4Src ? img4Src: "noImg4",
+    //     //     img5: img5Src ? img5Src: "noImg5"
+    // })
+}
+
 
 const carName = document.querySelector(".carName"),
     carMarca = document.querySelector(".carMarca"),
@@ -101,27 +120,27 @@ function addValues() {
         transmissao: carTransmi.value,
         quilometragem: carQuilo.value,
         infos: carInfos.value,
-        img1: img1Src,
-        img2: img2Src,
-        img3: img3Src,
-        img4: img4Src,
-        img5: img5Src
+        img1: img1Src ? img1Src: "N/A",
+        img2: img2Src ? img2Src: "N/A",
+        img3: img3Src ? img3Src: "N/A",
+        img4: img4Src ? img4Src: "N/A",
+        img5: img5Src ? img5Src: "N/A"
     })
+
+    estoqueCarroUpdate();
 
     if (estoque.carro.length !== 0) {
         estoque.carro.forEach((e) => {
             if (newCar.cartoAdd[0].nome !== e.nome) {
                 addValidCar();
-                createCard();
-                cadastroCarro('fechar');
+                modalCadastroCarro('fechar');
             } else {
                 alert("JA EXISTE CARRO COM O MESMO NOME");
             }
         })
     } else {
         addValidCar();
-        createCard();
-        cadastroCarro('fechar');
+        modalCadastroCarro('fechar');
     };
 
     newCar.cartoAdd.length = 0;
@@ -129,24 +148,30 @@ function addValues() {
 };
 
 function addValidCar() {
-    estoque.carro.push({
-        nome: carName.value,
-        marca: carMarca.value,
-        modelo: carModelo.value,
-        versao: carVersao.value,
-        ano: carAno.value,
-        preco: carPreco.value,
-        transmissao: carTransmi.value,
-        quilometragem: carQuilo.value,
-        infos: carInfos.value,
-        img1: img1Src,
-        img2: img2Src,
-        img3: img3Src,
-        img4: img4Src,
-        img5: img5Src
-    })
-    addValidCarJSON();
+    addValidCarDB();
+    createCard();
+    estoqueCarroUpdate();
 };
+
+/* // ----------------- SAVE CADASTRO INTO JSON ----------------- //  */
+
+function addValidCarDB(){
+
+    fetch("saveDB.php", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": JSON.stringify(newCar.cartoAdd)
+
+    })//.then(function(response){
+    //     return response.text();
+    // }).then(function(data){
+    //     console.log(data);
+    // })
+};
+
+/* // ----------------- LIMPAR INPUTS ----------------- //  */
 
 function limparInput() {
     carName.value = "";
