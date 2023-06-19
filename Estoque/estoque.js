@@ -86,20 +86,17 @@ function addValues() {
         transmissao: carTransmi.value,
         quilometragem: carQuilo.value,
         infos: carInfos.value,
-        img1: img1Src ? img1Src : "N/A",
-        img2: img2Src ? img2Src : "N/A",
-        img3: img3Src ? img3Src : "N/A",
-        img4: img4Src ? img4Src : "N/A",
-        img5: img5Src ? img5Src : "N/A"
+        img1: img1Src ? img1Src : "noIMG",
+        img2: img2Src ? img2Src : "noIMG",
+        img3: img3Src ? img3Src : "noIMG",
+        img4: img4Src ? img4Src : "noIMG",
+        img5: img5Src ? img5Src : "noIMG"
     })
 
     addValidCarDB();
-    estoqueCarroUpdate();
     modalCadastroCarro('fechar');
 
-
     newCar.cartoAdd.length = 0;
-    limparInput();
 };
 
 /* // ----------------- SAVE CADASTRO INTO JSON ----------------- //  */
@@ -117,6 +114,8 @@ function addValidCarDB() {
     }).then(function (data) {
         console.log(data);
     })
+
+    estoqueCarroUpdate();
 };
 
 
@@ -159,7 +158,10 @@ function estoqueCarroUpdate() {
 function createCard() {
     const carrosEstoque = document.querySelector('.carrosEstoque');
 
-    console.log(estoque.carro);
+
+    for(var i=2; i<carrosEstoque.childElementCount; i++){
+        carrosEstoque.childNodes[i].remove();
+    }
 
     estoque.carro.forEach((e) => {
         carrosEstoque.insertAdjacentHTML("beforeend",
@@ -189,8 +191,10 @@ function createCard() {
                     <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
                 </div>
         </section>`
-        );
-    });
+        )
+    })
+
+    limparInput();
 };
 
 
@@ -532,6 +536,4 @@ function modalCadastroCarro(estado) {
 
 }
 
-function refreshPage(){
-    estoqueCarroUpdate();
-}
+estoqueCarroUpdate();
