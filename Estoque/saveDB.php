@@ -27,10 +27,6 @@ if(isset($_POST)){
     if (mysqli_num_rows($validacao) < 1) {
         $result = mysqli_query($conexao, "INSERT INTO carros(nome,marca,modelo,versao,ano,preco,transmissao,infos,img1,img2,img3,img4,img5)
          VALUES('$nome','$marca','$modelo','$versao','$ano','$preco','$transmissao','$infos','$img1','$img2','$img3','$img4','$img5')");
-         echo "INSERIDO";
-    } else {
-        echo "CARRO JA EXISTENTE NA BASE DE DADOS";
     }
 }
-        
 ?>

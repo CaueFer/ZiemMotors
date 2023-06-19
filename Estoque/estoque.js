@@ -65,40 +65,6 @@ imgInput.forEach((e) => {
 const estoque = { carro: [] };
 const newCar = { cartoAdd: [] };
 
-function estoqueCarroUpdate(){
-
-    fetch("readDB.php", {
-        "method": "POST",
-        "headers": {
-            "Content-Type": "application/json; charset=utf-8"
-        }
-
-    }).then(function(response){
-        return response.text();
-    }).then(function(data){
-        console.log(data);
-    })
-
-
-    // estoque.carro.push({
-    //     //     nome: carName.value,
-    //     //     marca: carMarca.value,
-    //     //     modelo: carModelo.value,
-    //     //     versao: carVersao.value,
-    //     //     ano: carAno.value,
-    //     //     preco: carPreco.value,
-    //     //     transmissao: carTransmi.value,
-    //     //     quilometragem: carQuilo.value,
-    //     //     infos: carInfos.value,
-    //     //     img1: img1Src ? img1Src: "noImg1",
-    //     //     img2: img2Src ? img2Src: "noImg2",
-    //     //     img3: img3Src ? img3Src: "noImg3",
-    //     //     img4: img4Src ? img4Src: "noImg4",
-    //     //     img5: img5Src ? img5Src: "noImg5"
-    // })
-}
-
-
 const carName = document.querySelector(".carName"),
     carMarca = document.querySelector(".carMarca"),
     carModelo = document.querySelector(".carModelo"),
@@ -120,42 +86,24 @@ function addValues() {
         transmissao: carTransmi.value,
         quilometragem: carQuilo.value,
         infos: carInfos.value,
-        img1: img1Src ? img1Src: "N/A",
-        img2: img2Src ? img2Src: "N/A",
-        img3: img3Src ? img3Src: "N/A",
-        img4: img4Src ? img4Src: "N/A",
-        img5: img5Src ? img5Src: "N/A"
+        img1: img1Src ? img1Src : "N/A",
+        img2: img2Src ? img2Src : "N/A",
+        img3: img3Src ? img3Src : "N/A",
+        img4: img4Src ? img4Src : "N/A",
+        img5: img5Src ? img5Src : "N/A"
     })
 
+    addValidCarDB();
     estoqueCarroUpdate();
+    modalCadastroCarro('fechar');
 
-    if (estoque.carro.length !== 0) {
-        estoque.carro.forEach((e) => {
-            if (newCar.cartoAdd[0].nome !== e.nome) {
-                addValidCar();
-                modalCadastroCarro('fechar');
-            } else {
-                alert("JA EXISTE CARRO COM O MESMO NOME");
-            }
-        })
-    } else {
-        addValidCar();
-        modalCadastroCarro('fechar');
-    };
 
     newCar.cartoAdd.length = 0;
     limparInput();
 };
 
-function addValidCar() {
-    addValidCarDB();
-    createCard();
-    estoqueCarroUpdate();
-};
-
 /* // ----------------- SAVE CADASTRO INTO JSON ----------------- //  */
-
-function addValidCarDB(){
+function addValidCarDB() {
 
     fetch("saveDB.php", {
         "method": "POST",
@@ -164,15 +112,89 @@ function addValidCarDB(){
         },
         "body": JSON.stringify(newCar.cartoAdd)
 
-    })//.then(function(response){
-    //     return response.text();
-    // }).then(function(data){
-    //     console.log(data);
-    // })
+    }).then(function (response) {
+        return response.text();
+    }).then(function (data) {
+        console.log(data);
+    })
 };
 
-/* // ----------------- LIMPAR INPUTS ----------------- //  */
 
+/* // ----------------- UPDATE ARRAY ESTOQUE BASEADO NO DB ----------------- //  */
+function estoqueCarroUpdate() {
+    fetch("readDB.php", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        estoque.carro.length = 0;
+
+        data.forEach((e) => {
+            estoque.carro.push({
+                nome: e.nome,
+                marca: e.marca,
+                modelo: e.modelo,
+                versao: e.versao,
+                ano: e.ano,
+                preco: e.preco,
+                transmissao: e.transmissao,
+                quilometragem: e.quilometragem,
+                infos: e.infos,
+                img1: e.img1,
+                img2: e.img2,
+                img3: e.img3,
+                img4: e.img4,
+                img5: e.img5
+            })
+        })
+        createCard();
+    })
+};
+
+
+/* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
+function createCard() {
+    const carrosEstoque = document.querySelector('.carrosEstoque');
+
+    console.log(estoque.carro);
+
+    estoque.carro.forEach((e) => {
+        carrosEstoque.insertAdjacentHTML("beforeend",
+            `<section class="cardCarro">
+            <img src="${e.img1}" alt="cardImg">
+                <div class="cardContent">
+                    <span class="cardContentTitle">${e.nome}</span>
+                    <span class="cardContentPrice">R$${e.preco}</span>
+                    <div class="cardContentSpecs">
+                        <div class="Specs">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span>${e.quilometragem}</span>
+                        </div>
+                        <div class="Specs">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>${e.transmissao}</span>
+                        </div>
+                        <div class="Specs">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>${e.ano}</span>
+                        </div>
+                        <div class="Specs">
+                            <i class="fa-solid fa-gas-pump"></i>
+                            <span>Gasolina</span>
+                        </div>
+                    </div>
+                    <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
+                </div>
+        </section>`
+        );
+    });
+};
+
+
+/* // ----------------- LIMPAR INPUTS ----------------- //  */
 function limparInput() {
     carName.value = "";
     carMarca.value = "";
@@ -194,42 +216,6 @@ function limparInput() {
         }
     });
 }
-
-
-function createCard() {
-
-    const carrosEstoque = document.querySelector('.carrosEstoque');
-
-    carrosEstoque.insertAdjacentHTML("beforeend",
-        `<section class="cardCarro">
-            <img src="${newCar.cartoAdd[0].img1}" alt="cardImg">
-                <div class="cardContent">
-                    <span class="cardContentTitle">${newCar.cartoAdd[0].nome}</span>
-                    <span class="cardContentPrice">R$${newCar.cartoAdd[0].preco}</span>
-                    <div class="cardContentSpecs">
-                        <div class="Specs">
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <span>${newCar.cartoAdd[0].quilometragem}</span>
-                        </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                            <span>${newCar.cartoAdd[0].transmissao}</span>
-                        </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>${newCar.cartoAdd[0].ano}</span>
-                        </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-gas-pump"></i>
-                            <span>Gasolina</span>
-                        </div>
-                    </div>
-                    <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
-                </div>
-        </section>`
-    )
-};
-
 
 
 function openBigPage(e) {
@@ -541,6 +527,11 @@ function modalCadastroCarro(estado) {
         modalCar.show();
     } else {
         modalCar.close();
+        limparInput();
     }
 
+}
+
+function refreshPage(){
+    estoqueCarroUpdate();
 }

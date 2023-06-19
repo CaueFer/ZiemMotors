@@ -242,6 +242,12 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
+            <button onclick="refreshPage()" class="w-100 fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
+                <span class="top-key"></span>
+                <span class="text">ATUALIZAR PAGE</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
         </article>
     </main>
     <footer class="footer">
@@ -249,8 +255,8 @@ if (isset($_SESSION['email']) == true) {
     </footer>
 </body>
 
-<script src="estoque.js?v=1.45" defer></script>
-<script src="../geral.js" defer></script>
+<script src="estoque.js?v=1.45" ></script>
+<script src="../geral.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
