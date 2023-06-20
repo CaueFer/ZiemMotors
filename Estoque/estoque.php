@@ -234,15 +234,17 @@ if (isset($_SESSION['email']) == true) {
                 </div>
             </ul>
         </aside>
-
-        <article class="carrosEstoque">
-            <button onclick="modalCadastroCarro('abrir')" class="w-100 fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
+        
+        <div class="mainContent">
+        <button onclick="modalCadastroCarro('abrir')" class="w-auto fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
                 <span class="top-key"></span>
                     <span class="text">CADASTRAR CARRO</span>
                     <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-        </article>
+        <article class="carrosEstoque"></article>
+        </div>
+        
     </main>
     <footer class="footer">
         <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>

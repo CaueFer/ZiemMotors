@@ -149,8 +149,6 @@ function estoqueCarroUpdate() {
                 img5: e.img5
             })
         })
-
-        console.log("estoque att");
         createCard();
     })
 };
@@ -160,41 +158,42 @@ function estoqueCarroUpdate() {
 function createCard() {
     const carrosEstoque = document.querySelector('.carrosEstoque');
 
-
-    for (var i = 2; i < carrosEstoque.childElementCount; i++) {
-        carrosEstoque.childNodes[i].remove();
+    while(carrosEstoque.firstChild){
+        carrosEstoque.removeChild(carrosEstoque.lastChild)
     }
-
-    estoque.carro.forEach((e) => {
-        carrosEstoque.insertAdjacentHTML("beforeend",
-            `<section class="cardCarro">
-            <img src="${e.img1}" alt="cardImg">
-                <div class="cardContent">
-                    <span class="cardContentTitle">${e.nome}</span>
-                    <span class="cardContentPrice">R$${e.preco}</span>
-                    <div class="cardContentSpecs">
-                        <div class="Specs">
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <span>${e.quilometragem}</span>
+        
+    if(carrosEstoque.childElementCount < 1 ){
+        estoque.carro.forEach((e) => {
+            carrosEstoque.insertAdjacentHTML("beforeend",
+                `<section class="cardCarro">
+                <img src="${e.img1}" alt="cardImg">
+                    <div class="cardContent">
+                        <span class="cardContentTitle">${e.nome}</span>
+                        <span class="cardContentPrice">R$${e.preco}</span>
+                        <div class="cardContentSpecs">
+                            <div class="Specs">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                <span>${e.quilometragem}</span>
+                            </div>
+                            <div class="Specs">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                <span>${e.transmissao}</span>
+                            </div>
+                            <div class="Specs">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <span>${e.ano}</span>
+                            </div>
+                            <div class="Specs">
+                                <i class="fa-solid fa-gas-pump"></i>
+                                <span>Gasolina</span>
+                            </div>
                         </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                            <span>${e.transmissao}</span>
-                        </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>${e.ano}</span>
-                        </div>
-                        <div class="Specs">
-                            <i class="fa-solid fa-gas-pump"></i>
-                            <span>Gasolina</span>
-                        </div>
+                        <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
                     </div>
-                    <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
-                </div>
-        </section>`
-        )
-    })
+            </section>`
+            )
+        })
+    }
 
     limparInput();
 };

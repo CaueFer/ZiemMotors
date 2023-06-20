@@ -3,6 +3,11 @@ main {
     flex-flow: row wrap;
 }
 
+.mainContent{
+    display: flex;
+    flex-direction: column;
+}
+
 .asideNav {
     display: flex;
     flex-flow: column wrap;
@@ -322,7 +327,7 @@ input[type="range"]::-moz-range-thumb {
     float: right;
     font-weight: 700;
     letter-spacing: 0.05em;
-    margin: 0;
+    margin: 40px;
     outline: none;
     overflow: visible;
     padding: 1em 2em;
