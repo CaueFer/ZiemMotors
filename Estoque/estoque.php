@@ -50,7 +50,7 @@ if (isset($_SESSION['email']) == true) {
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-3 link-secondary navTitle">Estoque</a></li>
+                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                     </ul>
@@ -157,8 +157,8 @@ if (isset($_SESSION['email']) == true) {
                     </div>
                 </div>
             </div>
-
         </dialog>
+
         <aside class="asideNav">
             <ul class="asideUl noSelect">
                 <p class="asideTitle">Filtros</p>
@@ -236,7 +236,7 @@ if (isset($_SESSION['email']) == true) {
         </aside>
 
         <article class="carrosEstoque">
-            <button onclick="modalCadastroCarro('abrir')" class="vw-50 fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
+            <button onclick="modalCadastroCarro('abrir')" class="w-100 fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
                 <span class="top-key"></span>
                     <span class="text">CADASTRAR CARRO</span>
                     <span class="bottom-key-1"></span>

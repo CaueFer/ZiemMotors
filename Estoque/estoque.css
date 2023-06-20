@@ -283,12 +283,13 @@ input[type="range"]::-moz-range-thumb {
     display: flex;
     flex-flow: column wrap;
     padding: 40px;
+    width: 600px;
 }
 
 .cardCarro {
     display: flex;
     flex-direction: row wrap;
-    width: 600px;
+    width: 100%;
     margin: 20px;
     background-color: rgb(48, 48, 48);
 }
