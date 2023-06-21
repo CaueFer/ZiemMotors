@@ -247,7 +247,7 @@ function createBigPage(e) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ziem Motors</title>
         <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
-        <link rel="stylesheet" href="../PagCarro/pagcarro.css?v=1.46">
+        <link rel="stylesheet" href="../PagCarro/pagcarro.css?v=1.47">
         <link rel="stylesheet" href="../geral.css?v=1.45">
 
         <!-- CDNS ---- -->
@@ -259,8 +259,7 @@ function createBigPage(e) {
     </head>
     
     <body>
-        <header>
-            <nav>
+        <header class="navHeader position-fixed w-100 top-0">
                 <div class="container">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
                         style="height:60px">
@@ -293,11 +292,9 @@ function createBigPage(e) {
                         </div>
                     </div>
                 </div>
-            </nav>
         </header>
     
         <main>
-            <div class="boxBtn"></div>  
             <button class="cta" onclick="javascript:location.href='../Estoque/estoque.php'">
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                     <path d="M1,5 L11,5"></path>

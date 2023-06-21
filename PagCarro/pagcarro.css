@@ -21,7 +21,7 @@
     z-index: 3;
 }
 
-.cta2{
+.cta2 {
     top: 90%;
 }
 
@@ -40,29 +40,27 @@
     transition: all 0.3s ease;
 }
 
-.cta > span, 
-.cta2 > span{
+.cta span,
+.cta2 span {
     position: relative;
     font-family: "Ubuntu", sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: transparent;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 .cta svg,
-.cta2 svg{
+.cta2 svg {
     position: relative;
     top: 0;
+    margin-bottom: 4px;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke: #ffffff;
     stroke-width: 2;
-    -webkit-transform: translateX(-5px);
-    -ms-transform: translateX(-5px);
-    transform: translateX(-5px);
     transform: rotate(-180deg);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -71,30 +69,22 @@
 .cta:hover:before,
 .cta2:hover:before {
     width: 100%;
-    background: #f2f2f2;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.cta:hover svg, 
+.cta:hover svg,
 .cta2:hover svg {
     stroke: black;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
     transform: rotate(0deg);
 }
 
 .cta:hover span,
-.cta2:hover span{
+.cta2:hover span {
     color: #000000;
-    margin-left: 10px;
-    -webkit-transform: translateX(-5px);
-    -ms-transform: translateX(-5px);
-    transform: translateX(-5px);
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+
 }
 
 .cta:active,
@@ -102,17 +92,6 @@
     -webkit-transform: scale(0.95);
     -ms-transform: scale(0.95);
     transform: scale(0.95);
-}
-
-.boxBtn{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3000px;
-    height: 3000px;
-    background-color: #ff000085;
-    z-index: 2;
 }
 
 /* // -------------------- carousel -------------------- //  */
@@ -343,11 +322,11 @@
     width: 100%;
 }
 
-.modalTitle span{
+.modalTitle span {
     font-size: 22px;
 }
 
-.modalContent{
+.modalContent {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -357,12 +336,12 @@
     height: auto;
 }
 
-.modalContent span{
+.modalContent span {
     font-size: 18px;
 }
 
 
- /* button settings */ 
+/* button settings */
 .ui-btn {
     --btn-default-bg: rgb(41, 41, 41);
     --btn-padding: 15px 20px;
@@ -376,10 +355,10 @@
     --default-btn-color: #fff;
     --font-size: 13px;
     --font-weight: 600;
-    --font-family: Menlo,Roboto Mono,monospace;
-  }
-  
-  .ui-btn {
+    --font-family: Menlo, Roboto Mono, monospace;
+}
+
+.ui-btn {
     box-sizing: border-box;
     padding: var(--btn-padding);
     border-radius: 5px;
@@ -394,82 +373,85 @@
     transition: var(--btn-transition);
     overflow: hidden;
     box-shadow: var(--btn-shadow);
-  }
-  
-  .ui-btn span {
+}
+
+.ui-btn span {
     letter-spacing: var(--btn-letter-spacing);
     transition: var(--btn-transition);
     box-sizing: border-box;
     position: relative;
     background: inherit;
-  }
-  
-  .ui-btn span::before {
+}
+
+.ui-btn span::before {
     box-sizing: border-box;
     position: absolute;
     content: "";
     background: inherit;
-  }
-  
-  .ui-btn:hover, .ui-btn:focus {
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
     background: var(--btn-hover-bg);
-  }
-  
-  .ui-btn:hover span, .ui-btn:focus span {
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
     color: var(--hover-btn-color);
-  }
-  
-  .ui-btn:hover span::before, .ui-btn:focus span::before {
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
     animation: chitchat linear both var(--btn-animation-duration);
-  }
-  
-  @keyframes chitchat {
+}
+
+@keyframes chitchat {
     0% {
-      content: "#";
+        content: "#";
     }
 
     10% {
-      content: "^{";
+        content: "^{";
     }
 
     20% {
-      content: "#$_";
+        content: "#$_";
     }
 
     30% {
-      content: "#{+.";
+        content: "#{+.";
     }
 
     40% {
-      content: "?{4@";
+        content: "?{4@";
     }
 
     50% {
-      content: "?@%";
+        content: "?@%";
     }
 
     60% {
-      content: "?{%:";
-      right: 0;
+        content: "?{%:";
+        right: 0;
     }
 
     70% {
-      content: "{4%0";
-      right: 0;
+        content: "{4%0";
+        right: 0;
     }
-  
+
     80% {
-      content: "{0%";
-      right: 0;
+        content: "{0%";
+        right: 0;
     }
-  
+
     90% {
-      content: "4";
-      right: 0;
+        content: "4";
+        right: 0;
     }
-  
+
     100% {
-      content: "";
-      right: 0;
+        content: "";
+        right: 0;
     }
-  }
+}

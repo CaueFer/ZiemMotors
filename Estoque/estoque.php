@@ -21,7 +21,7 @@ if (isset($_SESSION['email']) == true) {
     $validacao = $conexao->query($sql);
 
     if (mysqli_num_rows($validacao) > 0) {
-         // botao cadastro
+        // botao cadastro
         $addCadastro = 'show';
     }
 }
@@ -49,41 +49,39 @@ if (isset($_SESSION['email']) == true) {
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
-                    style="height:60px">
-                    <a href="../home/home.php"
-                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
-                        style="width: 42px; height:40px">
-                        <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+    <header class="navHeader position-fixed w-100 top-0">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                style="height:60px">
+                <a href="../home/home.php"
+                    class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                    style="width: 42px; height:40px">
+                    <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
+                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
+                        aria-label="Search">
+                </form>
+
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../Imagens/icones-Logos/userIcon.svg" alt="userImg" width="38" height="38"
+                            class="rounded-circle">
                     </a>
-
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
-                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                    <ul class="dropdown-menu text-small" style="">
+                        <?php echo $navOptions ?>
                     </ul>
-
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                            aria-label="Search">
-                    </form>
-
-                    <div class="dropdown text-end">
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../Imagens/icones-Logos/userIcon.svg" alt="mdo" width="38" height="38"
-                                class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small" style="">
-                            <?php echo $navOptions ?>
-                        </ul>
-                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
     <main>
         <dialog class="modalCriar">
@@ -245,25 +243,27 @@ if (isset($_SESSION['email']) == true) {
                 </div>
             </ul>
         </aside>
-        
+
         <div class="mainContent">
-        <button onclick="modalCadastroCarro('abrir')" class="w-auto fancy mb-3 btnCadastrar <?php echo $addCadastro?>">
+            <button onclick="modalCadastroCarro('abrir')"
+                class="w-auto fancy mb-3 btnCadastrar <?php echo $addCadastro ?>">
                 <span class="top-key"></span>
-                    <span class="text">CADASTRAR CARRO</span>
-                    <span class="bottom-key-1"></span>
+                <span class="text">CADASTRAR CARRO</span>
+                <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-        <article class="carrosEstoque"></article>
+            <article class="carrosEstoque"></article>
         </div>
-        
+
     </main>
     <footer class="footer">
         <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
     </footer>
 </body>
-    
-<script src="estoque.js?v=1.45" ></script>
+
+<script src="estoque.js?v=1.45"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+
 </html>

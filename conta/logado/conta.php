@@ -10,7 +10,7 @@ $logado = $_SESSION['email'];
 
 $navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
 
-if(isset($_SESSION['email']) == true){
+if (isset($_SESSION['email']) == true) {
     $navOptions = '<li><a class="dropdown-item" href="#">Conta</a></li>
     <li><a class="dropdown-item" href="#">Configuracoes</a></li>
     <li>
@@ -41,43 +41,40 @@ if(isset($_SESSION['email']) == true){
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
-                    style="height:60px">
-                    <a href="../../home/home.php"
-                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
-                        style="width: 42px; height:40px">
-                        <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png"
-                            alt="logoZiem">
+    <header class="navHeader position-fixed w-100 top-0">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                style="height:60px">
+                <a href="../../home/home.php"
+                    class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                    style="width: 42px; height:40px">
+                    <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="../../Estoque/estoque.php"
+                            class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
+                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
+                        aria-label="Search">
+                </form>
+
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../../Imagens/icones-Logos/usericon.svg" alt="mdo" width="38" height="38"
+                            class="rounded-circle">
                     </a>
-
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../../Estoque/estoque.php"
-                                class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
-                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                    <ul class="dropdown-menu text-small" style="">
+                        <?php echo $navOptions ?>
                     </ul>
-
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                            aria-label="Search">
-                    </form>
-
-                    <div class="dropdown text-end">
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../../Imagens/icones-Logos/usericon.svg" alt="mdo" width="38" height="38"
-                                class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small" style="">
-                            <?php echo $navOptions ?>
-                        </ul>
-                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
     <main>
         <aside class="asideNav">
@@ -154,6 +151,8 @@ if(isset($_SESSION['email']) == true){
 </body>
 
 <script src="conta.js?v=1" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
 </html>
