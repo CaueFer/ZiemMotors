@@ -112,7 +112,7 @@ function addValidCarDB() {
     }).then(function (response) {
         return response.text();
     }).then(function (data) {
-        console.log("SAVEDB",data);
+        console.log("SAVEDB", data);
 
         estoqueCarroUpdate();
     })
@@ -158,18 +158,26 @@ function estoqueCarroUpdate() {
 function createCard() {
     const carrosEstoque = document.querySelector('.carrosEstoque');
 
-    while(carrosEstoque.firstChild){
+    while (carrosEstoque.firstChild) {
         carrosEstoque.removeChild(carrosEstoque.lastChild)
     }
-        
-    if(carrosEstoque.childElementCount < 1 ){
+
+    const formatarNumeroPreco = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    });
+
+    if (carrosEstoque.childElementCount < 1) {
         estoque.carro.forEach((e) => {
+            var precoRegional = formatarNumeroPreco.format(e.preco);
+
+
             carrosEstoque.insertAdjacentHTML("beforeend",
                 `<section class="cardCarro">
                 <img src="${e.img1}" alt="cardImg">
                     <div class="cardContent">
                         <span class="cardContentTitle">${e.nome}</span>
-                        <span class="cardContentPrice">R$${e.preco}</span>
+                        <span class="cardContentPrice">${precoRegional}</span>
                         <div class="cardContentSpecs">
                             <div class="Specs">
                                 <i class="fa-solid fa-gauge-high"></i>
@@ -188,7 +196,12 @@ function createCard() {
                                 <span>Gasolina</span>
                             </div>
                         </div>
-                        <button id="BtnDetails" onclick="openBigPage(event)">Mais detalhes<i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
+                        <button class="btnBigPage">
+                            <span class="btnBigPage_lg onclick="openBigPage(event)"">
+                                <span class="btnBigPage_sl"></span>
+                                <span class="btnBigPage_text">Mais Detalhes</span>
+                            </span>
+                        </button>
                     </div>
             </section>`
             )
@@ -283,7 +296,7 @@ function createBigPage(e) {
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../Imagens/icones-Logos/userIcon.svg" alt="mdo" width="38" height="38"
+                                <img src="../Imagens/icones-Logos/userIcon.svg" onerror="if (this.src != '../Imagens/icones-Logos/userIcon.svg') this.src = '../Imagens/icones-Logos/userIcon.svg';" alt="userImg" width="38" height="38"
                                     class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu text-small" style="">

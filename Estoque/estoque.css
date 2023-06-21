@@ -1,22 +1,27 @@
+/* // ----------------- CONFIGS GERAIS ----------------- //  */
+
 main {
     display: flex;
     flex-flow: row wrap;
 }
 
-.mainContent{
+.mainContent {
     display: flex;
     flex-direction: column;
+    width: 87%;
 }
 
 .asideNav {
+    position: relative;
     display: flex;
     flex-flow: column wrap;
     border-right: .5px solid #000000;
-    width: 200px;
+    width: 13%;
     height: 100vh;
 }
 
 .asideUl {
+    width: auto;
     padding: 15px 0px;
     margin: 0px 15px;
 }
@@ -27,9 +32,10 @@ main {
     padding: 5px 10px;
 }
 
-.show{
-    display: inline-block!important;
+.show {
+    display: inline-block !important;
 }
+
 /* // ----------------- FILTRO MARCA ----------------- //  */
 
 .marcaFilter {
@@ -285,62 +291,109 @@ input[type="range"]::-moz-range-thumb {
 /* // ----------------- ESTOQUE ----------------- //  */
 
 .carrosEstoque {
+    position: relative;
     display: flex;
     flex-flow: column wrap;
-    padding: 40px;
-    width: 600px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .cardCarro {
     display: flex;
-    flex-direction: row wrap;
-    width: 100%;
-    margin: 20px;
-    background-color: rgb(48, 48, 48);
+    flex-direction: row;
+    width: 85%;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 5px 10px 10px #d9d9d9,
+        -10px -10px 10px #ffffff;
 }
 
-.cardCarro>img {
-    width: 300px;
-    height: 300px;
+.cardCarro img {
+    width: 35%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
     object-fit: cover;
 }
 
 .cardContent {
+    position: relative;
     display: flex;
     flex-flow: column wrap;
-    margin-left: 20px;
+    justify-content: center;
+    align-items: start;
+    width: 65%;
+    height: 100%;
     padding: 10px;
+    padding-left: 25px;
     font-size: 22px;
-    color: white;
+}
+
+.cardContent span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.cardContent .cardContentTitle {
+    font-size: 34px;
+}
+
+.cardContent .cardContentPrice {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.cardContent .cardContentSpecs {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.cardContentSpecs .Specs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.cardContentSpecs .Specs:not(:last-child) {
+    margin-right: 35px;
+}
+
+.cardContentSpecs .Specs * {
+    font-size: 25px;
 }
 
 
 /* // ----------------- BOTAO CADASTRAR ----------------- //  */
 .fancy {
-    background-color: transparent;
-    border: 2px solid #000;
-    border-radius: 0;
     box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
+    position: relative;
     display: none;
-    float: right;
+    cursor: pointer;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    margin: 40px;
+    width: 500px;
+    margin: 40px auto;
+    padding: 1em 2em;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 0;
+    background-color: transparent;
+    float: right;
     outline: none;
     overflow: visible;
-    padding: 1em 2em;
-    position: relative;
     text-align: center;
     text-decoration: none;
     text-transform: none;
-    transition: all 0.3s ease-in-out;
     user-select: none;
-    font-size: 15px;
-   }
-   
-   .fancy .text {
+    transition: all 0.3s ease-in-out;
+}
+
+.fancy .text {
     font-size: 1.125em;
     line-height: 1.33333em;
     display: block;
@@ -349,9 +402,9 @@ input[type="range"]::-moz-range-thumb {
     text-transform: uppercase;
     text-decoration: none;
     color: black;
-   }
-   
-   .fancy .top-key {
+}
+
+.fancy .top-key {
     height: 2px;
     width: 1.5625rem;
     top: -2px;
@@ -359,9 +412,9 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, left 0.3s ease-out;
-   }
-   
-   .fancy .bottom-key-1 {
+}
+
+.fancy .bottom-key-1 {
     height: 2px;
     width: 1.5625rem;
     right: 1.875rem;
@@ -369,9 +422,9 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   .fancy .bottom-key-2 {
+}
+
+.fancy .bottom-key-2 {
     height: 2px;
     width: 0.625rem;
     right: 0.625rem;
@@ -379,40 +432,41 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     background: #e8e8e8;
     transition: width 0.5s ease-out, right 0.3s ease-out;
-   }
-   
-   .fancy:hover {
+}
+
+.fancy:hover {
     color: white;
     background: black;
-   }
-   
-   .fancy:hover::before {
+}
+
+.fancy:hover::before {
     width: 0.9375rem;
     background: white;
-   }
-   
-   .fancy:hover .text {
+}
+
+.fancy:hover .text {
     color: white;
-   }
-   
-   .fancy:hover .top-key {
+}
+
+.fancy:hover .top-key {
     left: -2px;
     width: 0px;
-   }
-   
-   .fancy:hover .bottom-key-1,
-    .fancy:hover .bottom-key-2 {
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
     right: 0;
     width: 0;
-   }
+}
 
 
 /* // ----------------- MODAL CADASTRO CARRO ----------------- //  */
-.modalContent::-webkit-scrollbar-thumb{
+.modalContent::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgb(194, 193, 193);
 }
-.modalContent::-webkit-scrollbar{
+
+.modalContent::-webkit-scrollbar {
     border-radius: 10px;
     width: 13px;
     background-color: rgb(235, 235, 235);
@@ -438,22 +492,22 @@ input[type="range"]::-moz-range-thumb {
     width: 100%;
 }
 
-.modalTitle span{
+.modalTitle span {
     font-size: 20px;
 }
 
-.modalTitle i{
+.modalTitle i {
     padding: 5px;
     cursor: pointer;
 }
 
-.modalContent{
+.modalContent {
     padding: 20px;
     height: 600px;
     overflow-y: auto;
 }
 
-.modalContent div{
+.modalContent div {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -468,7 +522,7 @@ input[type="range"]::-moz-range-thumb {
     gap: 1.5rem;
 }
 
-.imgCar{
+.imgCar {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -479,7 +533,7 @@ input[type="range"]::-moz-range-thumb {
     display: none;
 }
 
-.imgInputLabel{
+.imgInputLabel {
     position: relative;
     width: 100%;
     height: 100%;
@@ -492,17 +546,174 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-.imgInputLabel > img{
+.imgInputLabel>img {
     width: 100%;
     height: 100%;
     position: absolute;
     object-fit: contain;
 }
 
-.btnCadastro button{
+.modalContent .btnCadastroModal {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 0 auto;
-    margin-bottom: 1.5rem;
     padding: 13px;
+    padding-bottom: 1.5rem;
     font-size: 17px;
     border-radius: 10px;
+}
+
+/* // MODAL CADASTRO CARRO ----------------- //  */
+.btnBigPage {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: default !important;
+}
+
+.btnBigPage_lg {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all .15s ease;
+    cursor: pointer !important;
+}
+
+.btnBigPage_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+}
+
+.btnBigPage_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #ff4655;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+}
+
+.btnBigPage_text {
+    position: relative;
+}
+
+.btnBigPage_lg:hover .btnBigPage_sl {
+    width: calc(100% + 15px);
+}
+
+.btnBigPage_lg:hover .btnBigPage_lg::after {
+    background-color: #fff;
+}
+
+/* // ----------------- MEDIA QUERY ----------------- //  */
+
+/* @media (width > 780px) {
+    MUDAR PARA OUTRO SISTEMA
+} */
+
+@media (width >=1000px) {
+    .cardCarro {
+        width: 75%;
+    }
+
+    .btnBigPage_lg {
+        font-size: 14px;
+    }
+    .cardContent .cardContentTitle {
+        font-size: 30px;
+    }
+
+    .cardContent .cardContentPrice {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .cardContentSpecs .Specs * {
+        font-size: 20px;
+    }
+}
+
+@media (width >=1300px) {
+    .cardCarro {
+        width: 60%;
+    }
+
+    .btnBigPage_lg {
+        font-size: 14px;
+    }
+
+    .cardContent .cardContentTitle {
+        font-size: 30px;
+    }
+
+    .cardContent .cardContentPrice {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .cardContentSpecs .Specs * {
+        font-size: 20px;
+    }
+}
+
+@media (width >=1600px) {
+    .btnBigPage_lg {
+        font-size: 14px;
+    }
+
+    .cardContent .cardContentTitle {
+        font-size: 32px;
+    }
+
+    .cardContent .cardContentPrice {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .cardContentSpecs .Specs * {
+        font-size: 22px;
+    }
+}
+
+@media (width >=1800px) {
+    .btnBigPage_lg {
+        font-size: 14px;
+    }
+
+    .cardContent .cardContentTitle {
+        font-size: 34px;
+    }
+
+    .cardContent .cardContentPrice {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .cardContentSpecs .Specs * {
+        font-size: 25px;
+    }
 }

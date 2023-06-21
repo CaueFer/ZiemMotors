@@ -10,7 +10,6 @@
 .cta,
 .cta2 {
     position: absolute;
-    top: 5.5rem;
     margin: 20px;
     padding: 12px 18px;
     -webkit-transition: all 0.2s ease;

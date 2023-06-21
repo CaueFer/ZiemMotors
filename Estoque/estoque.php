@@ -38,7 +38,7 @@ if (isset($_SESSION['email']) == true) {
     <title>Ziem Motors</title>
     <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="estoque.css">
-    <link rel="stylesheet" href="../geral.css?v=1.45">
+    <link rel="stylesheet" href="../geral.css?v=1.46">
 
     <!-- CDNS ---- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -112,13 +112,13 @@ if (isset($_SESSION['email']) == true) {
                 </div>
                 <div class="preco">
                     <span>preco</span>
-                    <input type="number" class="carPreco" maxlength="10">
+                    <input type="price" step="any" placeholder="10000000" class="carPreco" maxlength="10">
                 </div>
                 <div class="transmissao">
                     <span>transmissao</span>
                     <select name="carTransmi" id="" class="carTransmi">
-                        <option value="automatica">Automatica</option>
-                        <option value="manual">Manual</option>
+                        <option value="Automatica">Automatica</option>
+                        <option value="Manual">Manual</option>
                     </select>
                 </div>
                 <div class="quilometragem">
@@ -161,13 +161,15 @@ if (isset($_SESSION['email']) == true) {
                             <span>ADD IMAGE</span>
                         </label>
                     </div>
-                    <div class="btnCadastro">
+                    <div class="btnCadastroModal">
                         <button onclick="addValues()">CADASTRAR CARRO</button>
                     </div>
                 </div>
             </div>
         </dialog>
 
+
+        <!-- main content ---------------  -->
         <aside class="asideNav">
             <ul class="asideUl noSelect">
                 <p class="asideTitle">Filtros</p>
@@ -245,8 +247,7 @@ if (isset($_SESSION['email']) == true) {
         </aside>
 
         <div class="mainContent">
-            <button onclick="modalCadastroCarro('abrir')"
-                class="w-auto fancy mb-3 btnCadastrar <?php echo $addCadastro ?>">
+            <button onclick="modalCadastroCarro('abrir')" class="fancy mb-3 btnCadastrar <?php echo $addCadastro ?>">
                 <span class="top-key"></span>
                 <span class="text">CADASTRAR CARRO</span>
                 <span class="bottom-key-1"></span>
