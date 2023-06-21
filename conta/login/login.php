@@ -35,7 +35,7 @@ if (isset($_POST['submitSign'])) {
     } else if ($signInputInvalido === 2) {
         $signClassAdd = "is-invalid";
         $signError = "Preencha os campos!";
-    } else if($signInputInvalido === 3){
+    } else if ($signInputInvalido === 3) {
         $signClassAdd = "is-valid";
         $signValid = "Conta criada!";
     }
@@ -80,11 +80,12 @@ if (isset($_POST['submitLogin'])) {
         $classAdd = "is-invalid";
         $loginError = "Preencha os campos!";
     }
-};
+}
+;
 
 $navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
 
-if(isset($_SESSION['email']) == true){
+if (isset($_SESSION['email']) == true) {
     $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
     <li><a class="dropdown-item" href="#">Perfil</a></li>
     <li>
@@ -119,19 +120,25 @@ if(isset($_SESSION['email']) == true){
     <header>
         <nav>
             <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative" style="height:60px">
-                    <a href="../../home/home.php" class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative" style="width: 42px; height:40px">
-                        <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                    style="height:60px">
+                    <a href="../../home/home.php"
+                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                        style="width: 42px; height:40px">
+                        <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png"
+                            alt="logoZiem">
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
+                        <li><a href="../../Estoque/estoque.php"
+                                class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                         <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                     </ul>
 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..." aria-label="Search">
+                        <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
+                            aria-label="Search">
                     </form>
 
                     <div class="dropdown text-end">
@@ -141,7 +148,7 @@ if(isset($_SESSION['email']) == true){
                                 class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" style="">
-                            <?php echo $navOptions?>
+                            <?php echo $navOptions ?>
                         </ul>
                     </div>
                 </div>
@@ -186,6 +193,7 @@ if(isset($_SESSION['email']) == true){
                                         onclick="showSignIn()">aqui</a> para
                                     criar uma.</small>
                             </form>
+                            <hr class="my-4">
                         </div>
                     </div>
                 </div>
@@ -216,10 +224,10 @@ if(isset($_SESSION['email']) == true){
                                         name="password" id="floatingPassword" placeholder="Password">
                                     <label for="floatingPassword">Senha</label>
                                     <div class="invalid-feedback">
-                                        <?php echo $signError;?>
+                                        <?php echo $signError; ?>
                                     </div>
                                     <div class="valid-feedback">
-                                        <?php echo $signValid;?>
+                                        <?php echo $signValid; ?>
                                     </div>
                                 </div>
                                 <button class="w-100 fancy mb-3" type="submit" name="submitSign">
@@ -229,42 +237,25 @@ if(isset($_SESSION['email']) == true){
                                     <span class="bottom-key-2"></span>
                                 </button>
                                 <small class="text-body-secondary subTitle">Clicando em Cadastrar, você concorda com os
-                                    <a href="#">termos de
+                                    <a id="showSignBtn" href="#">termos de
                                         usuario</a>.</small>
-                                <hr class="my-4">
-                                <h2 class="fs-5 fw-bold mb-3">Ou use um aplicativo parceiro</h2>
-                                <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                                    <svg class="bi me-1" width="16" height="16">
-                                        <use xlink:href="#twitter"></use>
-                                    </svg>
-                                    Cadastrar com Twitter
-                                </button>
-                                <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-                                    <svg class="bi me-1" width="16" height="16">
-                                        <use xlink:href="#facebook"></use>
-                                    </svg>
-                                    Cadastrar com Facebook
-                                </button>
-                                <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-                                    <svg class="bi me-1" width="16" height="16">
-                                        <use xlink:href="#github"></use>
-                                    </svg>
-                                    Cadastrar com Google
-                                </button>
                             </form>
+                            <hr class="my-4">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-    </div>
     </div>
 
+    <footer class="footer">
+        <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 <script src="login.js?v=1.45"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
 </html>

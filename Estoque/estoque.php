@@ -11,8 +11,19 @@ if (isset($_SESSION['email']) == true) {
     </li>
     <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
 
+
+    // validacao adm
     include_once('../conta/login/config.php');
-    $addCadastro = 'show';
+    $logado = $_SESSION['email'];
+
+    $sql = "SELECT * FROM usuarios WHERE email = '$logado' AND admin = '1';";
+
+    $validacao = $conexao->query($sql);
+
+    if (mysqli_num_rows($validacao) > 0) {
+         // botao cadastro
+        $addCadastro = 'show';
+    }
 }
 
 ?>
@@ -250,9 +261,8 @@ if (isset($_SESSION['email']) == true) {
         <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
     </footer>
 </body>
-
+    
 <script src="estoque.js?v=1.45" ></script>
-<script src="../geral.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
