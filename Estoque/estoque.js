@@ -158,7 +158,7 @@ function estoqueCarroUpdate() {
 /* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
 function createCard(marca, ano) {
     const carrosEstoque = document.querySelector('.carrosEstoque');
-    var filterArray = [];
+    var filterArray = estoque.carro;
 
     while (carrosEstoque.firstChild) {
         carrosEstoque.removeChild(carrosEstoque.lastChild)
@@ -171,14 +171,15 @@ function createCard(marca, ano) {
 
     if (marca === 'filtrar') {
         filterArray = estoque.carro.filter((val) => {
-            return targetToFilter.find((e) =>{
+            return targetToFilter.find((e) => {
                 return val.marca.toLowerCase() === e.toLowerCase();
             });
         })
-    } else if(ano !== undefined){
-
-    } else {
-        filterArray = estoque.carro;
+    }
+    if (ano !== undefined) {
+        filterArray = estoque.carro.filter((val) => {
+            return val.ano >= ano;
+        })
     }
 
     if (carrosEstoque.childElementCount < 1) {
@@ -478,12 +479,12 @@ closeSelect.forEach((e) => {
         targetLi.classList.remove("active");
 
         const indexTarget = targetToFilter.indexOf(targetLi.innerText);
-        if(indexTarget > -1){
+        if (indexTarget > -1) {
             targetToFilter.splice(indexTarget, 1);
         }
 
-        if(targetToFilter.length < 1){
-            createCard();
+        if (targetToFilter.length < 1) {
+            createCard('vapo');
         } else {
             createCard('filtrar');
         }
@@ -500,7 +501,6 @@ function filterCarMarca(alvo) {
         }
     };
 
-    console.log("TARGET TO FILTER",targetToFilter);
     createCard('filtrar');
 }
 
@@ -512,7 +512,6 @@ const priceFilter = document.querySelector('.priceFilter');
 priceTitle.addEventListener('click', (e) => {
 
     priceFilter.classList.toggle('off');
-    marcaFilter.classList.remove('active');
     anoFilter.classList.remove('active');
 })
 
@@ -614,8 +613,7 @@ anoOptionsSelect.forEach((e) => {
         anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
         anoFilter.classList.remove('active');
 
-        console.log(targetEl.innerText);
-        createCard('filtrar', targetEl.innerText);
+        createCard('', targetEl.innerText);
     })
 })
 
