@@ -45,8 +45,7 @@ if (isset($_SESSION['email']) == true) {
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a>
-                    </li>
+                    <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
@@ -59,7 +58,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../Imagens/icones-Logos/userIcon.svg" alt="mdo" width="38" height="38"
+                        <img src="../Imagens/icones-Logos/userIcon.svg" alt="userImg" width="38" height="38"
                             class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" style="">

@@ -8,7 +8,7 @@ main {
 .mainContent {
     display: flex;
     flex-direction: column;
-    width: 87%;
+    width: 80%;
 }
 
 .asideNav {
@@ -16,18 +16,19 @@ main {
     display: flex;
     flex-flow: column wrap;
     border-right: .5px solid #000000;
-    width: 13%;
+    width: 20%;
     height: 100vh;
 }
 
 .asideUl {
     width: auto;
     padding: 15px 0px;
-    margin: 0px 15px;
+    margin: 0px 15%;
 }
 
 .asideTitle {
-    font-size: 22px;
+    margin-top: 30px;
+    font-size: 32px;
     font-weight: 600;
     padding: 5px 10px;
 }
@@ -44,55 +45,60 @@ main {
     flex-flow: column wrap;
     width: 100%;
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .marcaTitle {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     padding: 5px 10px;
 }
 
-.marcaTitle i {
-    transition: transform 0.3s linear;
+.marcaFilter .marcaSubtitle {
+    padding: 0px 10px 5px 10px;
+    font-size: 18px;
 }
 
-.marcaFilter.active .marcaTitle i {
-    transform: rotate(-180deg);
-}
-
-.marcaFilter.active .content .options {
-    display: block;
-}
-
-#selectMarca {
-    font-size: 13px;
-    padding: 0px 10px;
-}
-
-.options {
-    display: none;
-    background-color: white;
-    position: absolute;
+.optionsMarca {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
     top: 40px;
     width: 100%;
-    z-index: 1;
+    height: 100%;
     border-radius: 5px;
     padding: 0px 5px;
-    border: .5px solid #f2f2f2;
 }
 
-.options li {
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
+.optionsMarca .marcaOpt {
+    position: relative;
+    padding: 3px 3px 3px 16px;
+    margin: 3px;
+    font-size: 18px;
 }
 
-.options li:hover {
+.optionsMarca .marcaOpt.active{
     background-color: #f2f2f2;
 }
 
+.optionsMarca .marcaOpt.active label > i{
+    display: block;
+}
+
+.optionsMarca li:hover {
+    background-color: #f2f2f2;
+}
+
+.optionsMarca label > i{
+    display: none;
+    position: absolute;
+    left: 92.5%;
+    top: 50%;
+    font-size: 15px;
+    cursor: pointer;
+}
 
 
 /* // ----------------- FILTRO PRECO ----------------- //  */
@@ -103,12 +109,13 @@ main {
     flex-flow: column wrap;
     width: 100%;
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .priceTitle {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     padding: 5px 10px;
 }
@@ -126,7 +133,7 @@ main {
 }
 
 #selectPrice {
-    font-size: 13px;
+    font-size: 18px;
     padding: 0px 10px;
 }
 
@@ -239,12 +246,13 @@ input[type="range"]::-moz-range-thumb {
     flex-flow: column wrap;
     width: 100%;
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .anoTitle {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     padding: 5px 10px;
 }
@@ -262,7 +270,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #selectAno {
-    font-size: 13px;
+    font-size: 18px;
     padding: 0px 10px;
 }
 
@@ -279,6 +287,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .optionsAno li {
+    font-size: 22px;
     padding: 5px;
     margin: 5px;
     cursor: pointer;
@@ -293,18 +302,24 @@ input[type="range"]::-moz-range-thumb {
 .carrosEstoque {
     position: relative;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 40px;
+    padding: 30px 10px 0px 10px!important;
 }
 
+.cardSobreCarro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px!important;
+}
 .cardCarro {
     display: flex;
-    flex-direction: row;
-    width: 85%;
-    height: 250px;
+    flex-direction: row!important;
+    justify-content: center;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
     border-radius: 10px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
@@ -313,8 +328,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardCarro img {
-    width: 35%;
-    height: 100%;
+    width: 50%;
     border-radius: 10px 0px 0px 10px;
     object-fit: cover;
 }
@@ -325,7 +339,7 @@ input[type="range"]::-moz-range-thumb {
     flex-flow: column wrap;
     justify-content: center;
     align-items: start;
-    width: 65%;
+    width: 50%;
     height: 100%;
     padding: 10px;
     padding-left: 25px;
@@ -337,7 +351,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardContent .cardContentTitle {
-    font-size: 34px;
+    font-size: 32px;
 }
 
 .cardContent .cardContentPrice {
@@ -587,7 +601,7 @@ input[type="range"]::-moz-range-thumb {
     background-color: #0f1923;
     overflow: hidden;
     box-shadow: inset 0px 0px 0px 1px transparent;
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all .15s ease;
@@ -635,7 +649,7 @@ input[type="range"]::-moz-range-thumb {
     MUDAR PARA OUTRO SISTEMA
 } */
 
-@media (width >=1000px) {
+/* @media (width >=1000px) {
     .cardCarro {
         width: 75%;
     }
@@ -643,77 +657,26 @@ input[type="range"]::-moz-range-thumb {
     .btnBigPage_lg {
         font-size: 14px;
     }
-    .cardContent .cardContentTitle {
-        font-size: 30px;
-    }
-
-    .cardContent .cardContentPrice {
-        font-size: 24px;
-        font-weight: 600;
-    }
-
-    .cardContentSpecs .Specs * {
-        font-size: 20px;
-    }
 }
 
 @media (width >=1300px) {
     .cardCarro {
         width: 60%;
     }
-
     .btnBigPage_lg {
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    .cardContent .cardContentTitle {
-        font-size: 30px;
-    }
-
-    .cardContent .cardContentPrice {
-        font-size: 24px;
-        font-weight: 600;
-    }
-
-    .cardContentSpecs .Specs * {
-        font-size: 20px;
-    }
 }
 
 @media (width >=1600px) {
     .btnBigPage_lg {
-        font-size: 14px;
-    }
-
-    .cardContent .cardContentTitle {
-        font-size: 32px;
-    }
-
-    .cardContent .cardContentPrice {
-        font-size: 26px;
-        font-weight: 600;
-    }
-
-    .cardContentSpecs .Specs * {
-        font-size: 22px;
+        font-size: 18px;
     }
 }
 
 @media (width >=1800px) {
     .btnBigPage_lg {
-        font-size: 14px;
+        font-size: 20px;
     }
-
-    .cardContent .cardContentTitle {
-        font-size: 34px;
-    }
-
-    .cardContent .cardContentPrice {
-        font-size: 28px;
-        font-weight: 600;
-    }
-
-    .cardContentSpecs .Specs * {
-        font-size: 25px;
-    }
-}
+} */

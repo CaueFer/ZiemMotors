@@ -176,19 +176,18 @@ if (isset($_SESSION['email']) == true) {
                 <div class="marcaFilter">
                     <div class="marcaTitle">
                         <span>Marca</span>
-                        <i class="fa-solid fa-angle-up"></i>
                     </div>
                     <div class="content">
-                        <span id="selectMarca">Selecionado: Nenhuma</span>
-                        <ul class="options" id="marcaOptions">
-                            <li class="marcaOpt">Audi</li>
-                            <li class="marcaOpt">BMW</li>
-                            <li class="marcaOpt">Ferrari</li>
-                            <li class="marcaOpt">Lamborghini</li>
-                            <li class="marcaOpt">McLaren</li>
-                            <li class="marcaOpt">Mercedes-Benz</li>
-                            <li class="marcaOpt">Porsche</li>
-                            <li class="marcaOpt">Tesla</li>
+                        <ul class="optionsMarca" id="marcaOptions">
+                            <li class="marcaOpt" id="audiOpt"><label for="audiOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Audi</li>
+                            <li class="marcaOpt" id="bmwOpt"><label for="bmwOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>BMW</li>
+                            <li class="marcaOpt" id="ferrariOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Ferrari</li>
+                            <li class="marcaOpt" id="lamboOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Lamborghini</li>
+                            <li class="marcaOpt" id="mclarenOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>McLaren</li>
+                            <li class="marcaOpt" id="mercedesOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Mercedes-Benz</li>
+                            <li class="marcaOpt" id="porscheOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Porsche</li>
+                            <li class="marcaOpt" id="teslaOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Tesla</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -204,7 +203,7 @@ if (isset($_SESSION['email']) == true) {
                             <div class="field">
                                 <span>Min</span>
                                 <span class="dentro">R$</span>
-                                <input type="text" class="inputMin" id="input" maxlength="7" value="2500000">
+                                <input type="text" class="inputMin" id="input" maxlength="13" value="2500000">
                             </div>
                             <div class="slider">
                                 <div class="progess"></div>
@@ -218,7 +217,7 @@ if (isset($_SESSION['email']) == true) {
                             <div class="field">
                                 <span>Max</span>
                                 <span class="dentro">R$</span>
-                                <input type="text" class="inputMax" id="input" maxlength="8" value="7500000">
+                                <input type="text" class="inputMax" id="input" maxlength="14" value="7500000">
                             </div>
                         </div>
                     </div>
@@ -230,7 +229,7 @@ if (isset($_SESSION['email']) == true) {
                         <i class="fa-solid fa-angle-up"></i>
                     </div>
                     <div class="contentAno">
-                        <span id="selectAno">Selecionado: Nenhuma</span>
+                        <span id="selectAno">Selecionado: N/A</span>
                         <ul class="optionsAno" id="anoOptions">
                             <li class="anoOpt">2000</li>
                             <li class="anoOpt">2002</li>
@@ -253,7 +252,8 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-            <article class="carrosEstoque"></article>
+            <article class="carrosEstoque row row-gap-3">
+            </article>
         </div>
 
     </main>

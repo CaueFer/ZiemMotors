@@ -173,7 +173,8 @@ function createCard() {
 
 
             carrosEstoque.insertAdjacentHTML("beforeend",
-                `<section class="cardCarro">
+                `<div class="cardSobreCarro col-6">
+                <section class="cardCarro">
                 <img src="${e.img1}" alt="cardImg">
                     <div class="cardContent">
                         <span class="cardContentTitle">${e.nome}</span>
@@ -191,19 +192,16 @@ function createCard() {
                                 <i class="fa-solid fa-calendar-days"></i>
                                 <span>${e.ano}</span>
                             </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-gas-pump"></i>
-                                <span>Gasolina</span>
-                            </div>
                         </div>
                         <button class="btnBigPage">
-                            <span class="btnBigPage_lg onclick="openBigPage(event)"">
+                            <span class="btnBigPage_lg">
                                 <span class="btnBigPage_sl"></span>
-                                <span class="btnBigPage_text">Mais Detalhes</span>
+                                <span class="btnBigPage_text"  onclick="openBigPage(event)">Mais Detalhes</span>
                             </span>
                         </button>
                     </div>
-            </section>`
+            </section>
+            </div>`
             )
         })
     }
@@ -444,28 +442,30 @@ function createBigPage(e) {
 
 /* // ----------------- FILTRO MARCA ----------------- //  */
 
-const marcaTitle = document.querySelector('.marcaTitle');
-const marcaFilter = document.querySelector('.marcaFilter');
-
-marcaTitle.addEventListener('click', (e) => {
-
-    marcaFilter.classList.toggle('active');
-    priceFilter.classList.remove('off');
-    anoFilter.classList.remove('active');
-})
-
 const marcaOptionsSelect = document.querySelectorAll('.marcaOpt');
-const marcaSelect = document.querySelector('#selectMarca')
+const closeSelect = document.querySelectorAll('.closeSelect');
+
 
 marcaOptionsSelect.forEach((e) => {
     e.addEventListener('click', (e) => {
         const targetEl = e.target;
-        marcaSelect.innerHTML = "";
-        marcaSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        marcaFilter.classList.remove('active');
+
+        targetEl.classList.toggle("active");
     })
 })
 
+closeSelect.forEach((e) =>{
+    e.addEventListener('click', (e) =>{
+        const targetEl = e.target;
+
+        const targetLi = targetEl.closest('li');
+        targetLi.classList.remove("active");
+    })
+})
+
+function filterCar(){
+    const targetToFilter = [];
+}
 
 /* // ----------------- FILTRO PRECO ----------------- //  */
 
@@ -495,47 +495,63 @@ const rangeInput = document.querySelectorAll(".rangeInput input"),
     progress = document.querySelector(".progess"),
     fieldValue = document.querySelectorAll(".field #input");
 
-let rangeGap = 1000000;
+let rangeGap = 1000000; // 1 MILHAO
+
+const formatarNumeroPreco = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    currencyDisplay: 'symbol'
+});
 
 rangeInput.forEach(input => {
     input.addEventListener("input", (e) => {
         let minVal = parseInt(rangeInput[0].value),
             maxVal = parseInt(rangeInput[1].value);
 
+        
         if (maxVal - minVal < rangeGap) {
             if (e.target.className === "rangeMin") {
-                rangeInput[0].value = maxVal - rangeGap;
+                rangeInput[0].value = formatarNumeroPreco.format(maxVal - rangeGap).split('R$')[1];
             } else {
-                rangeInput[1].value = minVal + rangeGap;
+                rangeInput[1].value = formatarNumeroPreco.format(minVal + rangeGap).split('R$')[1];
             }
         } else {
             progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
             progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
 
-            fieldValue[0].value = minVal;
-            fieldValue[1].value = maxVal;
+            fieldValue[0].value = formatarNumeroPreco.format(minVal).split('R$')[1];
+            fieldValue[1].value = formatarNumeroPreco.format(maxVal).split('R$')[1];
         }
     })
 });
 
 fieldValue.forEach(input => {
     input.addEventListener("input", (e) => {
-        let minVal = parseInt(fieldValue[0].value),
-            maxVal = parseInt(fieldValue[1].value);
+        let minNumber = fieldValue[0].value,
+            maxNumber = fieldValue[1].value,
+            minVal = Number(minNumber.replace(/[^0-9]+/gi,"")),
+            maxVal = Number(maxNumber.replace(/[^0-9]+/gi,""));
+
+        console.log(minVal, maxVal);
 
         if ((maxVal - minVal >= rangeGap) && maxVal <= 10000000) {
             if (e.target.className === "inputMin") {
                 rangeInput[0].value = minVal;
                 progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-                console.log(maxVal);
             } else {
                 rangeInput[1].value = maxVal;
                 progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
             }
         } else if (maxVal > 10000000) {
             if (e.target.className === "inputMax") {
+                rangeInput[1].value = "";
                 rangeInput[1].value = 10000000;
                 progress.style.right = 100 - (10000000 / rangeInput[1].max) * 100 + "%";
+            }
+        } else if(minVal > 9999999){
+            if (e.target.className === "inputMin") {
+                rangeInput[0].value = '9.000.000';
+                progress.style.right = 100 - (9000000 / rangeInput[1].max) * 100 + "%";
             }
         }
     })
