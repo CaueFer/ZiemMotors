@@ -129,22 +129,17 @@ if (isset($_SESSION['email']) == true) {
         </div> -->
         <div class="homeContente">
             <div class="homeText">
-                <h1>Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
+                <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
                 <p>Todos os carros são verificados e autenticados pelas marcas originais.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non vel culpa tempora vitae rerum
-                    voluptates,
-                    delectus asperiores aliquid, nam cupiditate iste exercitationem mollitia? Facilis quidem culpa,
-                    dignissimos
-                    eius ut dolore libero, facere assumenda laborum, ea debitis officiis? Delectus architecto ut odit
-                    cupiditate, soluta quas excepturi minus labore? Sint id quaerat cupiditate, fuga commodi sunt
-                    voluptatum
-                    possimus. Tempore eveniet aut laborum tenetur perspiciatis consequuntur iure corporis quasi.
-                    Similique,
-                    facilis deserunt voluptates provident neque nulla officia nam saepe eligendi! Enim fugiat omnis
-                    magnam.
-                    Molestias dignissimos quia odit corrupti voluptate autem iusto iure, quaerat a velit ipsam vero,
-                    ratione
-                    ducimus molestiae esse eius?</p>
+                <div class="row imgDestaquesContent">
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/logo-bmw.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/logo-lambo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
+                </div>
 
                 <div class="homeDestaques">
                     <h1>Destaques</h1>
@@ -165,7 +160,6 @@ if (isset($_SESSION['email']) == true) {
 </body>
 
 <script src="home.js?v=1.45" defer></script>
-<script src="../geral.js?v=1.45" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
