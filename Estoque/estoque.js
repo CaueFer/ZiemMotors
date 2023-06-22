@@ -62,8 +62,9 @@ imgInput.forEach((e) => {
 
 
 // CADASTRO CARROS INPUTS -----------------------------------------------------  // 
-const estoque = { carro: [] };
-const newCar = { cartoAdd: [] };
+const estoque = { carro: [] },
+    newCar = { cartoAdd: [] },
+    targetToFilter = [];
 
 const carName = document.querySelector(".carName"),
     carMarca = document.querySelector(".carMarca"),
@@ -155,8 +156,9 @@ function estoqueCarroUpdate() {
 
 
 /* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
-function createCard() {
+function createCard(marca, ano) {
     const carrosEstoque = document.querySelector('.carrosEstoque');
+    var filterArray = [];
 
     while (carrosEstoque.firstChild) {
         carrosEstoque.removeChild(carrosEstoque.lastChild)
@@ -167,10 +169,21 @@ function createCard() {
         currency: 'BRL',
     });
 
-    if (carrosEstoque.childElementCount < 1) {
-        estoque.carro.forEach((e) => {
-            var precoRegional = formatarNumeroPreco.format(e.preco);
+    if (marca === 'filtrar') {
+        filterArray = estoque.carro.filter((val) => {
+            return targetToFilter.find((e) =>{
+                return val.marca.toLowerCase() === e.toLowerCase();
+            });
+        })
+    } else if(ano !== undefined){
 
+    } else {
+        filterArray = estoque.carro;
+    }
+
+    if (carrosEstoque.childElementCount < 1) {
+        filterArray.forEach((e) => {
+            var precoRegional = formatarNumeroPreco.format(e.preco);
 
             carrosEstoque.insertAdjacentHTML("beforeend",
                 `<div class="cardSobreCarro col-6">
@@ -442,29 +455,53 @@ function createBigPage(e) {
 
 /* // ----------------- FILTRO MARCA ----------------- //  */
 
-const marcaOptionsSelect = document.querySelectorAll('.marcaOpt');
-const closeSelect = document.querySelectorAll('.closeSelect');
+const marcaOptionsSelect = document.querySelectorAll('.marcaOpt'),
+    closeSelect = document.querySelectorAll('.closeSelect');
 
 
 marcaOptionsSelect.forEach((e) => {
     e.addEventListener('click', (e) => {
         const targetEl = e.target;
 
-        targetEl.classList.toggle("active");
+        if (!targetEl.classList.contains('closeSelect')) {
+            targetEl.classList.add("active");
+            filterCarMarca(targetEl);
+        }
     })
 })
 
-closeSelect.forEach((e) =>{
-    e.addEventListener('click', (e) =>{
+closeSelect.forEach((e) => {
+    e.addEventListener('click', (e) => {
         const targetEl = e.target;
 
         const targetLi = targetEl.closest('li');
         targetLi.classList.remove("active");
+
+        const indexTarget = targetToFilter.indexOf(targetLi.innerText);
+        if(indexTarget > -1){
+            targetToFilter.splice(indexTarget, 1);
+        }
+
+        if(targetToFilter.length < 1){
+            createCard();
+        } else {
+            createCard('filtrar');
+        }
     })
 })
 
-function filterCar(){
-    const targetToFilter = [];
+function filterCarMarca(alvo) {
+
+    if (targetToFilter.length === 0) {
+        targetToFilter.push(alvo.innerText);
+    } else {
+        if (!targetToFilter.includes(alvo.innerText)) {
+            targetToFilter.push(alvo.innerText);
+        }
+    };
+
+    console.log("TARGET TO FILTER",targetToFilter);
+    createCard('filtrar');
 }
 
 /* // ----------------- FILTRO PRECO ----------------- //  */
@@ -508,7 +545,7 @@ rangeInput.forEach(input => {
         let minVal = parseInt(rangeInput[0].value),
             maxVal = parseInt(rangeInput[1].value);
 
-        
+
         if (maxVal - minVal < rangeGap) {
             if (e.target.className === "rangeMin") {
                 rangeInput[0].value = formatarNumeroPreco.format(maxVal - rangeGap).split('R$')[1];
@@ -529,8 +566,8 @@ fieldValue.forEach(input => {
     input.addEventListener("input", (e) => {
         let minNumber = fieldValue[0].value,
             maxNumber = fieldValue[1].value,
-            minVal = Number(minNumber.replace(/[^0-9]+/gi,"")),
-            maxVal = Number(maxNumber.replace(/[^0-9]+/gi,""));
+            minVal = Number(minNumber.replace(/[^0-9]+/gi, "")),
+            maxVal = Number(maxNumber.replace(/[^0-9]+/gi, ""));
 
         console.log(minVal, maxVal);
 
@@ -548,7 +585,7 @@ fieldValue.forEach(input => {
                 rangeInput[1].value = 10000000;
                 progress.style.right = 100 - (10000000 / rangeInput[1].max) * 100 + "%";
             }
-        } else if(minVal > 9999999){
+        } else if (minVal > 9999999) {
             if (e.target.className === "inputMin") {
                 rangeInput[0].value = '9.000.000';
                 progress.style.right = 100 - (9000000 / rangeInput[1].max) * 100 + "%";
@@ -565,8 +602,6 @@ const anoFilter = document.querySelector('.anoFilter');
 anoTitle.addEventListener('click', (e) => {
 
     anoFilter.classList.toggle('active');
-    marcaFilter.classList.remove('active');
-    priceFilter.classList.remove('off');
 })
 
 const anoOptionsSelect = document.querySelectorAll('.anoOpt');
@@ -578,6 +613,9 @@ anoOptionsSelect.forEach((e) => {
         anoSelect.innerHTML = "";
         anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
         anoFilter.classList.remove('active');
+
+        console.log(targetEl.innerText);
+        createCard('filtrar', targetEl.innerText);
     })
 })
 
@@ -594,8 +632,6 @@ function modalCadastroCarro(estado) {
     }
 
 }
-
-
 /* // ----------------- ATUALIZAR PAGE ----------------- //  */
 window.addEventListener("load", () => {
     estoqueCarroUpdate();

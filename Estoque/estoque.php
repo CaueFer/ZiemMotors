@@ -185,8 +185,8 @@ if (isset($_SESSION['email']) == true) {
                             <li class="marcaOpt" id="lamboOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Lamborghini</li>
                             <li class="marcaOpt" id="mclarenOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>McLaren</li>
                             <li class="marcaOpt" id="mercedesOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Mercedes-Benz</li>
-                            <li class="marcaOpt" id="porscheOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Porsche</li>
-                            <li class="marcaOpt" id="teslaOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i></label>Tesla</li>
+                            <li class="marcaOpt" id="porscheOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg "></i></label>Porsche</li>
+                            <li class="marcaOpt" id="teslaOpt"><label for="ferrariOpt"><i class="fa-solid fa-x fa-lg"></i></label>Tesla</li>
                             
                         </ul>
                     </div>

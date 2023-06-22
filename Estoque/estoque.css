@@ -94,7 +94,7 @@ main {
 .optionsMarca label > i{
     display: none;
     position: absolute;
-    left: 92.5%;
+    left: 90%;
     top: 50%;
     font-size: 15px;
     cursor: pointer;
