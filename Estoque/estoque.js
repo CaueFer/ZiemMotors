@@ -635,15 +635,3 @@ window.addEventListener("load", () => {
     estoqueCarroUpdate();
 })
 
-// const carModalNumb = document.querySelectorAll('carModalNumb');
-
-// carModalNumb.forEach((input) => {
-//     input.addEventListener("input", (e) => {
-//         const targetEl = e.target;
-
-//         if (isNaN(targetEl)) {
-//             console.log("digite um numero")
-//         }
-//     })
-// })
-

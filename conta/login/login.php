@@ -154,8 +154,7 @@ if (isset($_SESSION['email']) == true) {
     </header>
 
     <div class="container d-block position-relative vw-100 vh-100 p-10">
-        <div class="row">
-
+        <div class="row" style="margin-top: 50px!important;">
             <div class="col my-5">
                 <div class="modal-dialog position-relative bg-opacity-100" role="document" style="top: 5%;">
                     <div class="modal-content">
