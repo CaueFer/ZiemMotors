@@ -92,27 +92,27 @@ if (isset($_SESSION['email']) == true) {
             <div class="modalContent">
                 <div class="name">
                     <span>Nome</span>
-                    <input type="text" class="carName" maxlength="20">
+                    <input type="text" class="carName carModal" maxlength="20">
                 </div>
                 <div class="marca">
                     <span>marca</span>
-                    <input type="text" class="carMarca" maxlength="20">
+                    <input type="text" class="carMarca carModal" maxlength="20">
                 </div>
                 <div class="modelo">
                     <span>modelo</span>
-                    <input type="text" class="carModelo" maxlength="20">
+                    <input type="text" class="carModelo carModal" maxlength="20">
                 </div>
                 <div class="versao">
                     <span>versao</span>
-                    <input type="text" class="carVersao" maxlength="20">
+                    <input type="text" class="carVersao carModal" maxlength="20">
                 </div>
                 <div class="ano">
                     <span>ano</span>
-                    <input type="text" class="carAno" maxlength="4">
+                    <input type="number" class="carAno carModalNumb" min="1900" max="2099" step="1"/>
                 </div>
                 <div class="preco">
                     <span>preco</span>
-                    <input type="price" step="any" placeholder="10000000" class="carPreco" maxlength="10">
+                    <input type="number" step="any" placeholder="10000000" class="carPreco carModalNumb" maxlength="10">
                 </div>
                 <div class="transmissao">
                     <span>transmissao</span>
@@ -123,7 +123,7 @@ if (isset($_SESSION['email']) == true) {
                 </div>
                 <div class="quilometragem">
                     <span>quilometragem</span>
-                    <input type="number" class="carQuilo">
+                    <input type="number" class="carQuilo carModalNumb">
                 </div>
                 <div class="infos">
                     <span>Informacoes</span>
