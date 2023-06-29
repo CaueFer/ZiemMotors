@@ -46,7 +46,7 @@ if (isset($_SESSION['email']) == true) {
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
@@ -130,7 +130,7 @@ if (isset($_SESSION['email']) == true) {
         <div class="homeContente">
             <div class="homeText">
                 <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
-                <p>Todos os carros são verificados e autenticados pelas marcas originais.</p>
+                <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
                 <div class="row imgDestaquesContent">
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
