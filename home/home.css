@@ -145,6 +145,10 @@
     font-weight: 700;
     margin: 50px 100px;
 }
+.subtitle{
+    font-size: 100px;
+    font-weight: 200px;
+}
 
 /* -------------- HOME MARCAS --------------*/
 .imgDestaquesContent {

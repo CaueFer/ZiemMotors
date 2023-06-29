@@ -130,7 +130,7 @@ if (isset($_SESSION['email']) == true) {
         <div class="homeContente">
             <div class="homeText">
                 <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
-                <p>Todos os carros são verificados e autenticados pelas marcas originais.</p>
+                <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
                 <div class="row imgDestaquesContent">
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
