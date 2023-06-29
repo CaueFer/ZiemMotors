@@ -35,7 +35,9 @@ if (isset($_SESSION['email']) == true) {
 </head>
 <body>
 
+
     <header class="navHeader position-fixed w-100 top-0">
+    
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
                 style="height:60px">
@@ -69,6 +71,10 @@ if (isset($_SESSION['email']) == true) {
             </div>
         </div>
     </header>
+    <main>
+        <div class="contatotitle"></div>
+    
+    
     
 </body>
 </html>
