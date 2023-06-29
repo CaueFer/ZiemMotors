@@ -634,3 +634,4 @@ function modalCadastroCarro(estado) {
 window.addEventListener("load", () => {
     estoqueCarroUpdate();
 })
+

@@ -11,8 +11,8 @@ $logado = $_SESSION['email'];
 $navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
 
 if (isset($_SESSION['email']) == true) {
-    $navOptions = '<li><a class="dropdown-item" href="#">Conta</a></li>
-    <li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="#">Perfil</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>

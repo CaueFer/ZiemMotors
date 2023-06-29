@@ -1,0 +1,9 @@
+Sempre que atualizar algo no MYSql pega o arquivo e atualiza ele aqui.
+
+Localizacao da pasta
+
+\xampp\mysql\data\ziemmotors
+
+Copia a pasta ziemmotors e cola dentro da pasta banco de dados.
+
+Depois de ter atualizado o banco de dados da o COMMIT E SYNC

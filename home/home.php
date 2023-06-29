@@ -3,8 +3,8 @@ session_start();
 $navOptions = '<li><a class="dropdown-item" href="../conta/login/login.php">Fazer Login</a></li>';
 
 if (isset($_SESSION['email']) == true) {
-    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
-    <li><a class="dropdown-item" href="#">Perfil</a></li>
+    $navOptions = '<li><a class="dropdown-item" href="../conta/logado/conta.php">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="../conta/logado/conta.php">Perfil</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>
