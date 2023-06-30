@@ -24,7 +24,7 @@ if (isset($_SESSION['email']) == true) {
     <title>Ziem Motors</title>
     <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="../geral.css?v=1.45">
-    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="contato.css?v=1.45">
 
     <!-- CDNS ---- -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -72,9 +72,40 @@ if (isset($_SESSION['email']) == true) {
         </div>
     </header>
     <main>
-        <div class="contatotitle"></div>
+    <div class="fodase">
+    <div class="contato">
+       <br><br><br> <p>Entre em contato pelo nosso formulário</p>
+       
+</div>
+    <div class="contatoInput">
+        <p class="nome">Nome</p>
+                    <input type="text" name="nameUser" id="" placeholder="Nome"><br><br>
+                    <p class="email">Email</p>
+                    <input type="text" name="emailUser" id="" placeholder="Email"><br><br>
+                    <p class="telefone">Telefone</p>
+                    <input type="text" name="telefoneUser" id="" placeholder="telefone"><br><br>
+                    <p class="mensagem">Mensagem</p>
+                    <textarea name="msgUser" id="" cols="30" rows="10" placeholder="Mensagem"></textarea><br><br>
+                    <button>ENVIAR</button>
+                </div>
+        <div class="fodaseesqueda"></div>
+        <div class="fodasedireita">
+            <h1 class="contatenos">Contate nos</h1>
+            <div class="informações">
+            <p><img src="../Imagens/icones-Logos/icone-telefone-2.png" alt="img1" class="img1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    (47)3444-5991
+            
+            </p>
+            <p><img src="../Imagens/icones-Logos/icone localização.png" alt="img2" class="img2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Doutor João Colin, 120 - Centro Joinville/SC</p>
+            <p><img src="../Imagens/icones-Logos/icone horario.png" alt="img3" class="img3"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Horário de funcionamento:   Terça e quinta, das 9:00 às 18:00</p>
+            <p><img src="../Imagens/icones-Logos/icone email.png" alt="img4" class="img4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Ziemmotors@contato.br</p>
+           
+            </div>
+          
+</div>
+        </div>
+    </div>
     
-    
+
     
 </body>
 </html>

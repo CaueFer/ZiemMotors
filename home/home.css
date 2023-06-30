@@ -146,8 +146,11 @@
     margin: 50px 100px;
 }
 .subtitle{
-    font-size: 100px;
+    color: black;
+    font-size: 200px;
     font-weight: 200px;
+    margin-left: 20px;
+    position: absolute;
 }
 
 /* -------------- HOME MARCAS --------------*/
