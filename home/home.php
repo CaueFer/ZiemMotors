@@ -11,6 +11,8 @@ if (isset($_SESSION['email']) == true) {
     <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
