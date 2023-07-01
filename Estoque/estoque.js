@@ -207,10 +207,10 @@ function createCard(marca, ano) {
                                 <span>${e.ano}</span>
                             </div>
                         </div>
-                        <button class="btnBigPage">
+                        <button class="btnBigPage" onclick="openBigPage(event)">
                             <span class="btnBigPage_lg">
                                 <span class="btnBigPage_sl"></span>
-                                <span class="btnBigPage_text"  onclick="openBigPage(event)">Mais Detalhes</span>
+                                <span class="btnBigPage_text" >Mais Detalhes</span>
                             </span>
                         </button>
                     </div>
@@ -248,14 +248,23 @@ function limparInput() {
 }
 
 
-function openBigPage(e) {
-    const targetEl = e.target.closest("div").childNodes[1].innerText;
+function openBigPage(recebido, normal) {
+    if (normal === "searched") {
+        estoque.carro.forEach((e) => {
+            if (e.nome === recebido) {
+                createBigPage(e);
+            }
+        })
+    }
+    else {
+        const targetEl = recebido.target.closest("div").childNodes[1].innerText;
 
-    estoque.carro.forEach((e) => {
-        if (e.nome === targetEl) {
-            createBigPage(e);
-        }
-    })
+        estoque.carro.forEach((e) => {
+            if (e.nome === targetEl) {
+                createBigPage(e);
+            }
+        })
+    }
 };
 
 function createBigPage(e) {
@@ -639,15 +648,18 @@ window.addEventListener("load", () => {
 let nomeCarros = [];
 
 const searchInput = document.getElementById("searchInput"),
-    resultSearch = document.querySelector(".resultSearch"),
-    resultSearchOpt = document.querySelectorAll(".resultSearchOpt");
+    resultSearch = document.querySelector(".resultSearch");
 
-searchInput.addEventListener("focus", () =>{
+searchInput.addEventListener("focus", () => {
     carroSearch();
 })
 
+searchInput.addEventListener("focusout", () => {
+    setTimeout(() => { resultSearch.classList.remove("active"); }, 100);
+})
+
 searchInput.addEventListener("keyup", () => {
-    
+
     resultSearch.classList.add("active");
 
     let arr = [];
@@ -655,18 +667,18 @@ searchInput.addEventListener("keyup", () => {
     arr = nomeCarros.filter((val) => {
         return val.toLowerCase().startsWith(searchInputValue);
     }).map(val => `<li class="resultSearchOpt noSelect">${val}</li>`).join("");
-    if(arr.length){
+    if (arr.length) {
         resultSearch.innerHTML = arr;
+        resultSearch.childNodes.forEach((element) => {
+            element.addEventListener("click", (e) => {
+                const targetEl = e.target;
+                searchInput.value = targetEl.innerText;
+                openBigPage(targetEl.innerText, "searched");
+            })
+        })
     }
-    else resultSearch.innerHTML= `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
-})
+    else resultSearch.innerHTML = `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
 
-resultSearchOpt.forEach((e) =>{
-    resultSearchOpt.addEventListener("click", () =>{
-    console.log("cliquei");
-    searchInput.value = resultOpt.innerText;
-    resultSearch.classList.remove("active");
-    })
 })
 
 function carroSearch() {
