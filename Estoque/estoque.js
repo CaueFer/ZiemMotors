@@ -156,7 +156,7 @@ function estoqueCarroUpdate() {
 
 
 /* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
-function createCard(marca, ano) {
+function createCard(marca, ano, precomin, precomax) {
     const carrosEstoque = document.querySelector('.carrosEstoque');
     var filterArray = estoque.carro;
 
@@ -179,6 +179,11 @@ function createCard(marca, ano) {
     if (ano !== undefined) {
         filterArray = estoque.carro.filter((val) => {
             return val.ano >= ano;
+        })
+    }
+    if (precomin !== undefined) {
+        filterArray = estoque.carro.filter((val) => {
+            return val.preco >= precomin && val.preco <= precomax;
         })
     }
 
@@ -567,6 +572,7 @@ rangeInput.forEach(input => {
             fieldValue[0].value = formatarNumeroPreco.format(minVal).split('R$')[1];
             fieldValue[1].value = formatarNumeroPreco.format(maxVal).split('R$')[1];
         }
+        createCard('', '', minVal, maxVal);
     })
 });
 
@@ -599,6 +605,7 @@ fieldValue.forEach(input => {
                 progress.style.right = 100 - (9000000 / rangeInput[1].max) * 100 + "%";
             }
         }
+        createCard('', '', minVal, maxVal);
     })
 });
 

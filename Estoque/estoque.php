@@ -211,13 +211,13 @@ if (isset($_SESSION['email']) == true) {
                             <div class="rangeInput">
                                 <input type="range" class="rangeMin" min="100000" max="10000000" value="2500000"
                                     step="10000">
-                                <input type="range" class="rangeMax" min="100000" max="10000000" value="7500000"
+                                <input type="range" class="rangeMax" min="100000" max="10000000" value="10000000"
                                     step="10000">
                             </div>
                             <div class="field">
                                 <span>Max</span>
                                 <span class="dentro">R$</span>
-                                <input type="text" class="inputMax" id="input" maxlength="14" value="7500000">
+                                <input type="text" class="inputMax" id="input" maxlength="14" value="10000000">
                             </div>
                         </div>
                     </div>

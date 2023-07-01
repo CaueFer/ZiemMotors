@@ -70,20 +70,12 @@ if (isset($_SESSION['email']) == true) {
     <main>
         <div id="myCarousel" class="carousel slide mb-6 mt-10 position-relative" data-bs-ride="carousel"
             data-bs-theme="light">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
-                    aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
-                    class=""></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
-                    class="active" aria-current="true"></button>
-            </div>
             <div class="carousel-inner position-relative" style="height: 500px;">
                 <div class="carousel-item position-relative h-100">
                     <img class="w-100 h-100" style="object-fit: cover;"
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto0.jpg" alt="">
                     <div class="container">
-                        <div class="carousel-caption text-start">
+                        <div class="carousel-caption text-start mb-3">
                             <h1>Example headline.</h1>
                             <p class="opacity-75">Some representative placeholder content for the first slide of the
                                 carousel.</p>
@@ -95,7 +87,7 @@ if (isset($_SESSION['email']) == true) {
                     <img class="w-100 h-100" style="object-fit: cover;"
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto2.jpg" alt="">
                     <div class="container">
-                        <div class="carousel-caption">
+                        <div class="carousel-caption mb-3">
                             <h1>Another example headline.</h1>
                             <p>Some representative placeholder content for the second slide of the carousel.</p>
                             <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
@@ -106,7 +98,7 @@ if (isset($_SESSION['email']) == true) {
                     <img class="w-100 h-100" style="object-fit: cover;"
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto4.jpg" alt="">
                     <div class="container">
-                        <div class="carousel-caption text-end">
+                        <div class="carousel-caption text-end mb-3">
                             <h1>One more for good measure.</h1>
                             <p>Some representative placeholder content for the third slide of this carousel.</p>
                             <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
