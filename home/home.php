@@ -47,16 +47,12 @@ if (isset($_SESSION['email']) == true) {
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a>
+                    </li>
+                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a>
+                    </li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
-
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search" autocomplete="off">
-                    <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                        aria-label="Search" id="searchInput">
-                    <ul class="resultSearch"></ul>
-                </form>
 
                 <div class="dropdown text-end">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -72,76 +68,88 @@ if (isset($_SESSION['email']) == true) {
         </div>
     </header>
     <main>
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-                <input type="radio" name="slide" id="slide4">
-                <input type="radio" name="slide" id="slide5">
-
-                <div class="slideImg first">
-                    <img class="imageSlider id0" src="../Imagens/FotoCarros/fotoSlider/teste/foto0.jpg" alt="image0">
+        <div id="myCarousel" class="carousel slide mb-6 mt-10 position-relative" data-bs-ride="carousel"
+            data-bs-theme="light">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                    class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner position-relative" style="height: 500px;">
+                <div class="carousel-item position-relative h-100">
+                    <img class="w-100 h-100" style="object-fit: cover;"
+                        src="../Imagens/FotoCarros/fotoSlider/teste/foto0.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Example headline.</h1>
+                            <p class="opacity-75">Some representative placeholder content for the first slide of the
+                                carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="slideImg">
-                    <img class="imageSlider id1 natela" src="../Imagens/FotoCarros/fotoSlider/teste/foto1.jpg"
-                        alt="image1">
+                <div class="carousel-item position-relative h-100">
+                    <img class="w-100 h-100" style="object-fit: cover;"
+                        src="../Imagens/FotoCarros/fotoSlider/teste/foto2.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="slideImg">
-                    <img class="imageSlider id2" src="../Imagens/FotoCarros/fotoSlider/teste/foto2.jpg" alt="image2">
-                </div>
-                <div class="slideImg">
-                    <img class="imageSlider id3" src="../Imagens/FotoCarros/fotoSlider/teste/foto3.jpg" alt="image3">
-                </div>
-                <div class="slideImg">
-                    <img class="imageSlider id4" src="../Imagens/FotoCarros/fotoSlider/teste/foto4.jpg" alt="image4">
-                </div>
-                <div class="slideImg">
-                    <img class="imageSlider id5" src="../Imagens/FotoCarros/fotoSlider/teste/foto5.jpg" alt="image5">
-                </div>
-
-                <div class="autoNavigation">
-                    <div class="autoBtn1"></div>
-                    <div class="autoBtn2"></div>
-                    <div class="autoBtn3"></div>
-                    <div class="autoBtn4"></div>
-                    <div class="autoBtn5"></div>
-                </div>
-
-                <div class="manualNavigation">
-                    <label for="slide1" class="manualBtn"></label>
-                    <label for="slide2" class="manualBtn"></label>
-                    <label for="slide3" class="manualBtn"></label>
-                    <label for="slide4" class="manualBtn"></label>
-                    <label for="slide5" class="manualBtn"></label>
+                <div class="carousel-item active position-relative h-100">
+                    <img class="w-100 h-100" style="object-fit: cover;"
+                        src="../Imagens/FotoCarros/fotoSlider/teste/foto4.jpg" alt="">
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>One more for good measure.</h1>
+                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+        <form class="searchForm input-group col-12 w-50 mb-3 position-absolute start-50 translate-middle"
+            role="search" autocomplete="off">
+            <span class="lupaSearch fa-solid fa-magnifying-glass"></span>
+            <input type="search" class="inputSearch" placeholder="Pesquisar carro..." aria-label="Search"
+                id="searchInput">
+            <ul class="resultSearch inHome"></ul>
+        </form>
 
-        <!-- <div class="regua">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div> -->
         <div class="homeContente">
             <div class="homeText">
                 <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
                 <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
                 <div class="row imgDestaquesContent">
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/logo-bmw.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/logo-lambo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque" src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/logo-bmw.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/logo-lambo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
+                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                            src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
                 </div>
 
                 <div class="homeDestaques">
