@@ -231,6 +231,7 @@ if (isset($_SESSION['email']) == true) {
                     <div class="contentAno">
                         <span id="selectAno">Selecionado: N/A</span>
                         <ul class="optionsAno" id="anoOptions">
+                            <li class="anoOpt">Nenhum</li>
                             <li class="anoOpt">2000</li>
                             <li class="anoOpt">2002</li>
                             <li class="anoOpt">2004</li>

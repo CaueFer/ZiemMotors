@@ -626,10 +626,18 @@ anoOptionsSelect.forEach((e) => {
     e.addEventListener('click', (e) => {
         const targetEl = e.target;
         anoSelect.innerHTML = "";
-        anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        anoFilter.classList.remove('active');
+        console.log(targetEl.innerText);
+        if (targetEl.innerText === "Nenhum") {
+            anoSelect.insertAdjacentText('beforeend', "Selecionado: Nenhum");
+            createCard('', '');
+        }
+        else {
+            anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+            anoFilter.classList.remove('active');
+            createCard('', targetEl.innerText);
+        }
 
-        createCard('', targetEl.innerText);
+        
     })
 })
 
