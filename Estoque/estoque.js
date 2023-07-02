@@ -64,7 +64,10 @@ imgInput.forEach((e) => {
 // CADASTRO CARROS INPUTS -----------------------------------------------------  // 
 const estoque = { carro: [] },
     newCar = { cartoAdd: [] },
-    targetToFilter = [];
+    marcaToFilter = [],
+    anoToFilter = [];
+
+var minPriceToFilter, maxPriceToFilter;
 
 const carName = document.querySelector(".carName"),
     carMarca = document.querySelector(".carMarca"),
@@ -156,7 +159,7 @@ function estoqueCarroUpdate() {
 
 
 /* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
-function createCard(marca, ano, precomin, precomax) {
+function createCard() {
     const carrosEstoque = document.querySelector('.carrosEstoque');
     var filterArray = estoque.carro;
 
@@ -169,21 +172,25 @@ function createCard(marca, ano, precomin, precomax) {
         currency: 'BRL',
     });
 
-    if (marca === 'filtrar') {
-        filterArray = estoque.carro.filter((val) => {
-            return targetToFilter.find((e) => {
-                return val.marca.toLowerCase() === e.toLowerCase();
-            });
+    console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
+
+    if (marcaToFilter.length > 0) {
+        if(marcaToFilter !== undefined){
+            filterArray = estoque.carro.filter((val) => {
+                return marcaToFilter.find((e) => {
+                    return val.marca.toLowerCase() === e.toLowerCase();
+                });
+            })
+        }
+    }
+    if (anoToFilter > 0) {
+        filterArray = filterArray.filter((val) => {
+            return val.ano >= anoToFilter;
         })
     }
-    if (ano !== undefined) {
-        filterArray = estoque.carro.filter((val) => {
-            return val.ano >= ano;
-        })
-    }
-    if (precomin !== undefined) {
-        filterArray = estoque.carro.filter((val) => {
-            return val.preco >= precomin && val.preco <= precomax;
+    if (minPriceToFilter !== undefined) {
+        filterArray = filterArray.filter((val) => {
+            return val.preco >= minPriceToFilter && val.preco <= maxPriceToFilter;
         })
     }
 
@@ -492,30 +499,26 @@ closeSelect.forEach((e) => {
         const targetLi = targetEl.closest('li');
         targetLi.classList.remove("active");
 
-        const indexTarget = targetToFilter.indexOf(targetLi.innerText);
+        const indexTarget = marcaToFilter.indexOf(targetLi.innerText);
         if (indexTarget > -1) {
-            targetToFilter.splice(indexTarget, 1);
+            marcaToFilter.splice(indexTarget, 1);
         }
 
-        if (targetToFilter.length < 1) {
-            createCard('vapo');
-        } else {
-            createCard('filtrar');
-        }
+        createCard();
     })
 })
 
 function filterCarMarca(alvo) {
 
-    if (targetToFilter.length === 0) {
-        targetToFilter.push(alvo.innerText);
+    if (marcaToFilter.length === 0) {
+        marcaToFilter.push(alvo.innerText);
     } else {
-        if (!targetToFilter.includes(alvo.innerText)) {
-            targetToFilter.push(alvo.innerText);
+        if (!marcaToFilter.includes(alvo.innerText)) {
+            marcaToFilter.push(alvo.innerText);
         }
     };
 
-    createCard('filtrar');
+    createCard();
 }
 
 /* // ----------------- FILTRO PRECO ----------------- //  */
@@ -558,7 +561,6 @@ rangeInput.forEach(input => {
         let minVal = parseInt(rangeInput[0].value),
             maxVal = parseInt(rangeInput[1].value);
 
-
         if (maxVal - minVal < rangeGap) {
             if (e.target.className === "rangeMin") {
                 rangeInput[0].value = formatarNumeroPreco.format(maxVal - rangeGap).split('R$')[1];
@@ -572,7 +574,9 @@ rangeInput.forEach(input => {
             fieldValue[0].value = formatarNumeroPreco.format(minVal).split('R$')[1];
             fieldValue[1].value = formatarNumeroPreco.format(maxVal).split('R$')[1];
         }
-        createCard('', '', minVal, maxVal);
+        minPriceToFilter = minVal;
+        maxPriceToFilter = maxVal;
+        createCard();
     })
 });
 
@@ -582,8 +586,6 @@ fieldValue.forEach(input => {
             maxNumber = fieldValue[1].value,
             minVal = Number(minNumber.replace(/[^0-9]+/gi, "")),
             maxVal = Number(maxNumber.replace(/[^0-9]+/gi, ""));
-
-        console.log(minVal, maxVal);
 
         if ((maxVal - minVal >= rangeGap) && maxVal <= 10000000) {
             if (e.target.className === "inputMin") {
@@ -605,7 +607,9 @@ fieldValue.forEach(input => {
                 progress.style.right = 100 - (9000000 / rangeInput[1].max) * 100 + "%";
             }
         }
-        createCard('', '', minVal, maxVal);
+        minPriceToFilter = minVal;
+        maxPriceToFilter = maxVal;
+        createCard();
     })
 });
 
@@ -630,12 +634,13 @@ anoOptionsSelect.forEach((e) => {
         if (targetEl.innerText === "Nenhum") {
             anoSelect.insertAdjacentText('beforeend', "Selecionado: Nenhum");
             anoFilter.classList.remove('active');
-            createCard('', '');
+            createCard();
         }
         else {
             anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
             anoFilter.classList.remove('active');
-            createCard('', targetEl.innerText);
+            anoToFilter.splice(0, 1, targetEl.innerText);
+            createCard();
         }
     })
 })

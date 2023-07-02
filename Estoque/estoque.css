@@ -73,8 +73,10 @@ main {
 }
 
 .optionsMarca .marcaOpt {
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    padding: 3px 16px 3px 3px;
+    padding: 3px;
     margin: 3px;
     font-size: 18px;
 }
