@@ -11,8 +11,8 @@ $logado = $_SESSION['email'];
 $navOptions = '<li><a class="dropdown-item" href="login.php">Fazer Login</a></li>';
 
 if (isset($_SESSION['email']) == true) {
-    $navOptions = '<li><a class="dropdown-item" href="#">Conta</a></li>
-    <li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="#">Perfil</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>
@@ -58,9 +58,10 @@ if (isset($_SESSION['email']) == true) {
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search" autocomplete="off">
                     <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                        aria-label="Search">
+                        aria-label="Search" id="searchInput">
+                    <ul class="resultSearch"></ul>
                 </form>
 
                 <div class="dropdown text-end">

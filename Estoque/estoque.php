@@ -4,8 +4,8 @@ $navOptions = '<li><a class="dropdown-item" href="../conta/login/login.php">Faze
 $addCadastro = "";
 
 if (isset($_SESSION['email']) == true) {
-    $navOptions = '<li><a class="dropdown-item" href="#">Configuracoes</a></li>
-    <li><a class="dropdown-item" href="#">Perfil</a></li>
+    $navOptions = '<li><a class="dropdown-item" href="../conta/logado/conta.php">Configuracoes</a></li>
+    <li><a class="dropdown-item" href="../conta/logado/conta.php">Perfil</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>
@@ -61,13 +61,14 @@ if (isset($_SESSION['email']) == true) {
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search" autocomplete="off">
                     <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                        aria-label="Search">
+                        aria-label="Search" id="searchInput">
+                    <ul class="resultSearch"></ul>
                 </form>
 
                 <div class="dropdown text-end">
@@ -92,27 +93,27 @@ if (isset($_SESSION['email']) == true) {
             <div class="modalContent">
                 <div class="name">
                     <span>Nome</span>
-                    <input type="text" class="carName" maxlength="20">
+                    <input type="text" class="carName carModal" maxlength="20">
                 </div>
                 <div class="marca">
                     <span>marca</span>
-                    <input type="text" class="carMarca" maxlength="20">
+                    <input type="text" class="carMarca carModal" maxlength="20">
                 </div>
                 <div class="modelo">
                     <span>modelo</span>
-                    <input type="text" class="carModelo" maxlength="20">
+                    <input type="text" class="carModelo carModal" maxlength="20">
                 </div>
                 <div class="versao">
                     <span>versao</span>
-                    <input type="text" class="carVersao" maxlength="20">
+                    <input type="text" class="carVersao carModal" maxlength="20">
                 </div>
                 <div class="ano">
                     <span>ano</span>
-                    <input type="text" class="carAno" maxlength="4">
+                    <input type="number" class="carAno carModalNumb" min="1900" max="2099" step="1"/>
                 </div>
                 <div class="preco">
                     <span>preco</span>
-                    <input type="price" step="any" placeholder="10000000" class="carPreco" maxlength="10">
+                    <input type="number" step="any" placeholder="10000000" class="carPreco carModalNumb" maxlength="10">
                 </div>
                 <div class="transmissao">
                     <span>transmissao</span>
@@ -123,7 +124,7 @@ if (isset($_SESSION['email']) == true) {
                 </div>
                 <div class="quilometragem">
                     <span>quilometragem</span>
-                    <input type="number" class="carQuilo">
+                    <input type="number" class="carQuilo carModalNumb">
                 </div>
                 <div class="infos">
                     <span>Informacoes</span>
@@ -210,13 +211,13 @@ if (isset($_SESSION['email']) == true) {
                             <div class="rangeInput">
                                 <input type="range" class="rangeMin" min="100000" max="10000000" value="2500000"
                                     step="10000">
-                                <input type="range" class="rangeMax" min="100000" max="10000000" value="7500000"
+                                <input type="range" class="rangeMax" min="100000" max="10000000" value="10000000"
                                     step="10000">
                             </div>
                             <div class="field">
                                 <span>Max</span>
                                 <span class="dentro">R$</span>
-                                <input type="text" class="inputMax" id="input" maxlength="14" value="7500000">
+                                <input type="text" class="inputMax" id="input" maxlength="14" value="10000000">
                             </div>
                         </div>
                     </div>
@@ -230,6 +231,7 @@ if (isset($_SESSION['email']) == true) {
                     <div class="contentAno">
                         <span id="selectAno">Selecionado: N/A</span>
                         <ul class="optionsAno" id="anoOptions">
+                            <li class="anoOpt">Nenhum</li>
                             <li class="anoOpt">2000</li>
                             <li class="anoOpt">2002</li>
                             <li class="anoOpt">2004</li>

@@ -1,0 +1,168 @@
+.fodase{
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+    
+}
+.fodasedireita{
+    background-color: white;
+    position: absolute;
+    top: 110px;
+    border-radius: 60px 0px 0px 0px;
+    left: 57%;
+    width: 49.7%;
+
+    height: 90%;
+    justify-content: right;
+    
+}
+.contatenos{
+    display: flex;
+    justify-content: center;
+    padding: 60px 0px;
+    color: #000;
+    font-size: 44px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    line-height: normal;
+
+}
+.informações{
+    color: #000;
+    font-size: 24px;
+    font-family: 'Arvo', serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 50px;
+    line-height: 11vh;
+    margin-left: 15%;
+    
+}
+
+
+.img1{
+    max-width: 70px;
+    max-height: 110.122px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+
+}
+
+
+.img2{
+    max-width: 70px;
+    max-height: 110.122px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    
+}
+
+.img3{
+    max-width: 70px;
+    max-height: 110.122px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    
+}
+
+.img4{
+    max-width: 70px;
+    max-height: 110.122px;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    
+}
+.contatoInput {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    column-width: auto;
+    column-count: auto;
+    flex-flow: column nowrap;
+    line-height: normal;
+    border-radius: 10px;
+    top: 27%;
+    width: 35%;
+    margin-left: 7%;
+}
+
+.contatoInput>input {
+    padding: 10px;
+    border-radius: 3px;
+
+}
+.contatoInput>input:hover{
+    background: #ececec;
+}
+
+.contatoInput>button {
+    width: 25%;
+    height: 50px;
+    border-radius: 14px;
+    color: #000;
+    font-size: 19px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #dcdcdc;
+    
+    
+}
+.contatoInput>button:hover{
+    background: #ffffff;
+}
+.contato{
+    color: #FFF;
+font-size: 40px;
+font-family: 'Raleway', sans-serif;
+font-style: italic;
+font-weight: 700;
+line-height: normal;
+margin-left: 160px;
+}
+.nome{
+    color: #FFF;
+font-size: 20px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+
+
+.email{
+    color: #FFF;
+    font-size: 20px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.telefone{
+    color: #FFF;
+    font-size: 20px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.mensagem{
+    color: #FFF;
+    font-size: 20px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
