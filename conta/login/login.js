@@ -125,7 +125,7 @@ function createBigPage(e) {
                         <a href="../../home/home.php"
                             class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
                             style="width: 42px; height:40px">
-                            <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+                            <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
                         </a>
 
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -137,11 +137,11 @@ function createBigPage(e) {
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../Imagens/icones-Logos/userIcon.svg" onerror="if (this.src != '../Imagens/icones-Logos/userIcon.svg') this.src = '../Imagens/icones-Logos/userIcon.svg';" alt="userImg" width="38" height="38"
+                                <img src="../../Imagens/icones-Logos/userIcon.svg" onerror="if (this.src != '../../Imagens/icones-Logos/userIcon.svg') this.src = '../../Imagens/icones-Logos/userIcon.svg';" alt="userImg" width="38" height="38"
                                     class="rounded-circle">
                             </a>
                             <ul class="dropdown-menu text-small" style="">
-                            <li><a class="dropdown-item" href="../conta/logado/conta.php">Conta</a></li>
+                            <li><a class="dropdown-item" href="../../conta/logado/conta.php">Conta</a></li>
                             </ul>
                         </div>
                     </div>
@@ -149,40 +149,40 @@ function createBigPage(e) {
         </header>
     
         <main>
-            <button class="cta" onclick="javascript:location.href='../Estoque/estoque.php'">
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-                <span>Voltar</span>
-            </button>
-            <button class="cta2" onclick="javascript:location.href='../Estoque/estoque.php'">
-                <svg viewBox="0 0 13 10" height="10px" width="15px">
-                    <path d="M1,5 L11,5"></path>
-                    <polyline points="8 1 12 5 8 9"></polyline>
-                </svg>
-                <span>Voltar</span>
-            </button>
-            <h1 id="carTitle">${e.nome}</h1>
-            <div class="carrouselWrapper">
-                <div class="carrousel">
-                    <div class="slide img1 onfocus">
-                        <img src="${e.img1}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1Car">
-                    </div>
-                    <div class="slide img2 ">
-                        <img src="${e.img2}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2Car">
-                    </div>
-                    <div class="slide img3">
-                        <img src="${e.img3}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3Car">
-                    </div>
-                    <div class="slide img4">
-                        <img src="${e.img4}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4Car">
-                    </div>
-                    <div class="slide img5">
-                        <img src="${e.img5}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5Car">
-                    </div>
+            <button class="cta" onclick="javascript:location.href='../../Estoque/estoque.php'">
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+            <span>Voltar</span>
+        </button>
+        <button class="cta2" onclick="javascript:location.href='../../Estoque/estoque.php'">
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+            <span>Voltar</span>
+        </button>
+        <h1 id="carTitle">${e.nome}</h1>
+        <div class="carrouselWrapper">
+            <div class="carrousel">
+                <div class="slide img1 onfocus">
+                    <img src="${e.img1}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1Car">
+                </div>
+                <div class="slide img2 ">
+                    <img src="${e.img2}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2Car">
+                </div>
+                <div class="slide img3">
+                    <img src="${e.img3}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3Car">
+                </div>
+                <div class="slide img4">
+                    <img src="${e.img4}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4Car">
+                </div>
+                <div class="slide img5">
+                    <img src="${e.img5}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5Car">
                 </div>
             </div>
+        </div>
             <div class="carrouselMiniWrapper">
                 <div class="carrouselMini">
                     <div class="slideMini img1">

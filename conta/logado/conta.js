@@ -37,7 +37,7 @@ searchInput.addEventListener("keyup", () => {
 })
 
 function carroSearch() {
-    fetch("../Estoque/readDB.php", {
+    fetch("../../Estoque/readDB.php", {
         "method": "POST",
         "headers": {
             "Content-Type": "application/json; charset=utf-8"
@@ -93,8 +93,8 @@ function createBigPage(e) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ziem Motors</title>
         <link rel="shortcut icon" href="../Imagens/icones-Logos/favicon/favicon-16x16.png" type="image/x-icon">
-        <link rel="stylesheet" href="../PagCarro/pagcarro.css?v=1.47">
-        <link rel="stylesheet" href="../geral.css?v=1.45">
+        <link rel="stylesheet" href="../../PagCarro/pagcarro.css?v=1.47">
+        <link rel="stylesheet" href="../../geral.css?v=1.45">
 
         <!-- CDNS ---- -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -106,44 +106,44 @@ function createBigPage(e) {
     
     <body>
         <header class="navHeader position-fixed w-100 top-0">
-                <div class="container">
-                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
-                        style="height:60px">
-                        <a href="../../home/home.php"
-                            class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
-                            style="width: 42px; height:40px">
-                            <img class="bi me-2 logoimg" src="../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
+                    style="height:60px">
+                    <a href="../../home/home.php"
+                        class="logoimg d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none position-relative"
+                        style="width: 42px; height:40px">
+                        <img class="bi me-2 logoimg" src="../../Imagens/icones-Logos/logoNOVOZIEMBLACK.png" alt="logoZiem">
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="../../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
+                        <li><a href="../../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                        <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                    </ul>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../Imagens/icones-Logos/userIcon.svg" onerror="if (this.src != '../../Imagens/icones-Logos/userIcon.svg') this.src = '../../Imagens/icones-Logos/userIcon.svg';" alt="userImg" width="38" height="38"
+                                class="rounded-circle">
                         </a>
-
-                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                            <li><a href="../../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                            <li><a href="../../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
-                            <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                        <ul class="dropdown-menu text-small" style="">
+                        <li><a class="dropdown-item" href="../../conta/logado/conta.php">Conta</a></li>
                         </ul>
-
-                        <div class="dropdown text-end">
-                            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../Imagens/icones-Logos/userIcon.svg" onerror="if (this.src != '../Imagens/icones-Logos/userIcon.svg') this.src = '../Imagens/icones-Logos/userIcon.svg';" alt="userImg" width="38" height="38"
-                                    class="rounded-circle">
-                            </a>
-                            <ul class="dropdown-menu text-small" style="">
-                            <li><a class="dropdown-item" href="../conta/logado/conta.php">Conta</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
+            </div>
         </header>
     
         <main>
-            <button class="cta" onclick="javascript:location.href='../Estoque/estoque.php'">
+            <button class="cta" onclick="javascript:location.href='../../Estoque/estoque.php'">
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                     <path d="M1,5 L11,5"></path>
                     <polyline points="8 1 12 5 8 9"></polyline>
                 </svg>
                 <span>Voltar</span>
             </button>
-            <button class="cta2" onclick="javascript:location.href='../Estoque/estoque.php'">
+            <button class="cta2" onclick="javascript:location.href='../../Estoque/estoque.php'">
                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                     <path d="M1,5 L11,5"></path>
                     <polyline points="8 1 12 5 8 9"></polyline>
@@ -154,38 +154,38 @@ function createBigPage(e) {
             <div class="carrouselWrapper">
                 <div class="carrousel">
                     <div class="slide img1 onfocus">
-                        <img src="${e.img1}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1Car">
+                        <img src="${e.img1}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1Car">
                     </div>
                     <div class="slide img2 ">
-                        <img src="${e.img2}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2Car">
+                        <img src="${e.img2}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2Car">
                     </div>
                     <div class="slide img3">
-                        <img src="${e.img3}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3Car">
+                        <img src="${e.img3}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3Car">
                     </div>
                     <div class="slide img4">
-                        <img src="${e.img4}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4Car">
+                        <img src="${e.img4}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4Car">
                     </div>
                     <div class="slide img5">
-                        <img src="${e.img5}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5Car">
+                        <img src="${e.img5}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5Car">
                     </div>
                 </div>
             </div>
             <div class="carrouselMiniWrapper">
                 <div class="carrouselMini">
                     <div class="slideMini img1">
-                        <img src="${e.img1}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1CarMini">
+                        <img src="${e.img1}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img1CarMini">
                     </div>
                     <div class="slideMini img2 onfocus">
-                        <img src="${e.img2}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2CarMini">
+                        <img src="${e.img2}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img2CarMini">
                     </div>
                     <div class="slideMini img3">
-                        <img src="${e.img3}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3CarMini">
+                        <img src="${e.img3}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img3CarMini">
                     </div>
                     <div class="slideMini img4">
-                        <img src="${e.img4}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4CarMini">
+                        <img src="${e.img4}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img4CarMini">
                     </div>
                     <div class="slideMini img5">
-                        <img src="${e.img5}" onerror="if (this.src != '../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5CarMini">
+                        <img src="${e.img5}" onerror="if (this.src != '../../Imagens/icones-Logos/fotoERRO.jpeg') this.src = '../../Imagens/icones-Logos/fotoERRO.jpeg';" alt="img5CarMini">
                     </div>
                 </div>
             </div>
@@ -262,7 +262,7 @@ function createBigPage(e) {
         </footer>
     </body>
     
-    <script src="../PagCarro/pagcarro.js?v=1.46"></script>
+    <script src="../../PagCarro/pagcarro.js?v=1.46"></script>
     <script src="contato.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
