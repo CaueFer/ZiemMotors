@@ -629,6 +629,7 @@ anoOptionsSelect.forEach((e) => {
         console.log(targetEl.innerText);
         if (targetEl.innerText === "Nenhum") {
             anoSelect.insertAdjacentText('beforeend', "Selecionado: Nenhum");
+            anoFilter.classList.remove('active');
             createCard('', '');
         }
         else {
@@ -636,8 +637,6 @@ anoOptionsSelect.forEach((e) => {
             anoFilter.classList.remove('active');
             createCard('', targetEl.innerText);
         }
-
-        
     })
 })
 
