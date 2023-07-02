@@ -321,11 +321,6 @@ function createBigPage(e) {
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                         </ul>
 
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                                aria-label="Search">
-                        </form>
-
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">

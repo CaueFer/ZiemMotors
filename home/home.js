@@ -1,26 +1,3 @@
-// ---------------------  SLIDER -------------------------- //
-
-var counter = 1;
-
-const imgSlid = document.querySelectorAll('.imageSlider');
-
-if(imgSlid){
-    setInterval(function () {
-    
-        imgSlid.forEach((e) => {
-            e.classList.remove('natela');
-        });
-    
-        const imgTela = document.querySelector('.id' + counter);
-        imgTela.classList.add('natela');
-    
-        document.getElementById('slide' + counter).checked = true;
-        counter++;
-        if (counter > 4) {
-            counter = 1;
-        }
-    }, 5000);
-}
 
 /* // ----------------- BARRA PESQUISAR ----------------- //  */
 
@@ -143,11 +120,6 @@ function createBigPage(e) {
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                         </ul>
-
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                                aria-label="Search">
-                        </form>
 
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -291,6 +263,7 @@ function createBigPage(e) {
     </body>
     
     <script src="../PagCarro/pagcarro.js?v=1.46"></script>
+    <script src="home.js?v=1.45"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous" async></script>
