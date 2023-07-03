@@ -200,34 +200,34 @@ function createCard() {
 
             carrosEstoque.insertAdjacentHTML("beforeend",
                 `<div class="cardSobreCarro col-6">
-                <section class="cardCarro">
-                <img src="${e.img1}" alt="cardImg">
-                    <div class="cardContent">
-                        <span class="cardContentTitle">${e.nome}</span>
-                        <span class="cardContentPrice">${precoRegional}</span>
-                        <div class="cardContentSpecs">
-                            <div class="Specs">
-                                <i class="fa-solid fa-gauge-high"></i>
-                                <span>${e.quilometragem}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>${e.transmissao}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <span>${e.ano}</span>
+                    <section class="cardCarro">
+                        <img src="${e.img1}" alt="cardImg">
+                        <div class="cardContent">
+                            <span class="cardContentTitle">${e.nome}</span>
+                            <span class="cardContentPrice">${precoRegional}</span>
+                            <div class="cardContentSpecs">
+                                <div class="Specs">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                    <span>${e.quilometragem}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                    <span>${e.transmissao}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>${e.ano}</span>
+                                </div>
                             </div>
                         </div>
-                        <button class="btnBigPage" onclick="openBigPage(event)">
-                            <span class="btnBigPage_lg">
-                                <span class="btnBigPage_sl"></span>
-                                <span class="btnBigPage_text" >Mais Detalhes</span>
-                            </span>
-                        </button>
-                    </div>
-            </section>
-            </div>`
+                    </section>
+                    <button class="btnBigPage" onclick="openBigPage(event)">
+                                    <span class="btnBigPage_lg">
+                                        <span class="btnBigPage_sl"></span>
+                                        <span class="btnBigPage_text" >Mais Detalhes</span>
+                                    </span>
+                                </button>
+                </div>`
             )
         })
     }
@@ -269,7 +269,7 @@ function openBigPage(recebido, normal) {
         })
     }
     else {
-        const targetEl = recebido.target.closest("div").childNodes[1].innerText;
+        const targetEl = recebido.target.closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
 
         estoque.carro.forEach((e) => {
             if (e.nome === targetEl) {

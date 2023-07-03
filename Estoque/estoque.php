@@ -93,19 +93,19 @@ if (isset($_SESSION['email']) == true) {
             <div class="modalContent">
                 <div class="name">
                     <span>Nome</span>
-                    <input type="text" class="carName carModal" maxlength="20">
+                    <input type="text" class="carName carModal" maxlength="50">
                 </div>
                 <div class="marca">
                     <span>marca</span>
-                    <input type="text" class="carMarca carModal" maxlength="20">
+                    <input type="text" class="carMarca carModal" maxlength="30">
                 </div>
                 <div class="modelo">
                     <span>modelo</span>
-                    <input type="text" class="carModelo carModal" maxlength="20">
+                    <input type="text" class="carModelo carModal" maxlength="30">
                 </div>
                 <div class="versao">
                     <span>versao</span>
-                    <input type="text" class="carVersao carModal" maxlength="20">
+                    <input type="text" class="carVersao carModal" maxlength="30">
                 </div>
                 <div class="ano">
                     <span>ano</span>
