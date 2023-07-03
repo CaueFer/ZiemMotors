@@ -221,8 +221,11 @@ function createCard() {
                             </div>
                         </div>
                     </section>
-                    <button class="btnBigPage" onclick="openBigPage(event)">
-                    </button>
+                    <div class="btnBigPage">
+                        <div class="btnBigPage-details" onclick="openBigPage(event)">
+                            <p class="btnBigPage-text-title">MAIS DETALHES</p>
+                        </div>
+                    </div>
                 </div>`
             )
         })
@@ -265,7 +268,7 @@ function openBigPage(recebido, normal) {
         })
     }
     else {
-        const targetEl = recebido.target.closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
+        const targetEl = recebido.target.closest("div").closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
 
         estoque.carro.forEach((e) => {
             if (e.nome === targetEl) {
