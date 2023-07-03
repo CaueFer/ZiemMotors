@@ -199,7 +199,7 @@ function createCard() {
             var precoRegional = formatarNumeroPreco.format(e.preco);
 
             carrosEstoque.insertAdjacentHTML("beforeend",
-                `<div class="cardSobreCarro col-6">
+                `<div class="cardSobreCarro col-12">
                     <section class="cardCarro">
                         <img src="${e.img1}" alt="cardImg">
                         <div class="cardContent">
@@ -221,7 +221,7 @@ function createCard() {
                             </div>
                         </div>
                     </section>
-                    <button class="btnBigPage" onclick="openBigPage(event)">Mais detalhes</button>
+                    <button class="btnBigPage" onclick="openBigPage(event)"></button>
                 </div>`
             )
         })
@@ -278,6 +278,7 @@ function createBigPage(e) {
     var novaPagina;
 
     novaPagina = window.open("", "_self");
+    window.scroll({ top: 0 });
     novaPagina.document.write(
         `<!DOCTYPE html>
     <html lang="pt-br">
@@ -518,7 +519,7 @@ const priceFilter = document.querySelector('.priceFilter');
 
 priceTitle.addEventListener('click', (e) => {
 
-    priceFilter.classList.toggle('off');
+    priceFilter.classList.toggle('active');
     anoFilter.classList.remove('active');
 })
 
@@ -706,14 +707,3 @@ function carroSearch() {
         })
     })
 };
-
-/* // ----------------- HOVER CARD CARRO ----------------- //  */
-
-// const cardCarro = document.querySelectorAll(".cardCarro");
-    
-// cardCarro.forEach((element) =>{
-//     element.addEventListener("mouseover",(e) =>{
-//         const targetlEl = e.target;
-//         console.log(targetlEl.childNodes);
-//     });
-// })

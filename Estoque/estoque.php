@@ -180,14 +180,14 @@ if (isset($_SESSION['email']) == true) {
                     </div>
                     <div class="content">
                         <ul class="optionsMarca" id="marcaOptions">
-                            <li class="marcaOpt" id="audiOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Audi</li>
-                            <li class="marcaOpt" id="bmwOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>BMW</li>
-                            <li class="marcaOpt" id="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Ferrari</li>
-                            <li class="marcaOpt" id="lamboOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Lamborghini</li>
-                            <li class="marcaOpt" id="mclarenOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>McLaren</li>
-                            <li class="marcaOpt" id="mercedesOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Mercedes-Benz</li>
-                            <li class="marcaOpt" id="porscheOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Porsche</li>
-                            <li class="marcaOpt" id="teslaOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Tesla</li>
+                            <li class="marcaOpt" id="audiOpt"><span>Audi</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="bmwOpt"><span>BMW</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="ferrariOpt"><span>Ferrari</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="lamboOpt"><span>Lamborghini</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mclarenOpt"><span>McLaren</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes-Benz</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="porscheOpt"><span>Porsche</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="teslaOpt"><span>Tesla</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -253,7 +253,7 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-            <article class="carrosEstoque row row-gap-3">
+            <article class="carrosEstoque row">
             </article>
         </div>
 
