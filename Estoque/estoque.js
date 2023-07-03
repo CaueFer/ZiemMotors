@@ -172,7 +172,7 @@ function createCard() {
         currency: 'BRL',
     });
 
-    console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
+    //console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
 
     if (marcaToFilter.length > 0) {
         if(marcaToFilter !== undefined){
@@ -222,11 +222,7 @@ function createCard() {
                         </div>
                     </section>
                     <button class="btnBigPage" onclick="openBigPage(event)">
-                                    <span class="btnBigPage_lg">
-                                        <span class="btnBigPage_sl"></span>
-                                        <span class="btnBigPage_text" >Mais Detalhes</span>
-                                    </span>
-                                </button>
+                    </button>
                 </div>`
             )
         })
@@ -712,3 +708,13 @@ function carroSearch() {
     })
 };
 
+/* // ----------------- HOVER CARD CARRO ----------------- //  */
+
+// const cardCarro = document.querySelectorAll(".cardCarro");
+    
+// cardCarro.forEach((element) =>{
+//     element.addEventListener("mouseover",(e) =>{
+//         const targetlEl = e.target;
+//         console.log(targetlEl.childNodes);
+//     });
+// })
