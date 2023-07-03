@@ -628,7 +628,7 @@ anoOptionsSelect.forEach((e) => {
             createCard();
         }
         else {
-            anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+            anoSelect.insertAdjacentText('beforeend', "Acima de: " + targetEl.innerText.substr(0, 7));
             anoFilter.classList.remove('active');
             anoToFilter.splice(0, 1, targetEl.innerText);
             createCard();

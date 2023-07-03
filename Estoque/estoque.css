@@ -16,7 +16,7 @@ main {
     display: flex;
     flex-flow: column wrap;
     margin: 50px 0px;
-    border-right: .5px solid #6e6e6e;
+    border-right: .5px solid #afafaf;
     width: 30%;
 }
 
@@ -337,8 +337,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardSobreCarro:hover .cardCarro{
-    box-shadow: 5px 15px 30px #a09f9f9f,
-        -15px -15px 30px #e2e2e298;
+    box-shadow: 5px 10px 30px #6e6e6e9f,
+        -10px -5px 30px #cccccc98;
 }
 .cardSobreCarro:hover .btnBigPage{
     display: flex;
@@ -349,7 +349,7 @@ input[type="range"]::-moz-range-thumb {
     flex-direction: row!important;
     justify-content: center;
     width: 80%;
-    height: 240px;
+    height: 220px;
     border-radius: 10px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow: 5px 10px 10px #d9d9d9,
@@ -358,6 +358,9 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardCarro img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     border-radius: 10px 0px 0px 10px;
     object-fit: cover;
