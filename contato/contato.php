@@ -8,6 +8,7 @@ if (isset($_SESSION['email']) == true) {
     <li>
         <hr class="dropdown-divider">
     </li>
+    
     <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
 }
 
