@@ -64,7 +64,10 @@ imgInput.forEach((e) => {
 // CADASTRO CARROS INPUTS -----------------------------------------------------  // 
 const estoque = { carro: [] },
     newCar = { cartoAdd: [] },
-    targetToFilter = [];
+    marcaToFilter = [],
+    anoToFilter = [];
+
+var minPriceToFilter, maxPriceToFilter;
 
 const carName = document.querySelector(".carName"),
     carMarca = document.querySelector(".carMarca"),
@@ -156,7 +159,7 @@ function estoqueCarroUpdate() {
 
 
 /* // ----------------- CRIAR CARD PEQUENO ----------------- //  */
-function createCard(marca, ano) {
+function createCard() {
     const carrosEstoque = document.querySelector('.carrosEstoque');
     var filterArray = estoque.carro;
 
@@ -169,16 +172,25 @@ function createCard(marca, ano) {
         currency: 'BRL',
     });
 
-    if (marca === 'filtrar') {
-        filterArray = estoque.carro.filter((val) => {
-            return targetToFilter.find((e) => {
-                return val.marca.toLowerCase() === e.toLowerCase();
-            });
+    //console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
+
+    if (marcaToFilter.length > 0) {
+        if(marcaToFilter !== undefined){
+            filterArray = estoque.carro.filter((val) => {
+                return marcaToFilter.find((e) => {
+                    return val.marca.toLowerCase() === e.toLowerCase();
+                });
+            })
+        }
+    }
+    if (anoToFilter > 0) {
+        filterArray = filterArray.filter((val) => {
+            return val.ano >= anoToFilter;
         })
     }
-    if (ano !== undefined) {
-        filterArray = estoque.carro.filter((val) => {
-            return val.ano >= ano;
+    if (minPriceToFilter !== undefined) {
+        filterArray = filterArray.filter((val) => {
+            return val.preco >= minPriceToFilter && val.preco <= maxPriceToFilter;
         })
     }
 
@@ -187,35 +199,30 @@ function createCard(marca, ano) {
             var precoRegional = formatarNumeroPreco.format(e.preco);
 
             carrosEstoque.insertAdjacentHTML("beforeend",
-                `<div class="cardSobreCarro col-6">
-                <section class="cardCarro">
-                <img src="${e.img1}" alt="cardImg">
-                    <div class="cardContent">
-                        <span class="cardContentTitle">${e.nome}</span>
-                        <span class="cardContentPrice">${precoRegional}</span>
-                        <div class="cardContentSpecs">
-                            <div class="Specs">
-                                <i class="fa-solid fa-gauge-high"></i>
-                                <span>${e.quilometragem}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>${e.transmissao}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <span>${e.ano}</span>
+                `<div class="cardSobreCarro col-12">
+                    <section class="cardCarro">
+                        <img src="${e.img1}" alt="cardImg">
+                        <div class="cardContent">
+                            <span class="cardContentTitle">${e.nome}</span>
+                            <span class="cardContentPrice">${precoRegional}</span>
+                            <div class="cardContentSpecs">
+                                <div class="Specs">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                    <span>${e.quilometragem}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                    <span>${e.transmissao}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>${e.ano}</span>
+                                </div>
                             </div>
                         </div>
-                        <button class="btnBigPage">
-                            <span class="btnBigPage_lg">
-                                <span class="btnBigPage_sl"></span>
-                                <span class="btnBigPage_text"  onclick="openBigPage(event)">Mais Detalhes</span>
-                            </span>
-                        </button>
-                    </div>
-            </section>
-            </div>`
+                    </section>
+                    <button class="btnBigPage" onclick="openBigPage(event)"></button>
+                </div>`
             )
         })
     }
@@ -248,20 +255,30 @@ function limparInput() {
 }
 
 
-function openBigPage(e) {
-    const targetEl = e.target.closest("div").childNodes[1].innerText;
+function openBigPage(recebido, normal) {
+    if (normal === "searched") {
+        estoque.carro.forEach((e) => {
+            if (e.nome === recebido) {
+                createBigPage(e);
+            }
+        })
+    }
+    else {
+        const targetEl = recebido.target.closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
 
-    estoque.carro.forEach((e) => {
-        if (e.nome === targetEl) {
-            createBigPage(e);
-        }
-    })
+        estoque.carro.forEach((e) => {
+            if (e.nome === targetEl) {
+                createBigPage(e);
+            }
+        })
+    }
 };
 
 function createBigPage(e) {
     var novaPagina;
 
     novaPagina = window.open("", "_self");
+    window.scroll({ top: 0 });
     novaPagina.document.write(
         `<!DOCTYPE html>
     <html lang="pt-br">
@@ -299,11 +316,6 @@ function createBigPage(e) {
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                         </ul>
-
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                                aria-label="Search">
-                        </form>
 
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -478,30 +490,26 @@ closeSelect.forEach((e) => {
         const targetLi = targetEl.closest('li');
         targetLi.classList.remove("active");
 
-        const indexTarget = targetToFilter.indexOf(targetLi.innerText);
+        const indexTarget = marcaToFilter.indexOf(targetLi.innerText);
         if (indexTarget > -1) {
-            targetToFilter.splice(indexTarget, 1);
+            marcaToFilter.splice(indexTarget, 1);
         }
 
-        if (targetToFilter.length < 1) {
-            createCard('vapo');
-        } else {
-            createCard('filtrar');
-        }
+        createCard();
     })
 })
 
 function filterCarMarca(alvo) {
 
-    if (targetToFilter.length === 0) {
-        targetToFilter.push(alvo.innerText);
+    if (marcaToFilter.length === 0) {
+        marcaToFilter.push(alvo.innerText);
     } else {
-        if (!targetToFilter.includes(alvo.innerText)) {
-            targetToFilter.push(alvo.innerText);
+        if (!marcaToFilter.includes(alvo.innerText)) {
+            marcaToFilter.push(alvo.innerText);
         }
     };
 
-    createCard('filtrar');
+    createCard();
 }
 
 /* // ----------------- FILTRO PRECO ----------------- //  */
@@ -511,7 +519,7 @@ const priceFilter = document.querySelector('.priceFilter');
 
 priceTitle.addEventListener('click', (e) => {
 
-    priceFilter.classList.toggle('off');
+    priceFilter.classList.toggle('active');
     anoFilter.classList.remove('active');
 })
 
@@ -544,7 +552,6 @@ rangeInput.forEach(input => {
         let minVal = parseInt(rangeInput[0].value),
             maxVal = parseInt(rangeInput[1].value);
 
-
         if (maxVal - minVal < rangeGap) {
             if (e.target.className === "rangeMin") {
                 rangeInput[0].value = formatarNumeroPreco.format(maxVal - rangeGap).split('R$')[1];
@@ -558,6 +565,9 @@ rangeInput.forEach(input => {
             fieldValue[0].value = formatarNumeroPreco.format(minVal).split('R$')[1];
             fieldValue[1].value = formatarNumeroPreco.format(maxVal).split('R$')[1];
         }
+        minPriceToFilter = minVal;
+        maxPriceToFilter = maxVal;
+        createCard();
     })
 });
 
@@ -567,8 +577,6 @@ fieldValue.forEach(input => {
             maxNumber = fieldValue[1].value,
             minVal = Number(minNumber.replace(/[^0-9]+/gi, "")),
             maxVal = Number(maxNumber.replace(/[^0-9]+/gi, ""));
-
-        console.log(minVal, maxVal);
 
         if ((maxVal - minVal >= rangeGap) && maxVal <= 10000000) {
             if (e.target.className === "inputMin") {
@@ -590,6 +598,9 @@ fieldValue.forEach(input => {
                 progress.style.right = 100 - (9000000 / rangeInput[1].max) * 100 + "%";
             }
         }
+        minPriceToFilter = minVal;
+        maxPriceToFilter = maxVal;
+        createCard();
     })
 });
 
@@ -610,10 +621,18 @@ anoOptionsSelect.forEach((e) => {
     e.addEventListener('click', (e) => {
         const targetEl = e.target;
         anoSelect.innerHTML = "";
-        anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
-        anoFilter.classList.remove('active');
-
-        createCard('', targetEl.innerText);
+        console.log(targetEl.innerText);
+        if (targetEl.innerText === "Nenhum") {
+            anoSelect.insertAdjacentText('beforeend', "Selecionado: Nenhum");
+            anoFilter.classList.remove('active');
+            createCard();
+        }
+        else {
+            anoSelect.insertAdjacentText('beforeend', "Acima de: " + targetEl.innerText.substr(0, 7));
+            anoFilter.classList.remove('active');
+            anoToFilter.splice(0, 1, targetEl.innerText);
+            createCard();
+        }
     })
 })
 
@@ -639,15 +658,18 @@ window.addEventListener("load", () => {
 let nomeCarros = [];
 
 const searchInput = document.getElementById("searchInput"),
-    resultSearch = document.querySelector(".resultSearch"),
-    resultSearchOpt = document.querySelectorAll(".resultSearchOpt");
+    resultSearch = document.querySelector(".resultSearch");
 
-searchInput.addEventListener("focus", () =>{
+searchInput.addEventListener("focus", () => {
     carroSearch();
 })
 
+searchInput.addEventListener("focusout", () => {
+    setTimeout(() => { resultSearch.classList.remove("active"); }, 100);
+})
+
 searchInput.addEventListener("keyup", () => {
-    
+
     resultSearch.classList.add("active");
 
     let arr = [];
@@ -655,18 +677,18 @@ searchInput.addEventListener("keyup", () => {
     arr = nomeCarros.filter((val) => {
         return val.toLowerCase().startsWith(searchInputValue);
     }).map(val => `<li class="resultSearchOpt noSelect">${val}</li>`).join("");
-    if(arr.length){
+    if (arr.length) {
         resultSearch.innerHTML = arr;
+        resultSearch.childNodes.forEach((element) => {
+            element.addEventListener("click", (e) => {
+                const targetEl = e.target;
+                searchInput.value = targetEl.innerText;
+                openBigPage(targetEl.innerText, "searched");
+            })
+        })
     }
-    else resultSearch.innerHTML= `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
-})
+    else resultSearch.innerHTML = `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
 
-resultSearchOpt.forEach((e) =>{
-    resultSearchOpt.addEventListener("click", () =>{
-    console.log("cliquei");
-    searchInput.value = resultOpt.innerText;
-    resultSearch.classList.remove("active");
-    })
 })
 
 function carroSearch() {
@@ -685,4 +707,3 @@ function carroSearch() {
         })
     })
 };
-

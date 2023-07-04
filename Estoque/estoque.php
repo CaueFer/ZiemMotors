@@ -93,19 +93,19 @@ if (isset($_SESSION['email']) == true) {
             <div class="modalContent">
                 <div class="name">
                     <span>Nome</span>
-                    <input type="text" class="carName carModal" maxlength="20">
+                    <input type="text" class="carName carModal" maxlength="50">
                 </div>
                 <div class="marca">
                     <span>marca</span>
-                    <input type="text" class="carMarca carModal" maxlength="20">
+                    <input type="text" class="carMarca carModal" maxlength="30">
                 </div>
                 <div class="modelo">
                     <span>modelo</span>
-                    <input type="text" class="carModelo carModal" maxlength="20">
+                    <input type="text" class="carModelo carModal" maxlength="30">
                 </div>
                 <div class="versao">
                     <span>versao</span>
-                    <input type="text" class="carVersao carModal" maxlength="20">
+                    <input type="text" class="carVersao carModal" maxlength="30">
                 </div>
                 <div class="ano">
                     <span>ano</span>
@@ -180,14 +180,14 @@ if (isset($_SESSION['email']) == true) {
                     </div>
                     <div class="content">
                         <ul class="optionsMarca" id="marcaOptions">
-                            <li class="marcaOpt" id="audiOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Audi</li>
-                            <li class="marcaOpt" id="bmwOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>BMW</li>
-                            <li class="marcaOpt" id="ferrariOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Ferrari</li>
-                            <li class="marcaOpt" id="lamboOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Lamborghini</li>
-                            <li class="marcaOpt" id="mclarenOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>McLaren</li>
-                            <li class="marcaOpt" id="mercedesOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Mercedes-Benz</li>
-                            <li class="marcaOpt" id="porscheOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Porsche</li>
-                            <li class="marcaOpt" id="teslaOpt"><i class="fa-solid fa-x fa-lg closeSelect"></i>Tesla</li>
+                            <li class="marcaOpt" id="audiOpt"><span>Audi</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="bmwOpt"><span>BMW</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="ferrariOpt"><span>Ferrari</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="lamboOpt"><span>Lamborghini</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mclarenOpt"><span>McLaren</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes-Benz</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="porscheOpt"><span>Porsche</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="teslaOpt"><span>Tesla</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -211,13 +211,13 @@ if (isset($_SESSION['email']) == true) {
                             <div class="rangeInput">
                                 <input type="range" class="rangeMin" min="100000" max="10000000" value="2500000"
                                     step="10000">
-                                <input type="range" class="rangeMax" min="100000" max="10000000" value="7500000"
+                                <input type="range" class="rangeMax" min="100000" max="10000000" value="10000000"
                                     step="10000">
                             </div>
                             <div class="field">
                                 <span>Max</span>
                                 <span class="dentro">R$</span>
-                                <input type="text" class="inputMax" id="input" maxlength="14" value="7500000">
+                                <input type="text" class="inputMax" id="input" maxlength="14" value="10000000">
                             </div>
                         </div>
                     </div>
@@ -231,6 +231,7 @@ if (isset($_SESSION['email']) == true) {
                     <div class="contentAno">
                         <span id="selectAno">Selecionado: N/A</span>
                         <ul class="optionsAno" id="anoOptions">
+                            <li class="anoOpt">Nenhum</li>
                             <li class="anoOpt">2000</li>
                             <li class="anoOpt">2002</li>
                             <li class="anoOpt">2004</li>
@@ -252,7 +253,7 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-            <article class="carrosEstoque row row-gap-3">
+            <article class="carrosEstoque row">
             </article>
         </div>
 

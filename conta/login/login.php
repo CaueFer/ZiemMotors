@@ -130,13 +130,14 @@ if (isset($_SESSION['email']) == true) {
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="../../Estoque/estoque.php"
                             class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="../../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search" autocomplete="off">
                     <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                        aria-label="Search">
+                        aria-label="Search" id="searchInput">
+                    <ul class="resultSearch"></ul>
                 </form>
 
                 <div class="dropdown text-end">
@@ -200,7 +201,6 @@ if (isset($_SESSION['email']) == true) {
                     <div class="modal-content">
                         <div class="modal-header p-5 pb-4 pt-0">
                             <h1 class="fw-normal mb-0 fs-2">Nova conta</h1>
-                            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                         </div>
 
                         <div class="modal-body p-5 pt-0">
