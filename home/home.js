@@ -4,11 +4,8 @@
 let nomeCarros = [], estoque = { carro: [] };
 
 const searchInput = document.getElementById("searchInput"),
-    resultSearch = document.querySelector(".resultSearch");
-
-searchInput.addEventListener("focus", () => {
-    carroSearch();
-})
+    resultSearch = document.querySelector(".resultSearch"),
+    cardDestaquesCar = document.querySelectorAll(".cardDestaquesCar");
 
 searchInput.addEventListener("focusout", () => {
     setTimeout(() => { resultSearch.classList.remove("active"); }, 100);
@@ -35,6 +32,15 @@ searchInput.addEventListener("keyup", () => {
     }
     else resultSearch.innerHTML = `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
 })
+
+cardDestaquesCar.forEach((e) =>{
+    e.addEventListener("click", () =>{
+        console.log(e.childNodes[1].childNodes[3].childNodes[1].innerText);
+        const valor = e.childNodes[1].childNodes[3].childNodes[1].innerText;
+        openBigPage(valor);
+    })
+})
+
 
 function carroSearch() {
     fetch("../Estoque/readDB.php", {
@@ -270,3 +276,5 @@ function createBigPage(e) {
 </html>`
     );
 }
+
+carroSearch();
