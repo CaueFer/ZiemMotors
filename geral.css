@@ -12,6 +12,10 @@
     text-decoration: none;
 }
 
+html::-webkit-scrollbar {
+    width: 0px;
+}
+
 .imageSlider.natela {
     filter: grayscale(0%);
     box-shadow: -9px 0px 18px #00000093,
@@ -36,24 +40,25 @@
 }
 
 /* // ------------------------------------------------ //  */
-
+html{
+    width: 100%;
+}
 body {
-    position: relative;
     background-color: #ffffff;
+    height: auto;
 }
 
 main {
+    position: relative;
+    height: 100%;
     margin-top: 75px;
 }
 
 .footer {
-    position: absolute;
     width: 100%;
     height: 150px;
-    top: 100%;
     background-color: black;
 }
-
 
 .navHeader {
     padding: 5px 0px;

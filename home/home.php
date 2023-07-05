@@ -76,10 +76,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto0.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption text-start mb-3">
-                            <h1>Example headline.</h1>
-                            <p class="opacity-75">Some representative placeholder content for the first slide of the
-                                carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
@@ -88,9 +84,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto2.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption mb-3">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -99,9 +92,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto4.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption text-end mb-3">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
                         </div>
                     </div>
                 </div>
@@ -115,41 +105,119 @@ if (isset($_SESSION['email']) == true) {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <form class="searchForm input-group col-12 w-50 mb-3 position-absolute start-50 translate-middle"
-            role="search" autocomplete="off">
+        <form class="searchForm input-group col-12 w-50 mb-3 position-absolute start-50 translate-middle" role="search"
+            autocomplete="off">
             <span class="lupaSearch fa-solid fa-magnifying-glass"></span>
             <input type="search" class="inputSearch" placeholder="Pesquisar carro..." aria-label="Search"
                 id="searchInput">
             <ul class="resultSearch inHome"></ul>
         </form>
 
-        <div class="homeContente">
-            <div class="homeText">
-                <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
-                <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
-                <div class="row imgDestaquesContent">
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/logo-bmw.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/logo-lambo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
-                    <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
+
+        <div class="homeText">
+            <h1 class="homeTitle">Nossa empresa traz exclusividade e luxo aos nossos clientes</h1>
+            <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
+            <div class="row imgDestaquesContent">
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/logo-bmw.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/logo-lambo.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
+                <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
+                        src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
+            </div>
+        </div>
+
+        <div class="homeDestaques">
+            <h1>Veiculos em Destaque</h1>
+            <div class="row px-5 mx-auto mb-5">
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Ferrari F8 Spider</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$4.619.000,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="homeDestaques">
-                    <h1>Destaques</h1>
-                    <div class="destaquesCard">
-                        <div class="card">
-                            <img src="" alt="">
-
+            </div>
+            <div class="row px-5 mx-auto">
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-center cardDestaquesCar">
+                    <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <p class="card-text">2022</p>
+                            <h5 class="card-subtitle">R$6.699.990,00</h5>
                         </div>
                     </div>
                 </div>
