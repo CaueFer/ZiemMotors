@@ -78,7 +78,7 @@ if (isset($_SESSION['email']) == true) {
         <div class="fodase">
             <div class="contato">
                 <br><br><br>
-                <p>Entre em contato pelo nosso formulário</p>
+                <p>&nbsp;&nbsp; Entre em contato pelo nosso formulário</p>
 
             </div>
             <div class="contatoInput">
