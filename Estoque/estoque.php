@@ -253,6 +253,7 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
+            <div class="fadeEffect"></div>
             <article class="carrosEstoque row">
             </article>
         </div>

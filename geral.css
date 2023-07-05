@@ -12,6 +12,10 @@
     text-decoration: none;
 }
 
+html::-webkit-scrollbar {
+    width: 0px;
+}
+
 .imageSlider.natela {
     filter: grayscale(0%);
     box-shadow: -9px 0px 18px #00000093,
