@@ -40,10 +40,13 @@ html::-webkit-scrollbar {
 }
 
 /* // ------------------------------------------------ //  */
-
+html{
+    width: 100%;
+}
 body {
     position: relative;
     background-color: #ffffff;
+    height: 100%;
 }
 
 main {
@@ -57,7 +60,6 @@ main {
     top: 100%;
     background-color: black;
 }
-
 
 .navHeader {
     padding: 5px 0px;

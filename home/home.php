@@ -76,10 +76,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto0.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption text-start mb-3">
-                            <h1>Example headline.</h1>
-                            <p class="opacity-75">Some representative placeholder content for the first slide of the
-                                carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
@@ -88,9 +84,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto2.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption mb-3">
-                            <h1>Another example headline.</h1>
-                            <p>Some representative placeholder content for the second slide of the carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -99,9 +92,6 @@ if (isset($_SESSION['email']) == true) {
                         src="../Imagens/FotoCarros/fotoSlider/teste/foto4.jpg" alt="">
                     <div class="container">
                         <div class="carousel-caption text-end mb-3">
-                            <h1>One more for good measure.</h1>
-                            <p>Some representative placeholder content for the third slide of this carousel.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
                         </div>
                     </div>
                 </div>
@@ -115,8 +105,8 @@ if (isset($_SESSION['email']) == true) {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <form class="searchForm input-group col-12 w-50 mb-3 position-absolute start-50 translate-middle"
-            role="search" autocomplete="off">
+        <form class="searchForm input-group col-12 w-50 mb-3 position-absolute start-50 translate-middle" role="search"
+            autocomplete="off">
             <span class="lupaSearch fa-solid fa-magnifying-glass"></span>
             <input type="search" class="inputSearch" placeholder="Pesquisar carro..." aria-label="Search"
                 id="searchInput">
@@ -129,7 +119,7 @@ if (isset($_SESSION['email']) == true) {
                 <p class="subtitle">Todos os carros são verificados e autenticados pelas marcas originais.</p>
                 <div class="row imgDestaquesContent">
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
+                            src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
                             src="../Imagens/Icones-Logos/logoMarcas/Ferrari-Logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
@@ -139,24 +129,17 @@ if (isset($_SESSION['email']) == true) {
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
                             src="../Imagens/Icones-Logos/logoMarcas/Mercedes-Logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="lg imgDestaque"
-                            src="../Imagens/Icones-Logos/logoMarcas/Porsche-Logo.png" alt=""></div>
+                            src="../Imagens/Icones-Logos/logoMarcas/Audi_logo.png" alt=""></div>
                     <div class="imgDestaqueDIv d-flex col-3 position-relative"><img class="imgDestaque"
                             src="../Imagens/Icones-Logos/logoMarcas/tesla-logo.png" alt=""></div>
                 </div>
 
                 <div class="homeDestaques">
-                    <h1>Destaques</h1>
-                    <div class="destaquesCard">
-                        <div class="card">
-                            <img src="" alt="">
-
-                        </div>
-                    </div>
+                    <h1>Veiculos em Destaque</h1>
                 </div>
             </div>
         </div>
     </main>
-
     <footer class="footer">
         <p>© 1999-2023 ZiemMotors LTDA. Todos os direitos reservados.</p>
     </footer>
