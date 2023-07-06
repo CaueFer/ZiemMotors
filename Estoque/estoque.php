@@ -247,13 +247,13 @@ if (isset($_SESSION['email']) == true) {
         </aside>
 
         <div class="mainContent">
+            <div class="fadeEffect"></div>
             <button onclick="modalCadastroCarro('abrir')" class="fancy mb-3 btnCadastrar <?php echo $addCadastro ?>">
                 <span class="top-key"></span>
                 <span class="text">CADASTRAR CARRO</span>
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-            <div class="fadeEffect"></div>
             <article class="carrosEstoque row">
             </article>
         </div>

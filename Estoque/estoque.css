@@ -440,6 +440,7 @@ input[type="range"]::-moz-range-thumb {
 
 /* // ----------------- BOTAO CADASTRAR ----------------- //  */
 .fancy {
+    z-index: 3;
     box-sizing: border-box;
     position: relative;
     display: none;
