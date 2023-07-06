@@ -61,11 +61,13 @@ if (isset($_SESSION['email']) == true) {
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                    <li><a href="../contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a>
+                    </li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search" autocomplete="off">
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search"
+                    autocomplete="off">
                     <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
                         aria-label="Search" id="searchInput">
                     <ul class="resultSearch"></ul>
@@ -109,7 +111,7 @@ if (isset($_SESSION['email']) == true) {
                 </div>
                 <div class="ano">
                     <span>ano</span>
-                    <input type="number" class="carAno carModalNumb" min="1900" max="2099" step="1"/>
+                    <input type="number" class="carAno carModalNumb" min="1900" max="2099" step="1" />
                 </div>
                 <div class="preco">
                     <span>preco</span>
@@ -180,14 +182,22 @@ if (isset($_SESSION['email']) == true) {
                     </div>
                     <div class="content">
                         <ul class="optionsMarca" id="marcaOptions">
-                            <li class="marcaOpt" id="audiOpt"><span>Audi</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="bmwOpt"><span>BMW</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="ferrariOpt"><span>Ferrari</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="lamboOpt"><span>Lamborghini</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="mclarenOpt"><span>McLaren</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes-Benz</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="porscheOpt"><span>Porsche</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="teslaOpt"><span>Tesla</span><i class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="audiOpt"><span>Audi</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="bmwOpt"><span>BMW</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="ferrariOpt"><span>Ferrari</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="lamboOpt"><span>Lamborghini</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mclarenOpt"><span>McLaren</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes-Benz</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="porscheOpt"><span>Porsche</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
+                            <li class="marcaOpt" id="teslaOpt"><span>Tesla</span><i
+                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
                         </ul>
                     </div>
                 </div>
@@ -254,7 +264,13 @@ if (isset($_SESSION['email']) == true) {
                 <span class="bottom-key-1"></span>
                 <span class="bottom-key-2"></span>
             </button>
-            <article class="carrosEstoque row">
+            <article class="carrosEstoque row position-relative">
+                <div class="loader">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
             </article>
         </div>
 
