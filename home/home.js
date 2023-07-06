@@ -35,8 +35,7 @@ searchInput.addEventListener("keyup", () => {
 
 cardDestaquesCar.forEach((e) =>{
     e.addEventListener("click", () =>{
-        console.log(e.childNodes[1].childNodes[3].childNodes[1].innerText);
-        const valor = e.childNodes[1].childNodes[3].childNodes[1].innerText;
+        const valor = e.childNodes[1].childNodes[5].childNodes[1].innerText;
         openBigPage(valor);
     })
 })
@@ -89,6 +88,7 @@ function createBigPage(e) {
     var novaPagina;
 
     novaPagina = window.open("", "_self");
+    window.scroll({ top: 0 });
     novaPagina.document.write(
         `<!DOCTYPE html>
     <html lang="pt-br">
@@ -227,7 +227,6 @@ function createBigPage(e) {
                     </ul>
                 </div>
                 <div class="contato">
-                    <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
                     <div class="contatoTitle">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contate o Vendedor</span>
@@ -278,3 +277,8 @@ function createBigPage(e) {
 }
 
 carroSearch();
+
+window.addEventListener("scroll", () =>{
+    var header = document.querySelector(".navHeader");
+    header.classList.toggle("stickyNav", window.scrollY > 300);
+})

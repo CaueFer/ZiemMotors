@@ -10,6 +10,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 70%;
+    height: calc(100vh - 71px);
 }
 
 .asideNav {

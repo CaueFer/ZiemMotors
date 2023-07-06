@@ -36,7 +36,7 @@ if (isset($_SESSION['email']) == true) {
 </head>
 
 <body>
-    <header class="navHeader position-fixed w-100 top-0">
+    <header class="navHeader">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start position-relative"
                 style="height:60px">
@@ -67,7 +67,7 @@ if (isset($_SESSION['email']) == true) {
             </div>
         </div>
     </header>
-    <main>
+    <main style="margin-top: 0px!important;">
         <div id="myCarousel" class="carousel slide mb-6 mt-10 position-relative" data-bs-ride="carousel"
             data-bs-theme="light">
             <div class="carousel-inner position-relative" style="height: 500px;">
@@ -140,41 +140,45 @@ if (isset($_SESSION['email']) == true) {
             <div class="row px-5 mx-auto mb-5">
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <h5 class="card-title">Lamborghini - Huracan STO</h5>
                             <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-subtitle">R$6.799.990,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Ferrari F8 Spider</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$4.619.000,00</h5>
+                            <h5 class="card-title">Ferrari - F8 Spider</h5>
+                            <p class="card-text">2023</p>
+                            <h5 class="card-subtitle">R$5.599.000,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-title">Audi - Rs Q8 TFSI</h5>
+                            <p class="card-text">2021</p>
+                            <h5 class="card-subtitle">R$1.389.900,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-title">BMW - X4 M COMPETITION</h5>
+                            <p class="card-text">2020</p>
+                            <h5 class="card-subtitle">R$670.000,00</h5>
                         </div>
                     </div>
                 </div>
@@ -183,36 +187,40 @@ if (isset($_SESSION['email']) == true) {
             <div class="row px-5 mx-auto">
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-title">Mercedes-Benz - G 63 AMG </h5>
+                            <p class="card-text">2021</p>
+                            <h5 class="card-subtitle">R$2.499.990,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-title">Tesla - Model X Plaid</h5>
+                            <p class="card-text">2023</p>
+                            <h5 class="card-subtitle">R$1.699.900,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
-                            <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-title">Ferrari - Roma</h5>
+                            <p class="card-text">2021</p>
+                            <h5 class="card-subtitle">R$3.800.000,00</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
+                        <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Lamborghini Huracan STO</h5>

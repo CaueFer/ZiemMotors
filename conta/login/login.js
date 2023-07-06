@@ -234,7 +234,6 @@ function createBigPage(e) {
                     </ul>
                 </div>
                 <div class="contato">
-                    <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
                     <div class="contatoTitle">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contate o Vendedor</span>
