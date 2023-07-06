@@ -210,9 +210,9 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\PORSCHE.png" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\ferrariROMA.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Ferrari - Roma</h5>
+                            <h5 class="card-title">Ferrari Roma</h5>
                             <p class="card-text">2021</p>
                             <h5 class="card-subtitle">R$3.800.000,00</h5>
                         </div>
@@ -221,7 +221,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\PORSCHE.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Porsche 911 Carrera GTS</h5>
                             <p class="card-text">2022</p>

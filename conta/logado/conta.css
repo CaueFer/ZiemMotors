@@ -30,8 +30,10 @@ main{
     margin: 0px 15px;
 }
 
-.asideUl li{
+.asideUl a{
     font-size: 18px;
+    color: black;
+    text-decoration: none;
 }
 
 .asideTitle{
