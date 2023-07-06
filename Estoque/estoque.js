@@ -201,7 +201,6 @@ function createCard() {
             carrosEstoque.insertAdjacentHTML("beforeend",
                 `<div class="cardSobreCarro col-12">
                     <section class="cardCarro">
-                        <button class="btnBigPage" onclick="openBigPage(event)"></button>
                         <img src="${e.img1}" alt="cardImg">
                         <div class="cardContent">
                             <span class="cardContentTitle">${e.nome}</span>
@@ -222,6 +221,7 @@ function createCard() {
                             </div>
                         </div>
                     </section>
+                    <button class="btnBigPage" onclick="openBigPage(event)"></button>
                     
                 </div>`
             )
@@ -266,6 +266,7 @@ function openBigPage(recebido, normal) {
     }
     else {
         const targetEl = recebido.target.closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
+        console.log(targetEl);
 
         estoque.carro.forEach((e) => {
             if (e.nome === targetEl) {
@@ -418,7 +419,6 @@ function createBigPage(e) {
                     </ul>
                 </div>
                 <div class="contato">
-                    <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
                     <div class="contatoTitle">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contate o Vendedor</span>

@@ -1,3 +1,4 @@
+
 .searchForm{
     padding: 10px;
     font-size: 22px;
@@ -33,7 +34,7 @@
     color: black;
     font-size: 80px;
     font-weight: 700;
-    margin: 50px 100px 20px 100px;
+    margin: 100px 100px 20px 100px;
 }
 .subtitle{
     color: black;
@@ -99,4 +100,13 @@
 
 .card-text{
     font-size: 24px;
+}
+
+.cardImgDestaque{
+    position: absolute;
+    z-index: 3;
+    top: -13px;
+    left: -23px;
+    width: 7rem;
+    height: 7rem;
 }

@@ -61,11 +61,20 @@ main {
 }
 
 .navHeader {
+    position: relative;
+    width: 100%;
+    top: 0;
     padding: 5px 0px;
-    background-color: white;
+    background-color: transparent;
     border-bottom: .5px solid #414141d0;
     z-index: 4;
-}  
+    transition: all .6s ease;
+}
+
+.stickyNav{
+    position: fixed;
+    background-color: white;
+}
 
 .logo {
     cursor: pointer;
