@@ -279,6 +279,8 @@ function openBigPage(recebido, normal) {
 function createBigPage(e) {
     var novaPagina;
 
+    console.log(e.infos);
+
     novaPagina = window.open("", "_self");
     window.scroll({ top: 0 });
     novaPagina.document.write(

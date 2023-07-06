@@ -194,12 +194,11 @@
 /* // -------------------- carouselmini fim -------------------- //  */
 
 
-
 .carInfos {
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    height: 110vh;
+    height: 100%;
 }
 
 .sobreDiv {
@@ -228,6 +227,7 @@
 }
 
 .informacoes {
+    position: relative;
     color: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 10px;
