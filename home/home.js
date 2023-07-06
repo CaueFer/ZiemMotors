@@ -276,9 +276,27 @@ function createBigPage(e) {
     );
 }
 
-carroSearch();
-
 window.addEventListener("scroll", () =>{
     var header = document.querySelector(".navHeader");
-    header.classList.toggle("stickyNav", window.scrollY > 300);
+
+    if(window.scrollY > 300){
+        header.classList.add("stickyNav", window.scrollY > 300);
+
+        const logoIcon = document.querySelector("#logoIcon");
+        logoIcon.src = "../Imagens/icones-Logos/logoNOVOZIEMBLACK.png";
+
+        const iconUser = document.querySelector("#iconUser");
+        iconUser.src = "../Imagens/icones-Logos/userIconBlack.png";
+    }
+    if(window.scrollY < 300){
+        header.classList.remove("stickyNav", window.scrollY > 300);
+
+        const logoIcon = document.querySelector("#logoIcon");
+        logoIcon.src = "../Imagens/icones-Logos/logoNOVOZIEMWHITE.png";
+
+        const iconUser = document.querySelector("#iconUser");
+        iconUser.src = "../Imagens/icones-Logos/userIconWhite.png";
+    }
 })
+
+carroSearch();

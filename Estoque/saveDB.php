@@ -13,6 +13,7 @@ if(isset($_POST)){
     $ano = $carros[0]['ano'];
     $preco = $carros[0]['preco'];
     $transmissao = $carros[0]['transmissao'];
+    $quilometragem = $carros[0]['quilometragem'];
     $infos = $carros[0]['infos'];
     $img1 = $carros[0]['img1'];
     $img2 = $carros[0]['img2'];
@@ -25,8 +26,8 @@ if(isset($_POST)){
     $validacao = $conexao->query($sql);
 
     if (mysqli_num_rows($validacao) < 1) {
-        $result = mysqli_query($conexao, "INSERT INTO carros(nome,marca,modelo,versao,ano,preco,transmissao,infos,img1,img2,img3,img4,img5)
-         VALUES('$nome','$marca','$modelo','$versao','$ano','$preco','$transmissao','$infos','$img1','$img2','$img3','$img4','$img5')");
+        $result = mysqli_query($conexao, "INSERT INTO carros(nome,marca,modelo,versao,ano,preco,transmissao,quilometragem,infos,img1,img2,img3,img4,img5)
+         VALUES('$nome','$marca','$modelo','$versao','$ano','$preco','$transmissao','$quilometragem','$infos','$img1','$img2','$img3','$img4','$img5')");
     }
 }
 ?>
