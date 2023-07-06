@@ -7,13 +7,6 @@
     border-bottom: none;
 }
 
-.navHeader li a{
-    color: white!important;
-}
-.navHeader li a:hover{
-    color: rgb(221, 221, 221)!important;
-}
-
 .navHeader.stickyNav{
     position: fixed;
     color: black!important;
@@ -21,12 +14,20 @@
     border-bottom: .5px solid #414141d0;
 }
 
-.navHeader.stickyNav li{
+.navHeader.stickyNav li a{
     color: black!important;
 }
-.navHeader.stickyNav li:hover{
+.navHeader.stickyNav li:hover a{
     color: black!important;
 }
+
+.navHeader li a{
+    color: white!important;
+}
+.navHeader li a:hover{
+    color: rgb(221, 221, 221)!important;
+}
+
 
 .logo {
     cursor: pointer;

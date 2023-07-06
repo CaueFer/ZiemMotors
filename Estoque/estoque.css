@@ -549,7 +549,7 @@ input[type="range"]::-moz-range-thumb {
 .modalCriar {
     padding: 10px;
     border-radius: 10px;
-    z-index: 2;
+    z-index: 5;
     width: 600px;
     height: auto;
     margin: auto;

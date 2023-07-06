@@ -126,7 +126,7 @@ if (isset($_SESSION['email']) == true) {
                 </div>
                 <div class="quilometragem">
                     <span>quilometragem</span>
-                    <input type="number" class="carQuilo carModalNumb">
+                    <input type="number" class="carQuilo carModalNumb" name="quilometragem">
                 </div>
                 <div class="infos">
                     <span>Informacoes</span>
