@@ -346,8 +346,7 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     z-index: 2;
     top: 0;
-    left: 30%;
-    width: 68%;
+    width: 97%;
     height: 100px;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,.8) 0%, rgba(255,255,255,.6) 30%, rgba(255,255,255,0) 100%);
