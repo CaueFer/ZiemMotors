@@ -11,10 +11,11 @@
     position: absolute;
     top: 110px;
     border-radius: 80px 0px 0px 15px;
-    left: 58%;
-    width: 49.8%;
+    left: 50%;
+    width: 41.9%;
+    margin-left: 180px;
 
-    height: 92.1%;
+    height: 89.6%;
     justify-content: right;
     
 }
