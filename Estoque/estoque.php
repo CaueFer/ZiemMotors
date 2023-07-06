@@ -190,9 +190,7 @@ if (isset($_SESSION['email']) == true) {
                                     class="fa-solid fa-x fa-lg closeSelect"></i></li>
                             <li class="marcaOpt" id="lamboOpt"><span>Lamborghini</span><i
                                     class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="mclarenOpt"><span>McLaren</span><i
-                                    class="fa-solid fa-x fa-lg closeSelect"></i></li>
-                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes-Benz</span><i
+                            <li class="marcaOpt" id="mercedesOpt"><span>Mercedes Benz</span><i
                                     class="fa-solid fa-x fa-lg closeSelect"></i></li>
                             <li class="marcaOpt" id="porscheOpt"><span>Porsche</span><i
                                     class="fa-solid fa-x fa-lg closeSelect"></i></li>

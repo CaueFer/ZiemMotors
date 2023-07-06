@@ -478,6 +478,7 @@ marcaOptionsSelect.forEach((e) => {
         const targetEl = e.target;
 
         if (!targetEl.classList.contains('closeSelect')) {
+            console.log(targetEl);
             targetEl.classList.add("active");
             filterCarMarca(targetEl);
         }

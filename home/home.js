@@ -287,6 +287,9 @@ window.addEventListener("scroll", () =>{
 
         const iconUser = document.querySelector("#iconUser");
         iconUser.src = "../Imagens/icones-Logos/userIconBlack.png";
+
+        const linkNav = document.querySelector(".linkNav");
+        linkNav.classList.add("sticky");
     }
     if(window.scrollY < 300){
         header.classList.remove("stickyNav", window.scrollY > 300);
@@ -296,6 +299,9 @@ window.addEventListener("scroll", () =>{
 
         const iconUser = document.querySelector("#iconUser");
         iconUser.src = "../Imagens/icones-Logos/userIconWhite.png";
+
+        const linkNav = document.querySelector(".linkNav");
+        linkNav.classList.remove("sticky");
     }
 })
 

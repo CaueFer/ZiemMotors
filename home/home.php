@@ -1,14 +1,14 @@
 <?php
 session_start();
-$navOptions = '<li><a class="dropdown-item" href="../conta/login/login.php">Fazer Login</a></li>';
+$navOptions = '<li><a class="dropdown-item text-dark" href="../conta/login/login.php">Fazer Login</a></li>';
 
 if (isset($_SESSION['email']) == true) {
-    $navOptions = '<li><a class="dropdown-item" href="../conta/logado/conta.php">Configuracoes</a></li>
-    <li><a class="dropdown-item" href="../conta/logado/conta.php">Perfil</a></li>
+    $navOptions = '<li><a class="dropdown-item text-black" href="../conta/logado/conta.php">Configuracoes</a></li>
+    <li><a class="dropdown-item text-black" href="../conta/logado/conta.php">Perfil</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>
-    <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
+    <li><a class="dropdown-item text-black" href="../conta/login/sair.php">Sair</a></li>';
 }
 
 
@@ -55,8 +55,8 @@ if (isset($_SESSION['email']) == true) {
                 </ul>
 
                 <div class="dropdown text-end">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-block linkNav text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false" id="userDropdown">
                         <img src="../Imagens/icones-Logos/userIconWhite.png" alt="userImg" width="38" height="38"
                             class="rounded-circle" id="iconUser">
                     </a>
@@ -141,7 +141,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\lamboHarucan.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Lamborghini Huracan STO</h5>
                             <p class="card-text">2022</p>
@@ -152,7 +152,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\ferrariF8.jpeg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Ferrari F8 Spider</h5>
                             <p class="card-text">2023</p>
@@ -163,7 +163,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\audiRS.jpeg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Audi Rs Q8 TFSI</h5>
                             <p class="card-text">2021</p>
@@ -174,7 +174,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\BMWX4.jpeg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">BMW X4 M COMPETITION</h5>
                             <p class="card-text">2020</p>
@@ -188,7 +188,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\MECA.jpeg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Mercedes Benz G 63 AMG </h5>
                             <p class="card-text">2021</p>
@@ -199,7 +199,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\TESLA.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Tesla Model X Plaid</h5>
                             <p class="card-text">2023</p>
@@ -210,7 +210,7 @@ if (isset($_SESSION['email']) == true) {
                 <div class="col-3 d-flex justify-content-center cardDestaquesCar">
                     <div class="card cardDestaques">
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
-                        <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
+                        <img src="..\Imagens\FotoCarros\PORSCHE.png" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
                             <h5 class="card-title">Ferrari - Roma</h5>
                             <p class="card-text">2021</p>
@@ -223,9 +223,9 @@ if (isset($_SESSION['email']) == true) {
                         <img src="..\Imagens\FotoCarros\destaqueBanner.png" class="cardImgDestaque" alt="...">
                         <img src="..\Imagens\FotoCarros\fotoSlider\Teste/foto1.jpg" class="card-img-top" alt="...">
                         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                            <h5 class="card-title">Lamborghini Huracan STO</h5>
+                            <h5 class="card-title">Porsche 911 Carrera GTS</h5>
                             <p class="card-text">2022</p>
-                            <h5 class="card-subtitle">R$6.699.990,00</h5>
+                            <h5 class="card-subtitle">R$1.499.990,00</h5>
                         </div>
                     </div>
                 </div>

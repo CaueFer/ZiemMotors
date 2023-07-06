@@ -1,3 +1,11 @@
+.linkNav{
+    color: white!important;
+}
+
+.linkNav.sticky{
+    color: black!important;
+}
+
 .navHeader {
     position: absolute;
     width: 100%;
@@ -21,13 +29,12 @@
     color: black!important;
 }
 
-.navHeader li a{
+.nav li a{
     color: white!important;
 }
-.navHeader li a:hover{
+.nav li a:hover{
     color: rgb(221, 221, 221)!important;
 }
-
 
 .logo {
     cursor: pointer;
@@ -156,4 +163,9 @@
     left: -23px;
     width: 7rem;
     height: 7rem;
+}
+
+.card-img-top{
+    height: 50%;
+    object-fit: cover;
 }
