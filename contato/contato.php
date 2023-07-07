@@ -8,6 +8,7 @@ if (isset($_SESSION['email']) == true) {
     <li>
         <hr class="dropdown-divider">
     </li>
+    
     <li><a class="dropdown-item" href="../conta/login/sair.php">Sair</a></li>';
 }
 
@@ -50,7 +51,7 @@ if (isset($_SESSION['email']) == true) {
                     <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a>
                     </li>
                     <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
-                    <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                    <li><a href="../Sobrenos/sobrenos.php" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 position-relative" role="search"
@@ -74,10 +75,10 @@ if (isset($_SESSION['email']) == true) {
         </div>
     </header>
     <main>
-        <div class="fodase">
+        <div class="pag">
             <div class="contato">
                 <br><br><br>
-                <p>Entre em contato pelo nosso formulário</p>
+                <p>&nbsp;&nbsp; Entre em contato pelo nosso formulário</p>
 
             </div>
             <div class="contatoInput">
@@ -91,8 +92,8 @@ if (isset($_SESSION['email']) == true) {
                 <textarea name="msgUser" id="" cols="30" rows="10" placeholder="Mensagem"></textarea><br><br>
                 <button>ENVIAR</button>
             </div>
-            <div class="fodaseesqueda"></div>
-            <div class="fodasedireita">
+            <div class="pagesqueda"></div>
+            <div class="pagdireita">
                 <h1 class="contatenos">Contate nos</h1>
                 <div class="informações">
                     <p><img src="../Imagens/icones-Logos/icone-telefone-2.png" alt="img1" class="img1">

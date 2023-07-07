@@ -1,37 +1,11 @@
-// ---------------------  SLIDER -------------------------- //
-
-var counter = 1;
-
-const imgSlid = document.querySelectorAll('.imageSlider');
-
-if(imgSlid){
-    setInterval(function () {
-    
-        imgSlid.forEach((e) => {
-            e.classList.remove('natela');
-        });
-    
-        const imgTela = document.querySelector('.id' + counter);
-        imgTela.classList.add('natela');
-    
-        document.getElementById('slide' + counter).checked = true;
-        counter++;
-        if (counter > 4) {
-            counter = 1;
-        }
-    }, 5000);
-}
 
 /* // ----------------- BARRA PESQUISAR ----------------- //  */
 
 let nomeCarros = [], estoque = { carro: [] };
 
 const searchInput = document.getElementById("searchInput"),
-    resultSearch = document.querySelector(".resultSearch");
-
-searchInput.addEventListener("focus", () => {
-    carroSearch();
-})
+    resultSearch = document.querySelector(".resultSearch"),
+    cardDestaquesCar = document.querySelectorAll(".cardDestaquesCar");
 
 searchInput.addEventListener("focusout", () => {
     setTimeout(() => { resultSearch.classList.remove("active"); }, 100);
@@ -58,6 +32,14 @@ searchInput.addEventListener("keyup", () => {
     }
     else resultSearch.innerHTML = `<li class="resultOpt noSelect">Nenhum encontrado</li>`;
 })
+
+cardDestaquesCar.forEach((e) =>{
+    e.addEventListener("click", () =>{
+        const valor = e.childNodes[1].childNodes[5].childNodes[1].innerText;
+        openBigPage(valor);
+    })
+})
+
 
 function carroSearch() {
     fetch("../Estoque/readDB.php", {
@@ -106,6 +88,7 @@ function createBigPage(e) {
     var novaPagina;
 
     novaPagina = window.open("", "_self");
+    window.scroll({ top: 0 });
     novaPagina.document.write(
         `<!DOCTYPE html>
     <html lang="pt-br">
@@ -143,11 +126,6 @@ function createBigPage(e) {
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
                             <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                         </ul>
-
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                                aria-label="Search">
-                        </form>
 
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -249,7 +227,6 @@ function createBigPage(e) {
                     </ul>
                 </div>
                 <div class="contato">
-                    <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
                     <div class="contatoTitle">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contate o Vendedor</span>
@@ -291,9 +268,41 @@ function createBigPage(e) {
     </body>
     
     <script src="../PagCarro/pagcarro.js?v=1.46"></script>
+    <script src="home.js?v=1.45"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js?v=1.45"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous" async></script>
 </html>`
     );
 }
+
+window.addEventListener("scroll", () =>{
+    var header = document.querySelector(".navHeader");
+
+    if(window.scrollY > 300){
+        header.classList.add("stickyNav", window.scrollY > 300);
+
+        const logoIcon = document.querySelector("#logoIcon");
+        logoIcon.src = "../Imagens/icones-Logos/logoNOVOZIEMBLACK.png";
+
+        const iconUser = document.querySelector("#iconUser");
+        iconUser.src = "../Imagens/icones-Logos/userIconBlack.png";
+
+        const linkNav = document.querySelector(".linkNav");
+        linkNav.classList.add("sticky");
+    }
+    if(window.scrollY < 300){
+        header.classList.remove("stickyNav", window.scrollY > 300);
+
+        const logoIcon = document.querySelector("#logoIcon");
+        logoIcon.src = "../Imagens/icones-Logos/logoNOVOZIEMWHITE.png";
+
+        const iconUser = document.querySelector("#iconUser");
+        iconUser.src = "../Imagens/icones-Logos/userIconWhite.png";
+
+        const linkNav = document.querySelector(".linkNav");
+        linkNav.classList.remove("sticky");
+    }
+})
+
+carroSearch();

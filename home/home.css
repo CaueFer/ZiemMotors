@@ -1,7 +1,62 @@
+.linkNav{
+    color: white!important;
+}
+
+.linkNav.sticky{
+    color: black!important;
+}
+
+.navHeader {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    color: white!important;
+    background-color: transparent!important;
+    border-bottom: none;
+}
+
+.navHeader.stickyNav{
+    position: fixed;
+    color: black!important;
+    background-color: white!important;
+    border-bottom: .5px solid #414141d0;
+}
+
+.navHeader.stickyNav li a{
+    color: black!important;
+}
+.navHeader.stickyNav li:hover a{
+    color: black!important;
+}
+
+.nav li a{
+    color: white!important;
+}
+.nav li a:hover{
+    color: rgb(221, 221, 221)!important;
+}
+
+.logo {
+    cursor: pointer;
+    width: auto;
+    height: 60px;
+    color: white;
+}
+
+.logoimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navTitle{
+    font-size: 19px!important;
+}
+
 .searchForm{
     padding: 10px;
     font-size: 22px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow:  5px 5px 10px #838383!important;
 }
@@ -30,23 +85,22 @@
 }
 
 .homeTitle {
-    color: #000;
+    color: black;
     font-size: 80px;
     font-weight: 700;
-    margin: 50px 100px;
+    margin: 100px 100px 20px 100px;
 }
 .subtitle{
     color: black;
     font-size: 30px;
-    font-weight: 200px;
-    margin-left: 20px;
-    position: absolute;
+    font-weight: 300px;
+    margin: 20px 100px;
 }
-
 /* -------------- HOME MARCAS --------------*/
+
 .imgDestaquesContent {
     width: 70%;
-    margin: 0px auto !important;
+    margin: 50px auto !important;
     justify-content: center;
 }
 
@@ -65,4 +119,53 @@
 
 .lg.imgDestaque {
     width: 90% !important;
+}
+
+/* -------------- HOME DESTAQUES --------------*/
+.homeDestaques{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.homeDestaques h1 {
+    color: black;
+    font-size: 80px;
+    font-weight: 700;
+    margin: 50px 100px 20px 100px;
+    text-align: center;
+}
+
+.cardDestaques{
+    width: 22rem;
+    cursor: pointer;
+}
+
+.card-title{
+    font-size: 28px!important;
+    text-align: center;
+}
+
+.card-subtitle{
+    text-align: center;
+    font-size: 28px!important;
+    font-weight: bolder!important;
+}
+
+.card-text{
+    font-size: 24px;
+}
+
+.cardImgDestaque{
+    position: absolute;
+    z-index: 3;
+    top: -13px;
+    left: -23px;
+    width: 7rem;
+    height: 7rem;
+}
+
+.card-img-top{
+    height: 50%;
+    object-fit: cover;
 }

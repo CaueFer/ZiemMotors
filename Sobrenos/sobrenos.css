@@ -1,0 +1,31 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    padding: 60px 0px;
+    color: #000;
+    font-size: 44px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    line-height: normal;
+}
+.texto{
+
+color: #000;
+text-align: justify;
+font-family: Raleway;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 30px;
+margin-top: 50px;
+margin-left: 100px;
+margin-right: 100px;
+
+
+}
+
+.carousel-item{
+    justify-content: center;
+    background-color: black;
+}

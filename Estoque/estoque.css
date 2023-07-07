@@ -6,28 +6,30 @@ main {
 }
 
 .mainContent {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
+    height: calc(100vh - 71px);
 }
 
 .asideNav {
     position: relative;
     display: flex;
     flex-flow: column wrap;
-    border-right: .5px solid #000000;
-    width: 20%;
-    height: 100vh;
+    margin: 50px 0px;
+    border-right: .5px solid #afafaf;
+    width: 30%;
 }
 
 .asideUl {
     width: auto;
-    padding: 15px 0px;
-    margin: 0px 15%;
+    margin: 0px 20%;
+    padding: 0px;
 }
 
 .asideTitle {
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 32px;
     font-weight: 600;
     padding: 5px 10px;
@@ -96,7 +98,7 @@ main {
 .marcaOpt > i{
     display: none;
     position: absolute;
-    left: 85%;
+    left: 90%;
     top: 50%;
     font-size: 15px;
     cursor: pointer;
@@ -129,11 +131,11 @@ main {
     transition: transform 0.3s linear;
 }
 
-.priceFilter.active .marcaTitle i {
+.priceFilter.active .priceTitle i {
     transform: rotate(-180deg);
 }
 
-.priceFilter.off .contentPrice .options {
+.priceFilter.active .contentPrice .options {
     display: flex;
 }
 
@@ -152,7 +154,7 @@ main {
     z-index: 1;
     border-radius: 5px;
     margin: 30px 0px 35px;
-    padding: 5px 5px;
+    padding: 15px 5px;
     border: .5px solid #f2f2f2;
     font-size: 16px;
 }
@@ -321,31 +323,69 @@ input[type="range"]::-moz-range-thumb {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    padding: 30px 10px 0px 10px!important;
+    height: 100vh;
+    padding: 60px 10px 60px 10px!important;
+    row-gap: 2rem!important;
+    overflow: auto;
+}
+
+.carrosEstoque::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(194, 193, 193);
+}
+
+.carrosEstoque::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 10px;
+    background-color: rgb(235, 235, 235);
+    background-clip: content-box;
+}
+
+.fadeEffect{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 97%;
+    height: 100px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,.8) 0%, rgba(255,255,255,.6) 30%, rgba(255,255,255,0) 100%);
+
 }
 
 .cardSobreCarro{
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     padding: 0px 20px!important;
 }
+
+.cardSobreCarro:hover .cardCarro{
+    box-shadow: 5px 10px 30px #6e6e6e9f,
+        -10px -5px 30px #cccccc98;
+}
+.cardSobreCarro:hover .btnBigPage{
+    display: flex;
+}
+ 
 .cardCarro {
     display: flex;
     flex-direction: row!important;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    width: 80%;
+    height: 220px;
     border-radius: 10px;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow: 5px 10px 10px #d9d9d9,
         -10px -10px 10px #ffffff;
+    transition: all .2 ease-in;
 }
 
 .cardCarro img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     border-radius: 10px 0px 0px 10px;
     object-fit: cover;
@@ -361,7 +401,7 @@ input[type="range"]::-moz-range-thumb {
     height: 100%;
     padding: 10px;
     padding-left: 25px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .cardContent span {
@@ -369,23 +409,23 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardContent .cardContentTitle {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .cardContent .cardContentPrice {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
 }
 
 .cardContent .cardContentSpecs {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
 }
 
 .cardContentSpecs .Specs {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: .5rem;
 }
@@ -395,12 +435,13 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cardContentSpecs .Specs * {
-    font-size: 25px;
+    font-size: 21px;
 }
 
 
 /* // ----------------- BOTAO CADASTRAR ----------------- //  */
 .fancy {
+    z-index: 3;
     box-sizing: border-box;
     position: relative;
     display: none;
@@ -508,7 +549,7 @@ input[type="range"]::-moz-range-thumb {
 .modalCriar {
     padding: 10px;
     border-radius: 10px;
-    z-index: 2;
+    z-index: 5;
     width: 600px;
     height: auto;
     margin: auto;
@@ -598,69 +639,95 @@ input[type="range"]::-moz-range-thumb {
 
 /* // MODAL CADASTRO CARRO ----------------- //  */
 .btnBigPage {
-    position: relative;
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: none;
-    cursor: default !important;
-}
-
-.btnBigPage_lg {
-    position: relative;
-    display: block;
-    margin: auto;
-    padding: 15px 30px;
-    color: #fff;
-    background-color: #0f1923;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 0px 1px transparent;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all .15s ease;
-    cursor: pointer !important;
-}
-
-.btnBigPage_lg::before {
-    content: '';
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
-    width: 2px;
-    height: 2px;
-    background-color: #0f1923;
+    width: calc(80% - 2.33333%);
+    height: 220px;
+    margin: 0px calc(10% + 1.333333%);
+    border-radius: 10px;
+    /* background: #0000003f; */
+    background: transparent;
+    padding: 1.8rem;
+    border: 6px solid transparent;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    font-weight: 400;
 }
 
-.btnBigPage_sl {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: -1px;
-    left: -8px;
-    width: 0;
-    background-color: #ff4655;
-    transform: skew(-15deg);
-    transition: all .2s ease;
+/* // HOVER CARD ESTOQUE ----------------- //  */
+.btnBigPage:hover {
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
-.btnBigPage_text {
+/* // LOADER ANIMATION----------------- //  */
+.loader {
+    --dim: 3rem;
+    width: var(--dim)!important;
+    height: var(--dim)!important;
     position: relative;
-}
-
-.btnBigPage_lg:hover .btnBigPage_sl {
-    width: calc(100% + 15px);
-}
-
-.btnBigPage_lg:hover .btnBigPage_lg::after {
-    background-color: #fff;
-}
-
+    margin-top: 200px!important;
+    animation: spin988 2s linear infinite;
+  }
+  
+  .loader .circle {
+    --color: #000000;
+    --dim: 1.2rem;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+  }
+  
+  .loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+  
+  @keyframes spin988 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+  
+    20%, 25% {
+      transform: scale(1.3) rotate(90deg);
+    }
+  
+    45%, 50% {
+      transform: scale(1) rotate(180deg);
+    }
+  
+    70%, 75% {
+      transform: scale(1.3) rotate(270deg);
+    }
+  
+    95%, 100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
 /* // ----------------- MEDIA QUERY ----------------- //  */
 
 /* @media (width > 780px) {

@@ -172,7 +172,7 @@ function createCard() {
         currency: 'BRL',
     });
 
-    console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
+    //console.log(marcaToFilter, anoToFilter, minPriceToFilter, maxPriceToFilter)
 
     if (marcaToFilter.length > 0) {
         if(marcaToFilter !== undefined){
@@ -199,35 +199,31 @@ function createCard() {
             var precoRegional = formatarNumeroPreco.format(e.preco);
 
             carrosEstoque.insertAdjacentHTML("beforeend",
-                `<div class="cardSobreCarro col-6">
-                <section class="cardCarro">
-                <img src="${e.img1}" alt="cardImg">
-                    <div class="cardContent">
-                        <span class="cardContentTitle">${e.nome}</span>
-                        <span class="cardContentPrice">${precoRegional}</span>
-                        <div class="cardContentSpecs">
-                            <div class="Specs">
-                                <i class="fa-solid fa-gauge-high"></i>
-                                <span>${e.quilometragem}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
-                                <span>${e.transmissao}</span>
-                            </div>
-                            <div class="Specs">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <span>${e.ano}</span>
+                `<div class="cardSobreCarro col-12">
+                    <section class="cardCarro">
+                        <img src="${e.img1}" alt="cardImg">
+                        <div class="cardContent">
+                            <span class="cardContentTitle">${e.nome}</span>
+                            <span class="cardContentPrice">${precoRegional}</span>
+                            <div class="cardContentSpecs">
+                                <div class="Specs">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                    <span>${e.quilometragem}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                    <span>${e.transmissao}</span>
+                                </div>
+                                <div class="Specs">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>${e.ano}</span>
+                                </div>
                             </div>
                         </div>
-                        <button class="btnBigPage" onclick="openBigPage(event)">
-                            <span class="btnBigPage_lg">
-                                <span class="btnBigPage_sl"></span>
-                                <span class="btnBigPage_text" >Mais Detalhes</span>
-                            </span>
-                        </button>
-                    </div>
-            </section>
-            </div>`
+                    </section>
+                    <button class="btnBigPage" onclick="openBigPage(event)"></button>
+                    
+                </div>`
             )
         })
     }
@@ -269,7 +265,8 @@ function openBigPage(recebido, normal) {
         })
     }
     else {
-        const targetEl = recebido.target.closest("div").childNodes[1].innerText;
+        const targetEl = recebido.target.closest("div").childNodes[1].childNodes[3].childNodes[1].innerText;
+        console.log(targetEl);
 
         estoque.carro.forEach((e) => {
             if (e.nome === targetEl) {
@@ -282,7 +279,10 @@ function openBigPage(recebido, normal) {
 function createBigPage(e) {
     var novaPagina;
 
+    console.log(e.infos);
+
     novaPagina = window.open("", "_self");
+    window.scroll({ top: 0 });
     novaPagina.document.write(
         `<!DOCTYPE html>
     <html lang="pt-br">
@@ -317,14 +317,9 @@ function createBigPage(e) {
 
                         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li><a href="../Estoque/estoque.php" class="nav-link px-3 link-body-emphasis navTitle">Estoque</a></li>
-                            <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
-                            <li><a href="#" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
+                            <li><a href="../Contato/contato.php" class="nav-link px-3 link-body-emphasis navTitle">Contato</a></li>
+                            <li><a href="../Sobrenos/sobrenos.php" class="nav-link px-3 link-body-emphasis navTitle">Sobre</a></li>
                         </ul>
-
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                            <input type="search" class="focus-ring form-control" placeholder="Pesquisar carro..."
-                                aria-label="Search">
-                        </form>
 
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -426,7 +421,6 @@ function createBigPage(e) {
                     </ul>
                 </div>
                 <div class="contato">
-                    <img id="logoCar" src="../Imagens/icones-Logos/logo-lambo.png" alt="logoMarca">
                     <div class="contatoTitle">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contate o Vendedor</span>
@@ -486,6 +480,7 @@ marcaOptionsSelect.forEach((e) => {
         const targetEl = e.target;
 
         if (!targetEl.classList.contains('closeSelect')) {
+            console.log(targetEl);
             targetEl.classList.add("active");
             filterCarMarca(targetEl);
         }
@@ -528,7 +523,7 @@ const priceFilter = document.querySelector('.priceFilter');
 
 priceTitle.addEventListener('click', (e) => {
 
-    priceFilter.classList.toggle('off');
+    priceFilter.classList.toggle('active');
     anoFilter.classList.remove('active');
 })
 
@@ -637,7 +632,7 @@ anoOptionsSelect.forEach((e) => {
             createCard();
         }
         else {
-            anoSelect.insertAdjacentText('beforeend', "Selecionado: " + targetEl.innerText.substr(0, 7));
+            anoSelect.insertAdjacentText('beforeend', "Acima de: " + targetEl.innerText.substr(0, 7));
             anoFilter.classList.remove('active');
             anoToFilter.splice(0, 1, targetEl.innerText);
             createCard();
@@ -716,4 +711,3 @@ function carroSearch() {
         })
     })
 };
-
